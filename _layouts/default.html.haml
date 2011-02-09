@@ -1,0 +1,15 @@
+---
+layout: base
+---
+
+#wrapper
+  #main
+    #header
+      %a{ :href=>'/' }
+        %img{ :src=>'/images/banner.png' }
+    #menu
+      = partial( 'menu.html.haml' )
+    #content
+      ~ content
+    #footer
+      = partial( 'footer.html.haml' )

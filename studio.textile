@@ -1,0 +1,10 @@
+---
+layout: front
+title: Studio
+---
+
+h1(callout). A clean and easy web front end to "BoxGrinder REST":/rest designed to simplify the process of building appliances
+
+!(main)/images/boxgrinder_logo_studio_450px.gif(BoxGrinder Build)!
+
+Currently in planning phase...

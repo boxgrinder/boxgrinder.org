@@ -1,0 +1,29 @@
+---
+layout: front
+title: Home
+---
+
+h1(callout). BoxGrinder is a set of projects helping you grind out <strong>appliances</strong> for many <strong>virtualization and Cloud</strong> providers
+
+p(announcement). *BoxGrinder 0.8.0 released!* "Learn more":/news/bleh.
+
+<img src="/images/overview.png" class="main" alt="BoxGrinder projects: BoxGrinder Build, BoxGrinder REST, BoxGrinder Studio" usemap="#subprojects"/>
+
+h1. How does it work
+
+BoxGrinder creates appliances (also called images) from simple plain text Appliance Definition Files. There are only two simple steps to create an appliance:
+
+# *Create Appliance Definition File* - Check out our "documentation page":/documentation for detailed information about the structure and examples.
+# *Run BoxGrinder* - BoxGrinder will download all necessary artifact, build the instance, convert it to selected platform and upload it to selected destination. *All in one process!*
+
+!(main)/images/build_process.png(BoxGrinder build process)!
+
+<script src="https://gist.github.com/810385.js?file=f14-jeos.appl"></script>
+
+h1. Learn more
+
+h2(callout). If you are new to BoxGrinder - watch the "introduction video":/video!
+
+BoxGrinder supports many virtualization and Cloud platofrm like *EC2*, *Xen*, *KVM*, *VMware*. You can create appliance based on *Fedora*, *Red Hat Enterprise Linux* or *CentOS*. You are of course free to write your own plugin to support other virtualization platform or operating system!
+
+Refer to "latest documentation"/documentation for get more information about BoxGrinder. You can find there code examples and detailed usage instructions.

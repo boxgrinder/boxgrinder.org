@@ -1,0 +1,21 @@
+---
+layout: front
+title: REST
+---
+
+h1(callout). BoxGrinder REST is a RESTful interface to a distributed "BoxGrinder Build":/build farm.
+
+!(main)/images/boxgrinder_logo_rest_450px.gif(BoxGrinder Build)!
+
+h1. How it works
+
+# BoxGrinder REST server receives appliance definition file. Definition is parsed and a new build task is created.
+# Task is routed to a build queue.
+# When a build node becomes available it takes a task and executes it.
+# Built appliance is uploaded to selected repository.
+
+!(main)/images/bgrest_process.png(BoxGrinder Build)!
+
+h1. Learn more
+
+We encourage you to read "BoxGrinder REST documentation":/documentation/rest. There you can find a section on BoxGrinder REST, especially API definition and a "Quick Start":/documentation/rest/quick_start!

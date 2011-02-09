@@ -1,0 +1,24 @@
+---
+layout: front
+title: Build
+---
+
+h1(callout). Boxgrinder Build is a command line tool helping you build appliances
+
+!(main)/images/boxgrinder_logo_build_450px.gif(BoxGrinder Build)!
+
+h1. How it works
+
+BoxGrinder Build has a plugin architecture. We can distinguish three types:
+
+# *Operating System plugins* - generating base appliance for selected OS,
+# *Platform plugins* - creating converted base appliance for selected platform,
+# *Delivery plugins* - designed to deliver your new appliance to a specified location. For example as a tar file to a remote server or just register as AMI on EC2
+
+!(main)/images/bgbuild_process.png(BoxGrinder Build)!
+
+h1. Learn more
+
+The best way to learn more about BoxGrinder is to read the "BoxGrinder Build documentation pages":/documentation/build. And don't forget to checkout the "FAQ":/faq.
+
+To start using BoxGrinder Build quickly - take a look at "Quick Start":/documentation/build/quick_start page where you'll find information on how to prepare your environment, create your appliance definition file and build your first appliance!

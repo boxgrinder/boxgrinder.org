@@ -1,0 +1,7 @@
+title: BoxGrinder
+profiles:
+  development:
+  staging:
+    base_url: http://staging.boxgrinder.org/
+  production:
+    base_url: http://boxgrinder.org/
