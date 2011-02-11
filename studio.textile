@@ -1,6 +1,7 @@
 ---
-layout: front
+layout: two-column
 title: Studio
+hide_title: true
 ---
 
 h1(callout). A clean and easy web front end to "BoxGrinder REST":/rest designed to simplify the process of building appliances

@@ -1,0 +1,8 @@
+---
+layout: default
+---
+
+#main-column
+  - unless page.hide_title
+    %h1.pagetitle #{page.title}
+  ~ content

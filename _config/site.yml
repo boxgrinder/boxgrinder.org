@@ -1,7 +1,25 @@
 title: BoxGrinder
+links:
+  :twitter: http://twitter.com/boxgrinder
+  :build: /build
+  :rest: /rest
+  :doc: /documentation
+  :studio: /studio
+  :build_doc: /documentation/build
+  :rest_doc: /documentation/rest
+  :studio_doc: /documentation/studio
+  :judcon: http://www.jboss.org/events/JUDCon.html
+
+
 profiles:
-  development:
   staging:
     base_url: http://staging.boxgrinder.org/
+    deploy:
+      host: steamcannon.org
+      path: /var/www/domains/boxgrinder.org/staging/htdocs
   production:
     base_url: http://boxgrinder.org/
+    deploy:
+      host: steamcannon.org
+      path: /var/www/domains/boxgrinder.org/www/htdocs
+intense_debate_acct: 10ac347f1bbe55fd627210502aeb736d

@@ -1,9 +1,10 @@
 ---
-layout: front
+layout: two-column
 title: REST
+hide_title: true
 ---
 
-h1(callout). BoxGrinder REST is a RESTful interface to a distributed "BoxGrinder Build":/build farm.
+h1(callout). BoxGrinder REST is a RESTful interface to a distributed "BoxGrinder Build":/build farm
 
 !(main)/images/boxgrinder_logo_rest_450px.gif(BoxGrinder Build)!
 

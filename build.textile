@@ -1,6 +1,7 @@
 ---
-layout: front
+layout: two-column
 title: Build
+hide_title: true
 ---
 
 h1(callout). Boxgrinder Build is a command line tool helping you build appliances

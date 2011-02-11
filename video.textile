@@ -1,0 +1,8 @@
+---
+layout: two-column
+title: Video
+---
+
+This BoxGrinder introduction video was recorded on JUDCon 2010 in Boston. Presented by "Bob McWhirter":http://twitter.com/bobmcwhirter.
+
+div(#video). <iframe src="http://player.vimeo.com/video/13488207" width="400" height="300" frameborder="0"></iframe>

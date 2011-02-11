@@ -1,0 +1,15 @@
+---
+layout: one-column
+hide_title: true
+---
+
+.post
+  .byline
+    .author
+      = page.author
+    .date
+      = page.date.strftime('%d %b %Y')
+  .body
+    ~ content
+  .comments
+    = page.intense_debate_comments
