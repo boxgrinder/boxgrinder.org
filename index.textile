@@ -3,7 +3,6 @@ layout: two-column
 title: Home
 hide_title: true
 ---
-
     <map name='subprojects'>
         <area alt='BoxGrinder Studio' coords='180,40,340,100' href='/studio' shape='rect' title='BoxGrinder Studio' />
         <area alt='BoxGrinder REST' coords='180,150,340,210' href='/rest' shape='rect' title='BoxGrinder REST' />
@@ -12,20 +11,18 @@ hide_title: true
 
 h1(callout). BoxGrinder is a set of projects helping you grind out appliances for many virtualization and Cloud providers
 
-p(announcement). 2011/02/09 BoxGrinder 0.8.0 released - "learn more":/blog/2011/02/09/boxgrinder-build-0-8-0-released-finally!
+bq. 2011/02/09: BoxGrinder 0.8.0 released - "learn more":/blog/2011/02/09/boxgrinder-build-0-8-0-released-finally!
 
     <img src="/images/overview.png" class="main" alt="BoxGrinder projects: BoxGrinder Build, BoxGrinder REST, BoxGrinder Studio" usemap="#subprojects"/>
 
 h1. How does it work
 
-BoxGrinder creates appliances (also called images) from simple plain text Appliance Definition Files. There are only two simple steps to create an appliance:
-
-# *Create Appliance Definition File* - Check out our "documentation page":/documentation for detailed information about the structure and examples.
-# *Run BoxGrinder* - BoxGrinder will download all necessary artifacts, build the instance, convert it to selected platform and upload it to selected destination. *All in one process!*
-
 !(main)/images/build_process.png(BoxGrinder build process)!
 
-<pre><code>name: f14-jeos
+BoxGrinder creates appliances (also called images) from simple plain text "Appliance Definition":/tutorials/appliance-definition files. There are only two simple steps to create an appliance:
+
+# *Create Appliance Definition File* - Check out our "tutorials page":/tutorials for detailed information about the structure and examples.
+<pre style="margin-top: 1em;"><code>name: f14-jeos
 summary: Just Enough Operating System based on Fedora 14
 os:
   name: fedora
@@ -37,11 +34,15 @@ hardware:
 packages:
   - @core
 </code></pre>
+# *Run BoxGrinder* - BoxGrinder will download all necessary artifacts, build the instance, convert it to selected platform and upload it to selected destination. *All in one process!*
+<pre style="margin-top: 1em;"><code>boxgrinder build jeos.appl -p vmware -d local</code></pre>
+
+That's all!
 
 h1. Learn more
 
 h2(callout). If you are new to BoxGrinder - watch the "introduction video":/video!
 
-BoxGrinder supports many virtualization and Cloud platofrm like *EC2*, *Xen*, *KVM*, *VMware*. You can create appliance based on *Fedora*, *Red Hat Enterprise Linux* or *CentOS*. You are of course free to write your own plugin to support other virtualization platform or operating system!
+BoxGrinder supports many virtualization and Cloud platforms like *EC2*, *Xen*, *KVM*, *VMware*. You can create an appliance based on *Fedora*, *Red Hat Enterprise Linux* or *CentOS*. You are of course free to write your own plugin to support any other virtualization platform or operating system!
 
-Refer to "latest documentation"/documentation for get more information about BoxGrinder. You can find there code examples and detailed usage instructions.
+Refer to the "tutorials page":/tutorials to get more information about BoxGrinder. There you'll find code examples and detailed usage instructions.

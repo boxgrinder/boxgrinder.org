@@ -2,6 +2,7 @@
 title: "BoxGrinder Build 0.8.0 released, finally!"
 author: 'Marek Goldmann'
 layout: blog
+version: 0.8.0
 tags: [ boxgrinder, boxgrinder_build, fedora ]
 ---
 

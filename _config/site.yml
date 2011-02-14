@@ -23,3 +23,4 @@ profiles:
       host: steamcannon.org
       path: /var/www/domains/boxgrinder.org/www/htdocs
 intense_debate_acct: 10ac347f1bbe55fd627210502aeb736d
+google_analytics: UA-6435340-5

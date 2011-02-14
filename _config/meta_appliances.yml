@@ -1,0 +1,59 @@
+server: "dist.stormfolio.boxgrinder.org"
+path: /meta
+appliances:
+  - version: 1.3
+    os:
+      name: Fedora
+      version: 14
+    platforms:
+      - RAW
+      - VMware
+    arches:
+      - i686
+      - x86_64
+    amis:
+      backend: EBS
+      'i686': ami-225aac4b
+      'x86_64': ami-965dabff
+  - version: 1.2
+    os:
+      name: Fedora
+      version: 13
+    platforms:
+      - RAW
+      - VMware
+    arches:
+      - i686
+      - x86_64
+    amis:
+      backend: EBS
+      'i686': ami-faf70093
+      'x86_64': ami-7ef60117
+  - version: 1.1
+    os:
+      name: Fedora
+      version: 13
+    platforms:
+      - RAW
+      - VMware
+    arches:
+      - i686
+      - x86_64
+    amis:
+      backend: S3
+      'i686': ami-5eee1a37
+      'x86_64': ami-cac42fa3
+  - version: 1.0
+    os:
+      name: Fedora
+      version: 13
+    platforms:
+      - RAW
+      - VMware
+    arches:
+      - i386
+      - x86_64
+    amis:
+      backend: S3
+      'i386': ami-cac42fa3
+      'x86_64': ami-96db30ff

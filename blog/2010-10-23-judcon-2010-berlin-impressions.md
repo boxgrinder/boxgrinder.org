@@ -1,10 +1,9 @@
 ---
-title: "JUDCon 2010 Berlin &#x2013; impressions"
+title: "JUDCon 2010 Berlin - impressions"
 author: 'Marek Goldmann'
 layout: blog
 tags: [ boxgrinder, judcon ]
 ---
-
 
 It's
 over two weeks after JUDCon and I hadn't wrote anything yet. Now
@@ -28,7 +27,7 @@ There were also 2 rooms with space for 60 people upstairs where the
 talks were presented.
 # Talks
 
-[![Pete Muir](/blog/assets/5106501927_33506a4ea4_m.jpg)](http://www.flickr.com/photos/goldmann/5106501927/ "IMAG0341 by Marek Goldmann, on Flickr")We
+We
 had four tracks: SOA and integration, Cloud and large sale
 distributed systems, Workflow and BPM and JBoss AS 6 and 7. I
 attended Cloud and JBoss AS tracks.
@@ -50,7 +49,6 @@ Next we could see
 [Pete's](http://community.jboss.org/people/petemuir) talk on
 **Seam in the Cloud** – he presented the ability to integrate JBoss
 Developer studio and a JBoss AS running in the Cloud. Very nice!
-[![Tihomir Surdilovic teleconference](/blog/assets/5107100664_b82bf7046c_m.jpg)](http://www.flickr.com/photos/goldmann/5107100664/ "IMAG0345 by Marek Goldmann, on Flickr")
 
 Adrian
 (a.k.a. jclouds guy) and

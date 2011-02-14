@@ -1,0 +1,77 @@
+---
+layout: default
+title: Community
+---
+
+#left-column
+  - unless page.hide_title
+    %h1.pagetitle #{page.title}
+    :markdown
+      BoxGrinder is an open-source project so we make it easy to ask
+      questions or contribute.
+
+      ## JBoss Community Portal
+
+      In our JBoss Community Portal anyone with a JBoss Community account
+      can [contribute articles](http://community.jboss.org/en/boxgrinder?view=documents)
+      or [start a discussion](http://community.jboss.org/en/boxgrinder?view=discussions) about BoxGrinder.
+
+      * <http://community.jboss.org/en/boxgrinder>
+
+      ## Issue Tracker
+
+      We use JIRA to track bugs and feature requests. To submit a bug or
+      feature request or to comment on an existing issue, you'll first
+      need to [signup][jboss_signup] for a JBoss Community account.
+
+      [jboss_signup]: https://community.jboss.org/login.jspa
+
+      [![BoxGrinder Build issue tracker][bgbuild_small]](https://jira.jboss.org/browse/BGBUILD)
+      [![BoxGrinder REST issue tracker][bgrest_small]](https://jira.jboss.org/browse/BGREST)
+
+      ## IRC
+
+      The developers and users of BoxGrinder hang out on the `#boxgrinder`
+      channel on FreeNode.
+
+      * [irc://irc.freenode.net/boxgrinder](irc://irc.freenode.net/boxgrinder)
+
+
+      [bgbuild_small]: /images/boxgrinder_logo_build_100px.gif "BoxGrinder Build"
+      [bgrest_small]: /images/boxgrinder_logo_rest_100px.gif "BoxGrinder REST"
+#right-column
+  %h1 Latest tweets
+  :plain
+    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+    <script>
+    new TWTR.Widget({
+      version: 2,
+      type: 'profile',
+      rpp: 5,
+      interval: 6000,
+      width: 'auto',
+      height: 300,
+      theme: {
+        shell: {
+          background: '#dddddd',
+          color: '#880000'
+        },
+        tweets: {
+          background: '#eeeeee',
+          color: '#000000',
+          links: '#880000'
+        }
+      },
+      features: {
+        scrollbar: false,
+        loop: false,
+        live: false,
+        hashtags: true,
+        timestamp: true,
+        avatars: false,
+        behavior: 'all'
+      }
+    }).render().setUser('boxgrinder').start();
+    </script>
+
+

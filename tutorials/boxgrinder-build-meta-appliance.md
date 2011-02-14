@@ -1,5 +1,5 @@
 ---
-title: "BoxGrinder Build meta appliance"
+title: "BoxGrinder Build Meta appliance usage"
 layout: one-column
 ---
 
@@ -47,4 +47,4 @@ See [quick start article][bgbuild_quick_start] if you want learn more on how to 
 
 [bgbuild_quick_start]: /documentation/articles/boxgrinder-build-quick-start
 [bgbuild]: /build
-[meta_appliance]: /build/meta-appliance
+[meta_appliance]: /download/boxgrinder-build-meta-appliance

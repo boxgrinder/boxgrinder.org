@@ -5,7 +5,7 @@ module ReleaseHelper
   end
 
   def announcement_for_version(version)
-    site.posts.find { |p| p.layout == 'release' && p.version == version }
+    site.posts.find { |p| p.version == version }
   end
 
   def latest_release

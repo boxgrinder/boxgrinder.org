@@ -43,7 +43,7 @@ body {
 }
 
 #left-column {
-    width: 630px;
+    width: 600px;
     float: left;
     padding: 20px;
     background-color: #fff;
@@ -56,9 +56,11 @@ body {
 }
 
 #right-column {
-    width: 195px;
+    width: 215px;
     float: left;
-    padding: 0 0 0 10px;
+    padding: 10px;
+    background-color: #fff;
+    margin-left: 10px;
 }
 
 #footer {
@@ -83,6 +85,26 @@ div#menu {
 
 #bottom-right {
     float: left;
+}
+
+#latest-posts > div.item {
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #eee;
+}
+
+#latest-release {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+hr {
+    background-color: #eee;
+    height: 5px;
+    border: 0;
+    margin: 1em 0;
 }
 
 h1 {
@@ -209,6 +231,34 @@ li > ul {
     margin-bottom: 0;
 }
 
+
+/* RSS */
+
+div#jira {
+}
+
+div.rssBody > ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+div.rssBody > ul > li {
+    margin-bottom: 0.5em;
+}
+
+div.rssBody > ul > li > h4 {
+    font-family: "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+    font-style: normal;
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+
 div.byline {
     margin-bottom: 1em;
     overflow: hidden;
@@ -242,6 +292,10 @@ div.post > h1.title {
 
 strong {
     font-weight: bold;
+}
+
+em {
+    font-style: oblique;
 }
 
 #badges > a > img {

@@ -1,0 +1,79 @@
+---
+layout: default
+title: Development
+---
+
+#left-column
+  - unless page.hide_title
+    %h1.pagetitle #{page.title}
+
+    :markdown
+      # Source Code
+      The code is developed as open-source, with a publicly-accessible [source-code repository on GitHub](https://github.com/boxgrinder).
+
+      BoxGrinder is an open-source project licensed under the [LGPL].
+
+      [lgpl]: /license-lgpl.txt
+
+      ## BoxGrinder Build
+
+      ![BoxGrinder Build][bgbuild_medium]
+
+      BoxGirinder Build source code is spread across three repositories.
+
+      ### BoxGrinder Core
+
+          git clone git://github.com/boxgrinder/boxgrinder-core.git
+
+      * [GitHub page](http://github.com/boxgrinder/boxgrinder-core)
+      * [Latest commits](http://github.com/boxgrinder/boxgrinder-core/commits/master)
+
+      ### BoxGrinder Build
+
+          git clone git://github.com/boxgrinder/boxgrinder-build.git
+
+      * [GitHub page](http://github.com/boxgrinder/boxgrinder-build)
+      * [Latest commits](http://github.com/boxgrinder/boxgrinder-build/commits/master)
+
+      ### BoxGrinder Build Plugins
+
+          git clone git://github.com/boxgrinder/boxgrinder-build-plugins.git
+
+      * [GitHub page](http://github.com/boxgrinder/boxgrinder-build-plugins)
+      * [Latest commits](http://github.com/boxgrinder/boxgrinder-build-plugins/commits/master)
+
+      ## BoxGrinder REST
+
+      ![BoxGrinder REST][bgrest_medium]
+
+      BoxGirinder Build source code is spread across two repositories.
+
+      ### BoxGrinder REST
+
+          git clone git://github.com/boxgrinder/boxgrinder-rest.git
+
+      * [GitHub page](http://github.com/boxgrinder/boxgrinder-rest)
+      * [Latest commits](http://github.com/boxgrinder/boxgrinder-rest/commits/master)
+
+      ### BoxGrinder Node
+
+          git clone git://github.com/boxgrinder/boxgrinder-node.git
+
+      * [GitHub page](http://github.com/boxgrinder/boxgrinder-node)
+      * [Latest commits](http://github.com/boxgrinder/boxgrinder-node/commits/master)
+
+      # Continuous integration
+
+      The code is continuously built using [continuous integration](/development/continuous_integration).
+
+      The team is lead by Marek Goldmann and is supported by the other members of [ProjectOdd](http://projectodd.org/).
+
+
+      [bgbuild_medium]: /images/boxgrinder_logo_build_200px.gif "BoxGrinder Build"
+      [bgrest_medium]: /images/boxgrinder_logo_rest_200px.gif "BoxGrinder REST"
+
+#right-column
+  %h1 Latest JIRA Activity
+  = rss_widget('jira', 'http://jira.jboss.org/plugins/servlet/streams?key=BGBUILD', :limit => 5, :header => false, :content => false, :date => false)
+
+
