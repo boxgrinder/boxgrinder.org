@@ -9,11 +9,11 @@ layout: one-column
 
 ***
 
-To start building appliances you'll need to have a proper environment. You can use the meta appliance (simple way) or prepare your own build environment (longer way).
+To start building appliances you'll need to have a proper environment. You can use the [meta appliance][meta] (simple way) or prepare your own build environment (longer way).
 
 # Meta appliance
 
-See the meta appliance page for details on getting it up and running.
+See the [meta appliance][meta] page for details on getting it up and running.
 
 # Preparing own build environment
 
@@ -39,6 +39,7 @@ Finished!
 
 You're now ready to [install BoxGrinder Build][install].
 
+[meta]: /tutorials/boxgrinder-build-meta-appliance
 [prepare]: /tutorials/boxgrinder-build-quick-start/preparing-environment
 [install]: /tutorials/boxgrinder-build-quick-start/installation
 [build]: /tutorials/boxgrinder-build-quick-start/build-your-first-appliance

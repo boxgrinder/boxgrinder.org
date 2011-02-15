@@ -43,6 +43,10 @@ This [article][bgbuild_usage_instructions] introduces command line reference for
 
 ## Plugins
 
+## Plugin list
+
+In this article you can find [complete BoxGrinder Build plugin list][bgbuild_plugins] with descriptions and usage instructions.
+
 ### How to write a plugin for BoxGrinder Build
 
 This guide shows you [how to write a plugin for BoxGrinder Build][bgbuild_write_plugin].

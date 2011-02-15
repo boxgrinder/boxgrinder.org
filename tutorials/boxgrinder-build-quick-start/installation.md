@@ -23,13 +23,13 @@ The easiest way to obtain BoxGrinder Build is to simply add BoxGrinder repo to y
 
 ### Other systems
 
-On othersystems use `gem` command directly.
-
     gem install boxgrinder-build
 
 ## Install required plugins
 
-BoxGrinder Build has a plugin architecture. Before you can build anything - you need install plugins for operating system / platform combination you want to build for. See plugins page for more information about the available plugins. Please consult selected plugin wiki page on how to install this plugin.
+> Please refer to [plugins page][plugins] for a full plugin list
+
+BoxGrinder Build has a plugin architecture. Before you can build anything - you need install plugins for operating system / platform combination you want to build for. See [plugins page][plugins] for more information about the available plugins. Please consult selected plugin section on how to install this plugin.
 
 > We don't install the plugins automatically because we don't know which plugins you'll use.
 
@@ -40,8 +40,6 @@ BoxGrinder Build has a plugin architecture. Before you can build anything - you 
     yum install rubygem-boxgrinder-build-PLUGIN_NAME-plugin
 
 ### Other systems
-
-On othersystems use `gem` command directly.
 
     gem install boxgrinder-build-PLUGIN_NAME-plugin
 
@@ -54,6 +52,7 @@ After this you should be ready to use BoxGrinder Build:
 Now you can [build your appliance][build].
 
 [meta]: /tutorials/boxgrinder-build-meta-appliance
+[plugins]: /tutorials/boxgrinder-build-plugins
 
 [prepare]: /tutorials/boxgrinder-build-quick-start/preparing-environment
 [install]: /tutorials/boxgrinder-build-quick-start/installation
