@@ -19,4 +19,4 @@ h1. How it works
 
 h1. Learn more
 
-We encourage you to read "BoxGrinder REST documentation":/documentation/rest. There you can find a section on BoxGrinder REST, especially API definition and a "Quick Start":/documentation/rest/quick_start!
+We encourage you to read "BoxGrinder REST documentation":/tutorials. There you can find a section on BoxGrinder REST.

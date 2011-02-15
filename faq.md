@@ -11,7 +11,7 @@ title: FAQ
 
 ## What operating systems are supported by BoxGrinder Build?
 
-See [Operating System matrix](#{site.links[:build_doc]}/operating_system_matrix). Bear in mind that building appliance for different operating system than currently running (eg. building Fedora on CentOS) is **not supported**.
+See [plugins page](/tutorials/boxgrinder-build-plugins), operating system plugins section. Bear in mind that building appliance for different operating system than currently running (eg. building Fedora on CentOS) is **not supported**.
 
 ## How do I uninstall all BoxGrinder Build gems?
 

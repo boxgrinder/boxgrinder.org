@@ -20,6 +20,6 @@ BoxGrinder Build has a plugin architecture. We can distinguish three types:
 
 h1. Learn more
 
-The best way to learn more about BoxGrinder is to read the "BoxGrinder Build documentation pages":/documentation/build. And don't forget to checkout the "FAQ":/faq.
+The best way to learn more about BoxGrinder is to read the "BoxGrinder Build tutorials pages":/tutorials. And don't forget to checkout the "FAQ":/faq.
 
-To start using BoxGrinder Build quickly - take a look at "Quick Start":/documentation/build/quick_start page where you'll find information on how to prepare your environment, create your appliance definition file and build your first appliance!
+To start using BoxGrinder Build quickly - take a look at "Quick Start":/tutorials/boxgrinder-build-quick-start page where you'll find information on how to prepare your environment, create your appliance definition file and build your first appliance!
