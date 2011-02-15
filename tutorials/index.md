@@ -11,23 +11,23 @@ layout: one-column
 
 ## Appliance Definition
 
-[Appliance Definition][appl] is the entry point for BoxGrinder. It contains all required information to build the appliance.
+The [Appliance Definition][appl] is the entry point for BoxGrinder. It contains all of the required information to build the appliance.
 
 ### Appliance Definition format
 
-[Appliance Definition][appl] format detailed description.
+A  detailed description of the [Appliance Definition][appl] format.
 
-### How to customize appliance
+### Appliance customization
 
-Guide on [how to customize appliance][appl_customize] (add software, mix other appliances).
+A guide on [appliance customization][appl_customize] (adding software, mixing in other appliances).
 
 ### Parameters in appliance definitions
 
-Available [parameters][appl_params] in Appliance Definitions.
+A list of [parameters][appl_params] available to Appliance Definitions.
 
 ## Other
 
-### How to use local RPM repository
+### How to use a local RPM repository
 
 This [article][local_repo] helps you understand how to add software to your appliance when it is not available in official repositories.
 
@@ -35,17 +35,17 @@ This [article][local_repo] helps you understand how to add software to your appl
 
 ## BoxGrinder Build Quick Start
 
-This [quick start][bgbuild_quick_start] walks you through BoxGrinder Build set up process and helps ypu build yur first appliance.
+This [quick start][bgbuild_quick_start] walks you through the BoxGrinder Build set up process and helps you build your first appliance.
 
 ## BoxGrinder Build usage instructions
 
-This [article][bgbuild_usage_instructions] introduces command line reference for BoxGrinder Build.
+This [article][bgbuild_usage_instructions] introduces command line options for BoxGrinder Build.
 
 ## Plugins
 
 ## Plugin list
 
-In this article you can find [complete BoxGrinder Build plugin list][bgbuild_plugins] with descriptions and usage instructions.
+In this article you can find the [complete BoxGrinder Build plugin list][bgbuild_plugins] with descriptions and usage instructions.
 
 ### How to write a plugin for BoxGrinder Build
 
@@ -53,11 +53,11 @@ This guide shows you [how to write a plugin for BoxGrinder Build][bgbuild_write_
 
 ## Meta appliance
 
-[Meta appliance] is an appliance prepared to run [BoxGrinder Build](/build). It makes you possible to build other appliances without installing any BoxGrinder--related packages on your system.
+A [meta appliance] is an appliance prepared to run [BoxGrinder Build](/build). It allows you to build other appliances without installing any BoxGrinder--related packages on your system.
 
 [bgbuild_quick_start]: /tutorials/boxgrinder-build-quick-start
 [bgbuild_usage_instructions]: /tutorials/boxgrinder-build-usage-instructions
-[Meta appliance]: /tutorials/boxgrinder-build-meta-appliance
+[meta appliance]: /tutorials/boxgrinder-build-meta-appliance
 [bgbuild_plugins]: /tutorials/boxgrinder-build-plugins
 [bgbuild_write_plugin]: /tutorials/how-to-write-a-plugin-for-boxgrinder-build
 [bgbuild_prepare_env]: /tutorials/preparing-environment-to-use-boxgrinder-build

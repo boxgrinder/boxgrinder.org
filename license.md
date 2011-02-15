@@ -9,7 +9,7 @@ The BoxGrinder software is copyright 2010 by Red Hat, Inc.
 
 # Software License
 
-BoxGrinder is a community-driven open-source project. It's lead
+BoxGrinder is a community-driven open-source project. Its lead
 developers are employed by Red Hat, Inc and the project is licensed
 under the [GNU LGPL](/license-lgpl.txt).
 

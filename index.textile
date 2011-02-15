@@ -9,19 +9,19 @@ hide_title: true
         <area alt='BoxGrinder Build' coords='180,260,340,320' href='/build' shape='rect' title='BoxGrinder Build' />
     </map>
 
-h1(callout). BoxGrinder is a set of projects helping you grind out appliances for many virtualization and Cloud providers
+h1(callout). BoxGrinder is a set of projects that help you grind out appliances for multiple virtualization and Cloud providers
 
 bq. 2011/02/09: BoxGrinder 0.8.0 released - "learn more":/blog/2011/02/09/boxgrinder-build-0-8-0-released-finally!
 
     <img src="/images/overview.png" class="main" alt="BoxGrinder projects: BoxGrinder Build, BoxGrinder REST, BoxGrinder Studio" usemap="#subprojects"/>
 
-h1. How does it work
+h1. How does it work?
 
 !(main)/images/build_process.png(BoxGrinder build process)!
 
 BoxGrinder creates appliances (also called images) from simple plain text "Appliance Definition":/tutorials/appliance-definition files. There are only two simple steps to create an appliance:
 
-# *Create Appliance Definition File* - Check out our "tutorials page":/tutorials for detailed information about the structure and examples.
+# *Create Appliance Definition File* - Check out our "tutorials page":/tutorials for detailed information about the file structure along with examples.
 <pre style="margin-top: 1em;"><code>name: f14-jeos
 summary: Just Enough Operating System based on Fedora 14
 os:
@@ -34,7 +34,7 @@ hardware:
 packages:
   - @core
 </code></pre>
-# *Run BoxGrinder* - BoxGrinder will download all necessary artifacts, build the instance, convert it to selected platform and upload it to selected destination. *All in one process!*
+# *Run BoxGrinder* - BoxGrinder will download all the necessary artifacts, build the instance, convert it to the selected platform and upload it to the selected destination. *All in one process!*
 <pre style="margin-top: 1em;"><code>boxgrinder build jeos.appl -p vmware -d local</code></pre>
 
 That's all!
