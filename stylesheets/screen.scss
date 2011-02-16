@@ -231,6 +231,30 @@ li > ul {
     margin-bottom: 0;
 }
 
+/* TeamCity box */
+
+table.tcTable {
+    width: 400px;
+    border-spacing: 1px;
+}
+
+table.tcTable tr {
+        background-color: #eee;
+}
+
+div.projectName {
+    display: none;
+}
+
+td.buildConfigurationName, td.buildNumberDate, td.buildResults {
+    padding: 0.5em;
+}
+
+
+
+
+
+
 
 /* RSS */
 
