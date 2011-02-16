@@ -1,5 +1,5 @@
 ---
-title: "FUDCon Tempe 2011 &#x2013; delayed impressions"
+title: "FUDCon Tempe 2011 - delayed impressions"
 author: 'Marek Goldmann'
 layout: blog
 tags: [ boxgrinder, eucalyptus, fedora, fudcon ]
