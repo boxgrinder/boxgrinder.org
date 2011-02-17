@@ -70,6 +70,15 @@ body {
     overflow: hidden;
 }
 
+#cool-stuff {
+    background: url('/images/project_coolstuff_boxgrinder.png') no-repeat;
+}
+
+#cool-stuff p {
+    padding-top: 115px;
+    text-align: right;
+}
+
 div#menu {
     background-color: #444;
     color: #fff;
