@@ -2,6 +2,7 @@ class TOC
   def initialize(options = {})
     @options = {
         :magic_word => '((TOC))',
+        :levels => 2,
         :generate_header_links => false
     }.merge(options)
   end
@@ -31,8 +32,7 @@ class TOC
       number = $1.size
       name = $2.strip
       header = titleable(name)
-      toc << "#{' ' * number.to_i * 2}* [" + name + '](#' + header + ")\n"
-
+      toc << "#{' ' * number.to_i * 2}* [" + name + '](#' + header + ")\n" if number.to_i <= @options[:levels]
       @options[:generate_header_links] ? "h#{number}. <a name=\"#{header}\" href=\"##{header}\">#{name}</a>\n" : "<h#{number} id=\"#{header}\">#{name}</h#{number}>\n"
     end
 
@@ -46,7 +46,7 @@ class TOC
       number = $1
       name = $2
       header = titleable(name)
-      toc << '#' * number.to_i + ' "' + name + '":#' + header + "\n"
+      toc << '#' * number.to_i + ' "' + name + '":#' + header + "\n" if number.to_i <= @options[:levels]
       @options[:generate_header_links] ? "h#{number}. <a name=\"#{header}\" href=\"##{header}\">#{name}</a>\n" : "<h#{number} id=\"#{header}\">#{name}</h#{number}>\n"
     end
 

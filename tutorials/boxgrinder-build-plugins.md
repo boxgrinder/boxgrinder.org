@@ -3,6 +3,10 @@ title: "BoxGrinder Build plugins"
 layout: one-column
 ---
 
+((TOC))
+
+***
+
 # Plugin introduction
 
 There are three types of BoxGrinder plugins:
@@ -55,13 +59,13 @@ If a plugin configuration is needed, please place it it BoxGrinder configuration
 
 This plugin creates base disk image with Fedora operating system installed.
 
-### Configuration
+### Fedora Operating System Plugin Configuration
 
     plugins:
       fedora:
         format: qcow2      # Disk format to use. Default: raw.
 
-### Installation
+### Fedora Operating System Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -71,7 +75,7 @@ This plugin creates base disk image with Fedora operating system installed.
 
         gem install boxgrinder-build-fedora-os-plugin
 
-### Examples
+### Fedora Operating System Plugin Examples
 
 `fedora-13.appl`:
 
@@ -82,7 +86,7 @@ This plugin creates base disk image with Fedora operating system installed.
 
     [...]
 
-### Usage
+### Fedora Operating System Plugin Usage
 
     boxgrinder build fedora-13.appl
 
@@ -90,13 +94,13 @@ This plugin creates base disk image with Fedora operating system installed.
 
 This plugin creates base disk image with CentOS operating system installed.
 
-### Configuration
+### CentOS Operating System Plugin Configuration
 
     plugins:
       centos:
         format: qcow2      # Disk format to use. Default: raw.
 
-### Installation
+### CentOS Operating System Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -106,7 +110,7 @@ This plugin creates base disk image with CentOS operating system installed.
 
         gem install boxgrinder-build-centos-os-plugin
 
-### Examples
+### CentOS Operating System Plugin Examples
 
 `centos-5.appl`:
 
@@ -117,7 +121,7 @@ This plugin creates base disk image with CentOS operating system installed.
 
     [...]
 
-### Usage
+### CentOS Operating System Plugin Usage
 
     boxgrinder build centos-5.appl
 
@@ -125,13 +129,13 @@ This plugin creates base disk image with CentOS operating system installed.
 
 This plugin creates base disk image with RHEL operating system installed.
 
-### Configuration
+### RHEL Operating System Plugin Configuration
 
     plugins:
       rhel:
         format: qcow2      # Disk format to use. Default: raw.
 
-### Installation
+### RHEL Operating System Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -141,7 +145,7 @@ This plugin creates base disk image with RHEL operating system installed.
 
         gem install boxgrinder-build-rhel-os-plugin
 
-### Examples
+### RHEL Operating System Plugin Examples
 
 `rhel-6.appl`:
 
@@ -152,7 +156,7 @@ This plugin creates base disk image with RHEL operating system installed.
 
     [...]
 
-### Usage
+### RHEL Operating System Plugin Usage
 
     boxgrinder build rhel-6.appl
 
@@ -167,18 +171,18 @@ Personal is meant to use with VMware Fusion, Player, Workstation. Enterprise sho
 
 > Note: Read README file created along with the image before you launch it for detailed instructions
 
-### Supported operating systems
+### VMware Platform Plugin Supported operating systems
 
 > TODO
 
-### Configuration
+### VMware Platform Plugin Configuration
 
     plugins:
       vmware:
         type: personal   # or enterprise (required)
         thin_disk: true  # default: false
 
-### Installation
+### VMware Platform Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -188,7 +192,7 @@ Personal is meant to use with VMware Fusion, Player, Workstation. Enterprise sho
 
         gem install boxgrinder-build-vmware-platform-plugin
 
-### Examples
+### VMware Platform Plugin Examples
 
     boxgrinder build jeos.appl -p vmware
 
@@ -196,15 +200,15 @@ Personal is meant to use with VMware Fusion, Player, Workstation. Enterprise sho
 
 This plugin creates disk image and descriptors consumable by VirtualBox virtualization software. Created disk is in vmdk format, you need to import it to your library, create new virtual machine and use imported disk.
 
-### Supported operating systems
+### VirtualBox Platform Plugin Supported operating systems
 
 > TODO
 
-### Configuration
+### VirtualBox Platform Plugin Configuration
 
 > No configuration required
 
-### Installation
+### VirtualBox Platform Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -214,7 +218,7 @@ This plugin creates disk image and descriptors consumable by VirtualBox virtuali
 
         gem install boxgrinder-build-virtualbox-platform-plugin
 
-### Examples
+### VirtualBox Platform Plugin Examples
 
     boxgrinder build jeos.appl -p virtualbox
 
@@ -224,15 +228,15 @@ This plugin creates a EC2 disk image.
 
 > Note: Created image **isn't a bundled AMI** – it is a disk image prepared to be bundled and delivered by the S3 plugin.
 
-### Supported operating systems
+### EC2 Platform Plugin Supported operating systems
 
 > TODO
 
-### Configuration
+### EC2 Platform Plugin Configuration
 
 > No configuration required
 
-### Installation
+### EC2 Platform Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -242,7 +246,7 @@ This plugin creates a EC2 disk image.
 
         gem install boxgrinder-build-ec2-platform-plugin
 
-### Examples
+### EC2 Platform Plugin Examples
 
     boxgrinder build jeos.appl -p ec2
 
@@ -250,15 +254,15 @@ This plugin creates a EC2 disk image.
 
 This plugin delivers the artifacts to specified path on local filesystem.
 
-### Supported operating systems
+### Local delivery plugin Supported operating systems
 
 > TODO
 
-### Supported platforms
+### Local delivery plugin Supported platforms
 
 > TODO
 
-### Configuration
+### Local delivery plugin Configuration
 
     plugins:
       local:
@@ -266,7 +270,7 @@ This plugin delivers the artifacts to specified path on local filesystem.
         overwrite: false               # default: false
         package: false                 # default: true
 
-### Installation
+### Local delivery plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -276,7 +280,7 @@ This plugin delivers the artifacts to specified path on local filesystem.
 
         gem install boxgrinder-build-local-delivery-plugin
 
-### Examples
+### Local delivery plugin Examples
 
 VMware appliance delivered to local filesystem:
 
@@ -290,15 +294,15 @@ VirtualBox appliance delivered to local filesystem:
 
 This plugin copies artifacts to a remote location using SFTP protocol.
 
-### Supported operating systems
+### SFTP Delivery Plugin Supported operating systems
 
 > TODO
 
-### Supported platforms
+### SFTP Delivery Plugin Supported platforms
 
 > TODO
 
-### Configuration
+### SFTP Delivery Plugin Configuration
 
     plugins:
       sftp:
@@ -306,7 +310,7 @@ This plugin copies artifacts to a remote location using SFTP protocol.
         username: stormgrind                # required
         host: myhost.com                    # required
 
-### Installation
+### SFTP Delivery Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -316,7 +320,7 @@ This plugin copies artifacts to a remote location using SFTP protocol.
 
         gem install boxgrinder-build-sftp-delivery-plugin
 
-### Examples
+### SFTP Delivery Plugin Examples
 
 VMware appliance delivered to remote SFTP server:
 
@@ -334,7 +338,7 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
 * **cloudfront** - a packaged image with metadata (same as for s3 type) for public download using CloudFront - great for distribution, you need to have CloudFront enabled for your account,
 * **ami** - creates an AMI from selected image and registers it in Amazon EC2. After that the AMI will be visible for you as a private image and ready to run. This type is only available for images in EC2 format (converted using "-p ec2" switch).
 
-### Configuration
+### S3 Delivery Plugin Configuration
 
     plugins:
       s3:
@@ -347,7 +351,7 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
         key_file: /home/a/pk-ABCD.pem                     # required only for ami type
         host: http://host:8773/services/Walrus            # default: http://s3.amazonaws.com; host used to upload AMI
 
-### Installation
+### S3 Delivery Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -357,7 +361,7 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
 
         gem install boxgrinder-build-s3-delivery-plugin
 
-### Examples
+### S3 Delivery Plugin Examples
 
 EC2 AMI for `jeos.appl`:
 
@@ -379,15 +383,15 @@ This plugin delivers appliance as EBS-based AMI to AWS.
 
 > **Warning:** You can use this plugin only on instances running on EC2. This plugin will not work on your local host because we need to mount EBS volume to copy the data and we cannot do a remote mount. You can use meta appliance AMI to create EBS AMI's.
 
-### Supported operating systems
+### EBS Delivery Plugin Supported operating systems
 
 > TODO
 
-### Supported platforms
+### EBS Delivery Plugin Supported platforms
 
 > TODO
 
-### Configuration
+### EBS Delivery Plugin Configuration
 
     plugins:
       sftp:
@@ -399,7 +403,7 @@ This plugin delivers appliance as EBS-based AMI to AWS.
 
 > Note: The delete_on_termination flag is used to specify if the root volume should be deleted after the instance is terminated.
 
-### Installation
+### EBS Delivery Plugin Installation
 
 * Fedora/RHEL/CentOS
 
@@ -409,7 +413,7 @@ This plugin delivers appliance as EBS-based AMI to AWS.
 
         gem install boxgrinder-build-ebs-delivery-plugin
 
-### Examples
+### EBS Delivery Plugin Examples
 
 EBS EC2 AMI for `jeos.appl`:
 

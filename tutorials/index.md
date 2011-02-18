@@ -33,17 +33,17 @@ This [article][local_repo] helps you understand how to add software to your appl
 
 # BoxGrinder Build
 
-## BoxGrinder Build Quick Start
+## Quick Start
 
 This [quick start][bgbuild_quick_start] walks you through the BoxGrinder Build set up process and helps you build your first appliance.
 
-## BoxGrinder Build usage instructions
+## Usage instructions
 
 This [article][bgbuild_usage_instructions] introduces command line options for BoxGrinder Build.
 
 ## Plugins
 
-## Plugin list
+### Plugin list
 
 In this article you can find the [complete BoxGrinder Build plugin list][bgbuild_plugins] with descriptions and usage instructions.
 
