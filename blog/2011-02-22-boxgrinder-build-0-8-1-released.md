@@ -6,37 +6,39 @@ version: 0.8.1
 tags: [ boxgrinder ]
 ---
 
-I'm happy to announce new **BoxGrinder Build 0.8.1**. This is a bugfix release. Please refer to
+I'm happy to announce **BoxGrinder Build 0.8.1**. This is a bugfix release. Please refer to the
 [Release Notes][release_notes] below for a full list of bugfixes.
 
-This release is immediately available from [BoxGrinder stable repo][repos] and will be available shorty in Fedora Rawhide.
+This release is immediately available from [BoxGrinder stable repo][repos] and will be 
+available shortly in Fedora Rawhide.
 
 # Some future ideas (your input needed!)
 
 ## Moving all plugins into boxgrinder-build gem?
 
-In this release I fixed some [gem dependencies issues][BGBUILD-165]. Currently we have **11 plugins** for BoxGrinder Build. Having up to date
-gemspec and RPM spec files with proper version of all dependencies is very hard. I think about including all
-plugins into *boxgrinder-build* gem.
+In this release I fixed some [gem dependency issues][BGBUILD-165]. Currently we have **11 plugins** 
+for BoxGrinder Build. Keeping the gemspec and RPM spec files up to date with the proper versions of all 
+of the dependencies is difficult. I'm therefore considering including all of the plugins into the 
+*boxgrinder-build* gem.
 
 ### Advantages:
 
-* Simpler install - all plugins ready to work
+* Simpler install - all of the plugins would be available with one install
 * Simpler release process
 
 ### Disadvantages:
 
-* All plugins with dependencies installed - bigger dependency tree
+* All of the plugins with their dependencies would be installed, resulting in a bigger dependency tree
 * Plugins you're not interested in would be installed too
 
 **What's your opinion?** Please leave a comment.
 
 ## BoxGrinder 0.8.x in Fedora 13/14?
 
-[BoxGrinder Build 0.8.0 was released][0.8.0] almost two weeks ago, but it hadn't make into Fedora yet (you can of course
-download latest releases from [our repositories][repos], you don't need to wait for Fedora packages). Fixing
-[BGBUILD-165] makes it finally possbile. I haven't still decided whether 0.8.x should land in Fedora 13 and 14.
-If you have some thoughts on this, **please leave a comment**.
+[BoxGrinder Build 0.8.0 was released][0.8.0] almost two weeks ago, but it hasn't yet made it into Fedora (you can of course
+download the latest releases from [our repositories][repos], you don't need to wait for Fedora packages) due to [BGBUILD-165].
+With [BGBUILD-165] now fixed, 0.8.x can be added to Fedora, though I haven't decided whether 0.8.x should land in Fedora 13 and 14.
+If you have any thoughts on this, **please leave a comment**.
 
 # Release notes
 
