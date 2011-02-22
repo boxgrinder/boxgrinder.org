@@ -294,7 +294,23 @@ div.rssBody > ul > li > h4 {
     font-size: 1em;
 }
 
+/* IntenseDebate */
 
+div.post > div.comments {
+    padding: 0.5em;
+    background-color: #eee;
+}
+
+#idc-container-parent #idc-container {
+    max-width: none;
+    background-color: #fff;
+    padding: 1em;
+    margin: 0;
+}
+
+#idc-container-parent #idc-container .idc-c .idc-c-h {
+    background: #eee;
+}
 
 
 
@@ -321,7 +337,7 @@ div.pagination-links {
 }
 
 div.post {
-    border-bottom: 5px solid #ddd;
+    
 }
 
 div.post > h1.title {
@@ -346,11 +362,6 @@ em {
 
 .gist {
     font-size: 0.9em;
-}
-
-div.post > div.comments {
-    padding: 0.5em;
-    background-color: #eee;
 }
 
 ul#menu {

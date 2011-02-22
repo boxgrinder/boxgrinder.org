@@ -11,8 +11,6 @@ layout: one-column
 
 ## Appliance Definition
 
-The [Appliance Definition][appl] is the entry point for BoxGrinder. It contains all of the required information to build the appliance.
-
 ### Appliance Definition format
 
 A  detailed description of the [Appliance Definition][appl] format.
