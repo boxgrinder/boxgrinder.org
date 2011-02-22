@@ -1,0 +1,11 @@
+[boxgrinder-$basearch]
+name=BoxGrinder for Fedora $releasever - $basearch
+baseurl=http://repo.boxgrinder.org/boxgrinder/packages/fedora/$releasever/RPMS/$basearch/
+enabled=1
+gpgcheck=0
+
+[boxgrinder-noarch]
+name=BoxGrinder for Fedora $releasever - noarch
+baseurl=http://repo.boxgrinder.org/boxgrinder/packages/fedora/$releasever/RPMS/noarch/
+enabled=1
+gpgcheck=0

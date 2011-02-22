@@ -27,6 +27,10 @@ A list of [parameters][appl_params] available to Appliance Definitions.
 
 ## Other
 
+### BoxGrinder RPM repositories
+
+This [article][rpm] describes the locations where you can find BoxGrinder RPM artifacts.
+
 ### How to use a local RPM repository
 
 This [article][local_repo] helps you understand how to add software to your appliance when it is not available in official repositories.
@@ -64,7 +68,8 @@ A [meta appliance] is an appliance prepared to run [BoxGrinder Build](/build). I
 [bgbuild_install]: /tutorials/boxgrinder-build-installation
 
 
-[local_repo]: /tutorials/how-to-use-local-repository
-[appl]: /tutorials/appliance-definition
-[appl_customize]: /tutorials/how-to-customize-appliance
-[appl_params]: /tutorials/appliance-definition-parameters
+[rpm]: /tutorials/boxgrinder-rpm-repositories/
+[local_repo]: /tutorials/how-to-use-local-repository/
+[appl]: /tutorials/appliance-definition/
+[appl_customize]: /tutorials/how-to-customize-appliance/
+[appl_params]: /tutorials/appliance-definition-parameters/

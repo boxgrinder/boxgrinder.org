@@ -4,7 +4,7 @@ title: Build
 hide_title: true
 ---
 
-h1(callout). Boxgrinder Build is a command line tool helping you build appliances
+h1(callout). BoxGrinder Build is a command line tool helping you build appliances
 
 !(main)/images/boxgrinder_logo_build_450px.gif(BoxGrinder Build)!
 

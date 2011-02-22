@@ -1,0 +1,5 @@
+[boxgrinder-nightly-noarch]
+name=BoxGrinder for Fedora $releasever - noarch
+baseurl=http://repo.ci.boxgrinder.org/fedora/$releasever/RPMS/
+enabled=1
+gpgcheck=0

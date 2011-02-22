@@ -10,7 +10,7 @@ layout: default
   %h1 Latest stable release
   #latest-release
     BoxGrinder Build:
-    %a{:href=>"#{announcement_for_version('0.8.0').url}"}
+    %a{:href=>"#{announcement_for_version(latest_release[:version]).url}"}
       = latest_release[:version]
   %h1 Latest posts
   #latest-posts
