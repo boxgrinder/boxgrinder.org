@@ -14,6 +14,15 @@ Awestruct::Extensions::Pipeline.new do
   extension ReleaseSizes.new
   extension TOC.new(:levels => 3)
 
+  extension Awestruct::Extensions::Tagger.new(:posts,
+                                              '/blog/index',
+                                              '/blog/tags',
+                                              :per_page=>5)
+
+  extension Awestruct::Extensions::TagCloud.new(:posts,
+                                                '/blog/tags/index.html',
+                                                :layout=>'one-column')
+
   helper Awestruct::Extensions::GoogleAnalytics
   helper Awestruct::Extensions::Partial
   helper ReleaseHelper

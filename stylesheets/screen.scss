@@ -155,8 +155,6 @@ h1, h2, h3, h4 {
 h1.pagetitle {
     color: #880000;
     font-size: 2.2em;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 0.5em;
     padding-bottom: 0.2em;
 }
 
@@ -312,6 +310,50 @@ div.post > div.comments {
     background: #eee;
 }
 
+/* TAGS */
+
+
+.tag-cloud {
+  margin: auto;
+  text-align: justify;
+
+  .tag {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .tag-0 {
+    font-size: 130%;
+  }
+
+  .tag-1 {
+    font-size: 150%;
+  }
+
+  .tag-2 {
+    font-size: 170%;
+  }
+
+  .tag-3 {
+    font-size: 190%;
+  }
+
+  .tag-4 {
+    font-size: 210%;
+  }
+
+  .tag-5 {
+    font-size: 230%;
+  }
+
+  .tag-6 {
+    font-size: 250%;
+  }
+
+}
+
+
 
 
 
@@ -319,18 +361,25 @@ div.post > div.comments {
 
 div.byline {
     margin-bottom: 1em;
-    overflow: hidden;
+    
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5em;
 }
 
 div.byline > div.author {
-    float: left;
     font-weight: bold;
+    margin-bottom: 0.5em;
 }
 
 div.byline > div.date {
-    float: left;
-    margin-left: 1em;
+
 }
+
+div.byline > div.tags {
+
+}
+
+
 
 div.pagination-links {
     margin-top: 1em;
@@ -341,7 +390,7 @@ div.post {
 }
 
 div.post > h1.title {
-    padding: 0.5em 0 0 0;
+    padding: 0.5em 0 0.2em 0;
 }
 
 .maruku_toc > ul {

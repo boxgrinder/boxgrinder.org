@@ -1,21 +1,33 @@
 ---
 title: Blog
-layout: one-column
+layout: default
 hide_title: true
 ---
 
-- for post in page.posts
-  .post
-    %h1.title
-      %a{:href=>post.url}= post.title
-    .byline
-      .author
-        = post.author
-      .date
-        #{post.date.strftime( '%d %B %Y' )}
-    .body
-      ~ post.content
-    .comments
-      = post.intense_debate_comments_link
-= page.posts.links
+#left-column
+  - for post in page.posts
+    .post
+      %h1.title
+        %a{:href=>post.url}= post.title
+      .byline
+        .author
+          = post.author
+        .date
+          Published: #{post.date.strftime( '%d %B %Y' )}
+        .tags
+          - unless post.tags.empty?
+            Tags:
+            - post.tags.each do |tag|
+              %a{:href=>tag.primary_page.url}
+                = tag
+      .body
+        ~ post.content
+      .comments
+        = post.intense_debate_comments_link
+  = page.posts.links
+#right-column
+  %h1 Tags
+  .tag-cloud
+    = site.posts_tag_cloud
+
 
