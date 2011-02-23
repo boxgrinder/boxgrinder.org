@@ -2,7 +2,7 @@
 title: "JUDCon 2010 Berlin - impressions"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, judcon ]
+tags: [ judcon ]
 ---
 
 It's

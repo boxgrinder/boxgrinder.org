@@ -2,7 +2,7 @@
 title: "EBS AMI support for BoxGrinder "
 author: 'Marek Goldmann'
 layout: blog
-tags: [ ami, aws, boxgrinder, boxgrinder_build, ebs ]
+tags: [ ami, aws, boxgrinder_build, ebs ]
 ---
 
 There

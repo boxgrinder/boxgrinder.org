@@ -2,7 +2,7 @@
 title: "BoxGrinder Build 0.7.1 released!"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, fedora ]
+tags: [ boxgrinder_build, fedora ]
 ---
 
 New

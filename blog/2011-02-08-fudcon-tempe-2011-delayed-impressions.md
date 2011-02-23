@@ -2,7 +2,7 @@
 title: "FUDCon Tempe 2011 - delayed impressions"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, eucalyptus, fedora, fudcon ]
+tags: [ eucalyptus, fedora, fudcon ]
 ---
 
 Thanks to [Max](http://spevack.livejournal.com/) and

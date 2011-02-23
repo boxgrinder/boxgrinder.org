@@ -2,7 +2,7 @@
 title: "BoxGrinder 0.6.4 released &#x2013; on the road to Fedora"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, fedora, rpm ]
+tags: [ boxgrinder_build, fedora, rpm ]
 ---
 
 

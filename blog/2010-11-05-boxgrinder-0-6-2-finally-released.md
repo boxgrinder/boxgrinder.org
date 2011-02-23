@@ -2,7 +2,7 @@
 title: "BoxGrinder 0.6.2 finally released!"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, fedora ]
+tags: [ boxgrinder_build, fedora ]
 ---
 
 This

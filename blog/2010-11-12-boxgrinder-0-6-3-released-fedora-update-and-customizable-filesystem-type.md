@@ -2,7 +2,7 @@
 title: "BoxGrinder 0.6.3 released &#x2013; Fedora update and customizable filesystem type"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, fedora ]
+tags: [ boxgrinder_build, fedora ]
 ---
 
 We're

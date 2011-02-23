@@ -2,7 +2,7 @@
 title: "BoxGrinder Build 0.6.5 released!"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ ami, boxgrinder, boxgrinder_build, ec2, fedora ]
+tags: [ ami, boxgrinder_build, ec2, fedora ]
 ---
 
 

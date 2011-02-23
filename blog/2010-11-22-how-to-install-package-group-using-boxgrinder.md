@@ -2,7 +2,7 @@
 title: "How to install package group using BoxGrinder?"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, fedora, howto, jeos ]
+tags: [ boxgrinder_build, fedora, howto, jeos ]
 ---
 
 If you want install a

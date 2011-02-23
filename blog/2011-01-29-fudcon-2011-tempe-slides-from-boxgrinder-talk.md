@@ -2,7 +2,7 @@
 title: "FUDCon 2011 Tempe slides from BoxGrinder talk"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, fudcon, tempe ]
+tags: [ fudcon, tempe ]
 ---
 
 As promised - I've just uploaded my slides from

@@ -2,7 +2,7 @@
 title: "BoxGrinder Build 0.7.0 is out!"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, cloud, ec2, fedora ]
+tags: [ boxgrinder_build, cloud, ec2, fedora ]
 ---
 
 I'm

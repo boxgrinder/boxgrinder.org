@@ -2,7 +2,7 @@
 title: "BoxGrinder Build developer guide: how to write a plugin?"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, howto, wiki ]
+tags: [ boxgrinder_build, howto, wiki ]
 ---
 
 Wile

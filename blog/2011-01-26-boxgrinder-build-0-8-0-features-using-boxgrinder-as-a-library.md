@@ -2,7 +2,7 @@
 title: "BoxGrinder Build 0.8.0 features: Using BoxGrinder as a library"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, ruby ]
+tags: [ boxgrinder_build, ruby ]
 ---
 
 This

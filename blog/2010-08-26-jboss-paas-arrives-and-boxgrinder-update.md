@@ -2,7 +2,7 @@
 title: "JBoss PaaS arrives and BoxGrinder update"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, jboss, paas, red-hat ]
+tags: [ jboss, paas, red-hat ]
 ---
 
 # JBoss PaaS

@@ -3,7 +3,7 @@ title: "BoxGrinder Build 0.8.1 released!"
 author: 'Marek Goldmann'
 layout: blog
 version: 0.8.1
-tags: [ boxgrinder ]
+tags: [ boxgrinder_build ]
 ---
 
 I'm happy to announce **BoxGrinder Build 0.8.1**. This is a bugfix release. Please refer to the

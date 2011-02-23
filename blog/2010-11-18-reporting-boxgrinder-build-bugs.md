@@ -2,7 +2,7 @@
 title: "Reporting BoxGrinder Build bugs"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build, bug, issues ]
+tags: [ boxgrinder_build, bug, issues ]
 ---
 
 So,

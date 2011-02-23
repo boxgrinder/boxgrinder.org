@@ -2,7 +2,7 @@
 title: "BoxGrinder Build 0.8.0 features: New configuration and CLI"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder, boxgrinder_build ]
+tags: [ boxgrinder_build ]
 ---
 
 With

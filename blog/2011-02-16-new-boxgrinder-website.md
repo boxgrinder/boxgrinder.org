@@ -2,7 +2,7 @@
 title: "New BoxGrinder website!"
 author: 'Marek Goldmann'
 layout: blog
-tags: [ boxgrinder ]
+tags: [ website ]
 ---
 
 # Here it is!
