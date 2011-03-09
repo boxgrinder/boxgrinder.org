@@ -1,21 +1,28 @@
 ---
-layout: one-column
-hide_title: true
+layout: default
 ---
 
-.post
-  .byline
-    .author
-      = page.author
-    .date
-      Published: #{page.date.strftime( '%d %B %Y' )}
-    .tags
-      - unless page.tags.empty?
-        Tags:
-        - page.tags.each do |tag|
-          %a{:href=>tag.primary_page.url}
-            = tag
-  .body
-    ~ content
-  .comments
-    = page.intense_debate_comments
+#left-column
+  %h1.pagetitle #{page.title}
+  .post
+    .byline
+      .author
+        = page.author
+      .date
+        Published: #{page.date.strftime( '%d %B %Y' )}
+      .tags
+        - unless page.tags.empty?
+          Tags:
+          - page.tags.each do |tag|
+            %a{:href=>tag.primary_page.url}
+              = tag
+    .body
+      ~ content
+    .comments
+      = page.intense_debate_comments
+#right-column
+  = partial( 'latest_posts.html.haml' )
+  %h1 Tweet it!
+  #twitter
+    :plain
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="boxgrinder">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

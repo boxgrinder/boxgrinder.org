@@ -11,7 +11,7 @@ hide_title: true
 
 h1(callout). BoxGrinder is a set of projects that help you grind out appliances for multiple virtualization and Cloud providers
 
-bq. 2011/02/09: BoxGrinder 0.8.0 released - "learn more":/blog/2011/02/09/boxgrinder-build-0-8-0-released-finally!
+bq. Latest news: <a href="#{site.posts.first.url}">#{site.posts.first.title}</a>
 
     <img src="/images/overview.png" class="main" alt="BoxGrinder projects: BoxGrinder Build, BoxGrinder REST, BoxGrinder Studio" usemap="#subprojects"/>
 
@@ -21,21 +21,15 @@ h1. How does it work?
 
 BoxGrinder creates appliances (also called images) from simple plain text "Appliance Definition":/tutorials/appliance-definition files. There are only two simple steps to create an appliance:
 
-# *Create Appliance Definition File* - Check out our "tutorials page":/tutorials for detailed information about the file structure along with examples.
+# *Create Appliance Definition File* - Check out our "appliance definition structure page":/tutorials/appliance-definition for detailed information about the file structure along with examples.
 <pre style="margin-top: 1em;"><code>name: f14-jeos
 summary: Just Enough Operating System based on Fedora 14
 os:
   name: fedora
   version: 14
-hardware:
-  partitions:
-    "/":
-      size: 2
-packages:
-  - @core
 </code></pre>
 # *Run BoxGrinder* - BoxGrinder will download all the necessary artifacts, build the instance, convert it to the selected platform and upload it to the selected destination. *All in one process!*
-<pre style="margin-top: 1em;"><code>boxgrinder build jeos.appl -p vmware -d local</code></pre>
+<pre style="margin-top: 1em;"><code>boxgrinder-build jeos.appl -p vmware -d local</code></pre>
 
 That's all!
 
@@ -45,4 +39,4 @@ h2(callout). If you are new to BoxGrinder - watch the "introduction video":/vide
 
 BoxGrinder supports many virtualization and Cloud platforms like *EC2*, *Xen*, *KVM*, *VMware*. You can create an appliance based on *Fedora*, *Red Hat Enterprise Linux* or *CentOS*. You are of course free to write your own plugin to support any other virtualization platform or operating system!
 
-Refer to the "tutorials page":/tutorials to get more information about BoxGrinder. There you'll find code examples and detailed usage instructions.
+Refer to the "tutorials page":/tutorials to get more information about BoxGrinder. There you'll find code examples and detailed "usage instructions":/tutorials/boxgrinder-build-usage-instructions/.

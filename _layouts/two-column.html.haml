@@ -12,15 +12,40 @@ layout: default
     BoxGrinder Build:
     %a{:href=>"#{announcement_for_version(latest_release[:version]).url}"}
       = latest_release[:version]
-  %h1 Latest posts
-  #latest-posts
-    - for post in site.posts[0,4] do
-      .item
-        %h5
-          %a{:href=>post.url}= post.title
-        %h6 #{post.date.strftime( '%d %B %Y' )}
-    #even-more
-      %a{:href=>'/blog'}More blog posts
+  = partial( 'latest_posts.html.haml' )
+  %h1 Latest tweets
+  :plain
+    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+    <script>
+    new TWTR.Widget({
+      version: 2,
+      type: 'profile',
+      rpp: 3,
+      interval: 6000,
+      width: 'auto',
+      height: 300,
+      theme: {
+        shell: {
+          background: '#ffffff',
+          color: '#880000'
+        },
+        tweets: {
+          background: '#ffffff',
+          color: '#000000',
+          links: '#880000'
+        }
+      },
+      features: {
+        scrollbar: false,
+        loop: false,
+        live: false,
+        hashtags: true,
+        timestamp: true,
+        avatars: false,
+        behavior: 'all'
+      }
+    }).render().setUser('boxgrinder').start();
+    </script>
   %h1 Cool stuff
   #cool-stuff
     :markdown

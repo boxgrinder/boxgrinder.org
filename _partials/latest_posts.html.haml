@@ -1,0 +1,9 @@
+%h1 Latest posts
+#latest-posts
+  - for post in site.posts[0,4] do
+    .item
+      %h5
+        %a{:href=>post.url}= post.title
+      %h6 #{post.date.strftime( '%d %B %Y' )}
+  #even-more
+    %a{:href=>'/blog'}More blog posts

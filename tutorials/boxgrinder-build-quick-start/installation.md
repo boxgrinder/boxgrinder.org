@@ -25,29 +25,11 @@ The easiest way to obtain BoxGrinder Build is to simply add BoxGrinder repo to y
 
     gem install boxgrinder-build
 
-## Install required plugins
-
-> Please refer to [plugins page][plugins] for a full plugin list
-
-BoxGrinder Build has a plugin architecture. Before you can build anything - you need install plugins for operating system / platform combination you want to build for. See [plugins page][plugins] for more information about the available plugins. Please consult selected plugin section on how to install this plugin.
-
-> We don't install the plugins automatically because we don't know which plugins you'll use.
-
-### Fedora 13+, RHEL/CentOS
-
-> Note that admin rights might be required to run this command.
-
-    yum install rubygem-boxgrinder-build-PLUGIN_NAME-plugin
-
-### Other systems
-
-    gem install boxgrinder-build-PLUGIN_NAME-plugin
-
-Done!
+## Finished!
 
 After this you should be ready to use BoxGrinder Build:
 
-    boxgrinder help
+    boxgrinder-build --help
 
 Now you can [build your appliance][build].
 

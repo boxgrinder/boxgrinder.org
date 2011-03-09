@@ -3,86 +3,82 @@ title: "BoxGrinder Build usage instructions"
 layout: one-column
 ---
 
-After you install BoxGrinder Build you'll have boxgrinder command available. Use help task for more information:
+# Main usage
 
-    $ sudo boxgrinder help
+After you install BoxGrinder Build you'll have `boxgrinder-build` command available. Use `--help` switch for more information:
 
-    BoxGrinder Build:
-      A tool for building VM images from simple definition files.
+    $ sudo boxgrinder-build --help
 
-    Documentation:
-      http://community.jboss.org/docs/DOC-14358
+    Usage: boxgrinder-build [appliance definition file] [options]
 
-    Tasks:
-      boxgrinder build [appliance definition file] [options]  # Create an image from selected appliance definition for selected platform and deliver it using selected method
-      boxgrinder help [TASK]                                  # Describe available tasks or one specific task
-      boxgrinder info                                         # Prints out the program details
+    A tool for building VM images from simple definition files.
 
-# Tasks
-
-We introduced tasks. To get more information about build tasks run: boxgrinder help TASK.
-
-## Build task
-
-Build task creates the appliance.
-
-    $ sudo boxgrinder help build
-
-    BoxGrinder Build:
-      A tool for building VM images from simple definition files.
+    Homepage:
+        http://boxgrinder.org/
 
     Documentation:
-      http://community.jboss.org/docs/DOC-14358
+        http://boxgrinder.org/tutorials/
 
     Examples:
-      $ boxgrinder build jeos.appl                                                           # Build KVM image for jeos.appl
-      $ boxgrinder build jeos.appl --os-config format:qcow2                                  # Build KVM image for jeos.appl with a qcow2 disk
-      $ boxgrinder build jeos.appl -f                                                        # Build KVM image for jeos.appl with removing previous build for this image
-      $ boxgrinder build jeos.appl -p ec2 -d ami                                             # Build and register AMI for jeos.appl
-      $ boxgrinder build jeos.appl -p vmware --platform-config type:personal thin_disk:true  # Build VMware image for VMware Server, Player, Fusion using thin (growing) disk
-      $ boxgrinder build jeos.appl -p vmware -d local                                        # Build VMware image for jeos.appl and deliver it to local directory
-
-    Usage:
-      boxgrinder build [appliance definition file] [options]
+        $ boxgrinder-build jeos.appl                                                           # Build KVM image for jeos.appl
+        $ boxgrinder-build jeos.appl -f                                                        # Build KVM image for jeos.appl with removing previous build for this image
+        $ boxgrinder-build jeos.appl --os-config format:qcow2                                  # Build KVM image for jeos.appl with a qcow2 disk
+        $ boxgrinder-build jeos.appl -p vmware --platform-config type:personal,thin_disk:true  # Build VMware image for VMware Server, Player, Fusion using thin (growing) disk
+        $ boxgrinder-build jeos.appl -p ec2 -d ami                                             # Build and register AMI for jeos.appl
+        $ boxgrinder-build jeos.appl -p vmware -d local                                        # Build VMware image for jeos.appl and deliver it to local directory
 
     Options:
-      -l, [--additional-plugins=plugin1 plugin2]  # Space separated list of additional plugins. Default: empty.
-          [--debug]                               # Prints debug information while building. Default: false.
-      -f, [--force]                               # Force image creation - removes all previous builds for selected appliance. Default: false.
-      -d, [--delivery=DELIVERY]                   # The delivery method for selected appliance.
-                                                  # Default: none
-          [--trace]                               # Prints trace information while building. Default: false.
-          [--platform-config=key:value]           # Platform plugin options.
-          [--os-config=key:value]                 # Operating system plugin options.
-      -p, [--platform=PLATFORM]                   # The name of platform you want to convert to.
-                                                  # Default: none
-          [--delivery-config=key:value]           # Delivery plugin options.
+        -p, --platform [TYPE]            The name of platform you want to convert to.
+        -d, --delivery [METHOD]          The delivery method for selected appliance.
+        -f, --force                      Force image creation - removes all previous builds for selected appliance. Default: false.
 
-    Create an image from selected appliance definition for selected platform and deliver it using selected method
+    Plugin configuration options:
+        -l, --plugins [PLUGINS]          Comma separated list of additional plugins. Default: empty.
 
-### Build task options
+            --os-config [CONFIG]         Operating system plugin configuration in format: key1:value1,key2:value2.
+            --platform-config [CONFIG]   Platform plugin configuration in format: key1:value1,key2:value2.
+            --delivery-config [CONFIG]   Delivery plugin configuration in format: key1:value1,key2:value2.
 
-#### Overriding configuration
+    Logging options:
+            --debug                      Prints debug information while building. Default: false.
+            --trace                      Prints trace information while building. Default: false.
+        -b, --backtrace                  Prints full backtrace if errors occur whilst building. Default: true if console log is set to debug or trace, otherwise false.
 
-Using CLI task arguments you can override the configuration placed in BoxGrinder configuration file. Use `--PUGINTYPE-config` switch to set or override plugin configuration:
+    Common options:
+            --help                       Show this message.
+            --version                    Print the version.
 
-    boxgrinder build jeos.appl --os-config format:qcow2 -p vmware --platform-config disk_type:thin type:personal -d sftp --delivery-config username:marek path:/home/marek
+## Plugin options - overriding configuration
 
-## Info task
+Using CLI options you can override the configuration placed in BoxGrinder configuration file. Use `--PUGINTYPE-config` switch to set or override plugin configuration:
 
-    $ sudo boxgrinder help info
+    $ sudo boxgrinder-build jeos.appl --os-config format:qcow2 -p vmware --platform-config disk_type:thin,type:personal -d sftp --delivery-config username:marek,path:/home/marek
 
-    BoxGrinder Build:
-      A tool for building VM images from simple definition files.
+You can specify one switch more than once. Above example is equivalent to this:
 
-    Documentation:
-      http://community.jboss.org/docs/DOC-14358
+    $ sudo boxgrinder-build jeos.appl --os-config format:qcow2 -p vmware --platform-config disk_type:thin --platform-config type:personal -d sftp --delivery-config username:marek --delivery-config path:/home/marek
 
-    Usage:
-      boxgrinder info
+# Version information
 
-    Options:
-      -p, [--plugins]  # List also available plugins. Default: false.
+    $ sudo boxgrinder-build --version
 
-    Prints out the program details
+    BoxGrinder Build 0.9.0
+
+    Available os plugins:
+     - rhel plugin for Red Hat Enterprise Linux
+     - fedora plugin for Fedora
+     - centos plugin for CentOS
+
+    Available platform plugins:
+     - virtualbox plugin for VirtualBox
+     - vmware plugin for VMware
+     - ec2 plugin for Amazon Elastic Compute Cloud (Amazon EC2)
+
+    Available delivery plugins:
+     - ebs plugin for Elastic Block Storage
+     - cloudfront plugin for Amazon Simple Storage Service (Amazon S3)
+     - sftp plugin for SSH File Transfer Protocol
+     - ami plugin for Amazon Simple Storage Service (Amazon S3)
+     - local plugin for Local file system
+     - s3 plugin for Amazon Simple Storage Service (Amazon S3)
 

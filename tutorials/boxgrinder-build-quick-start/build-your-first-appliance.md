@@ -39,13 +39,13 @@ Create a file `f14-basic.appl` with the following content and place it under the
     packages:
       - @core
 
-# Run BoxGrinder
+# Run BoxGrinder Build
 
 The last step is to run BoxGrinder Build.
 
-    boxgrinder build appliances/build f14-basic.appl
+    boxgrinder-build appliances/build f14-basic.appl
 
-You can check logs located in `log/` directory if something goes wrong. See also: The specified article was not found..
+You can check logs located in `log/` directory if something goes wrong.
 
 [prepare]: /tutorials/boxgrinder-build-quick-start/preparing-environment
 [install]: /tutorials/boxgrinder-build-quick-start/installation
