@@ -9,7 +9,7 @@ tags: [ boxgrinder_build, fedora, release ]
 
 # Yeah!
 
-I'm really happy to announce next major release of **[BoxGrinder Build](/build): 0.9.0**! This release includes many bug fixes and most importantly - some requested features. See [release notes][release_notes] for a detailed list of issues.
+I'm really happy to announce the next major release of **[BoxGrinder Build](/build): 0.9.0**! This release includes many bug fixes and most importantly - some requested features. See [release notes][release_notes] for a detailed list of issues.
 
 # What's new?
 
@@ -22,11 +22,11 @@ In the previous version we packaged every [BoxGrinder plugin](/tutorials/boxgrin
 1. `boxgrinder-core`
 2. `boxgrinder-build`
 
-See [quick start](/tutorials/boxgrinder-build-quick-start/) for updated installation instructions.
+See the [quick start](/tutorials/boxgrinder-build-quick-start/) for updated installation instructions.
 
 ## Fedora 15 support
 
-You can already build **Fedora 15** appliances. You don't even need to wait for final release Enjoy!
+You can already build **Fedora 15** appliances. You don't even need to wait for final release. Enjoy!
 
 ## New (old) CLI and package format
 
@@ -34,7 +34,7 @@ BoxGrinder Build 0.8.x wasn't pushed to Fedora because our CLI changed and we di
 
 If you're confused, feel free to read the [BoxGrinder Build usage page](/tutorials/boxgrinder-build-usage-instructions/) which shows the current state.
 
-To make the BoxGrinder Build backward-compatible, we added support for our legacy packages section format:
+To make BoxGrinder Build backwards-compatible, we added support for our legacy packages section format:
 
 Old format:
 
