@@ -7,7 +7,7 @@ layout: one-column
 
 # Parameters?
 
-You can use several parameters in your appliance definitions (.appl files). They can be used for example in external repository definitions.
+You can use several parameters in your appliance definitions (.appl files). They can be used, for example, in external repository definitions.
 
     name: postgis
     summary: PostGIS appliance

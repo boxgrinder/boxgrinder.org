@@ -3,7 +3,7 @@ title: "Appliance Definition"
 layout: one-column
 ---
 
-Appliance definition files are written in YAML. If you don't know YAML, read more here, it's really easy to understand!
+Appliance definition files are written in YAML. If you don't know YAML, read more [here](http://www.yaml.org), it's really easy to understand!
 
 Let's start with a small example:
 
@@ -131,7 +131,7 @@ The post section has subsections for each platform. If you want execute operatio
       base:
         - "/sbin/chkconfig postgresql on"
 
-If you want to execute different commands for different platforms, use the platform name as subsextion name, like this:
+If you want to execute different commands for different platforms, use the platform name as subsection name, like this:
 
     post:
       vmware:
@@ -141,7 +141,7 @@ If you want to execute different commands for different platforms, use the platf
 
 > Note: If you specify commands to execute for a selected format, but you do not convert the appliance to this format - the command will be not executed.
 
-Example post section with one command executed for the base image and one command executed for VMware appliance:
+Example post section with one command executed for the base image and one command executed for VMware appliances:
 
     post:
       base:

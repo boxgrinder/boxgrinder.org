@@ -11,7 +11,15 @@ The easiest way to get starting building appliances is to use the [meta applianc
 
 The latest meta appliances for various virtual environments is available from the [meta appliance][meta_appliance] page. After downloading, follow the appropriate instructions below for booting your instance.
 
-> TODO: [When should I use 32-bit vs 64-bit images? What about RAW vs VMware? It would be nice to show which image work with which hypervisors]
+> TODO: [When should I use 32-bit vs 64-bit images? What about RAW vs VMware? It would be nice to show which image work with which hypervisors.]
+## 32 vs 64 bit variants
+BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions provide the best performance and flexibility, and are recommended unless your hardware is unable to support [x86-64](http://en.wikipedia.org/wiki/X86-64). The 64 bit versions has several key advantages; 
+
+* In excess of 4GB of RAM can be assigned to the meta appliance, and more than ~3GB is usable by a single application [^1]. 
+* Building of cross-architecture 32 bit (i386, i586, i686) appliances is possible, in addition to native 64 bit build support. The 32 bit appliances are capable only of 32 bit builds only.     
+* BoxGrinder Build benefits from improvements and optimisations in modern 64 bit architectures and OSes, such as increased numbers of registers, newer instruction sets and improvements in memory-mapping.
+
+[1] Even with [PAE](http://en.wikipedia.org/wiki/Physical_Address_Extension) each application is still limited to ~3GB of virtual address space.
 
 # Booting Locally
 
