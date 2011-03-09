@@ -9,32 +9,32 @@ tags: [ boxgrinder_build, fedora, release ]
 
 # Yeah!
 
-I'm really happy to announce next major release of **[BoxGrinder Build](/build): 0.9.0**! This release includes many bug fixes and most importantly - some requested features. See [release notes][release_notes] for detailed list of issues.
+I'm really happy to announce next major release of **[BoxGrinder Build](/build): 0.9.0**! This release includes many bug fixes and most importantly - some requested features. See [release notes][release_notes] for a detailed list of issues.
 
 # What's new?
 
 ## Packaging
 
-In previous version we packaged every [BoxGrinder plugin](/tutorials/boxgrinder-build-plugins/) in its own Gem (and then RPM). This wasn't great because the amount of time to maintain versions and dependencies between plugins was too big. Instead of adding new great features I was involved in fixing packaging bugs.
+In the previous version we packaged every [BoxGrinder plugin](/tutorials/boxgrinder-build-plugins/) in its own Gem (and then RPM). This wasn't great because the amount of time to maintain versions and dependencies between plugins was too big. Instead of adding new great features I was involved in fixing packaging bugs.
 
-**Now it's over - we ship only 2 gems**:
+**But not anymore!  Now we only ship 2 gems**:
 
-1. `boxgrinder-core` and
+1. `boxgrinder-core`
 2. `boxgrinder-build`
 
 See [quick start](/tutorials/boxgrinder-build-quick-start/) for updated installation instructions.
 
 ## Fedora 15 support
 
-You can already build **Fedora 15** appliances, you don't even need to wait for final release, enjoy!
+You can already build **Fedora 15** appliances. You don't even need to wait for final release Enjoy!
 
 ## New (old) CLI and package format
 
-BoxGrinder Build 0.8.x wasn't pushed to Fedora because our CLI changed and we didn't want to break your scripts. With 0.9.0 we're back to our old CLI enahnced with changes from 0.8.x.
+BoxGrinder Build 0.8.x wasn't pushed to Fedora because our CLI changed and we didn't want to break your scripts. With 0.9.0 we're back to our old CLI enhanced with changes from 0.8.x.
 
-If you feel confused, feel free to read the [BoxGrinder Build usage page](/tutorials/boxgrinder-build-usage-instructions/) which shows what's the current state.
+If you're confused, feel free to read the [BoxGrinder Build usage page](/tutorials/boxgrinder-build-usage-instructions/) which shows the current state.
 
-To make BoxGrinder Build backwards compatible added support for our legacy packages section format:
+To make the BoxGrinder Build backward-compatible, we added support for our legacy packages section format:
 
 Old format:
 
@@ -47,11 +47,11 @@ New format:
     packages:
       - mc
 
-Please note that **if you use old format, a warning will be displayed, but the build will not break**. Old format support will be dropped in the future.
+Please note that **if you use the old format, a warning will be displayed, but the build will not break**. Old format support will be dropped in the future.
 
 # Fedora news
 
-[Fedora 15 Alpha was released yesterday](http://fedoraproject.org/wiki/Fedora_15_Alpha_release_notes)! From my (Marek) side I would like to thank the Fedora team for they hard work!
+[Fedora 15 Alpha was released yesterday](http://fedoraproject.org/wiki/Fedora_15_Alpha_release_notes)! From my (Marek) side I would like to thank the Fedora team for their hard work!
 
 BoxGrinder is part of Fedora 13 and 14 since December 2010, but for Fedora 15 BoxGrinder is [highlighted as a feature](http://fedoraproject.org/wiki/Features/BoxGrinder). This wouldn't be possible without the [Cloud SIG](http://fedoraproject.org/wiki/Cloud_SIG) support! Thank you!
 
@@ -59,11 +59,11 @@ Did you know that BoxGrinder is the **first [JBoss](http://www.jboss.org/) proje
 
 # New meta appliances
 
-We've rebuild the [meta appliance](/tutorials/boxgrinder-build-meta-appliance/) and released version 1.4 today. It's available from our [meta appliance download site](/download/boxgrinder-build-meta-appliance/). Feel free to use it to build your own appliances.
+We've rebuilt the [meta appliance](/tutorials/boxgrinder-build-meta-appliance/) and released version 1.4 today. It's available from our [meta appliance download site](/download/boxgrinder-build-meta-appliance/). Feel free to use it to build your own appliances.
 
 # New to BoxGrinder? Need some help?
 
-We have prepared some [tutorials](/tutorials) and a [FAQ](/faq) page. We're also available on [IRC](irc://irc.freenode.net/boxgrinder) or [forums](http://community.jboss.org/en/boxgrinder?view=discussions) for you. Feel free to jump in and chat with us!
+We have prepared some [tutorials](/tutorials) and a [FAQ](/faq). We're also available on [IRC](irc://irc.freenode.net/boxgrinder) or [forums](http://community.jboss.org/en/boxgrinder?view=discussions) for you. Feel free to jump in and chat with us!
 
 # Release notes
 
