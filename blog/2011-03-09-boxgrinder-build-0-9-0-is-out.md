@@ -3,13 +3,13 @@ title: "BoxGrinder Build 0.9.0 is out!"
 author: 'Marek Goldmann'
 layout: blog
 version: 0.9.0
-timestamp: 2011-03-09t10:00:00.10+01:00
+timestamp: 2011-03-09t13:50:00.10+01:00
 tags: [ boxgrinder_build, fedora, release ]
 ---
 
 # Yeah!
 
-I'm really happy to announce next major release of **[BoxGrinder Build](/build): 0.9.0**! This release includes many bug fixes and most importantly - some requested features. See [release notes] for detailed list of issues.
+I'm really happy to announce next major release of **[BoxGrinder Build](/build): 0.9.0**! This release includes many bug fixes and most importantly - some requested features. See [release notes][release_notes] for detailed list of issues.
 
 # What's new?
 

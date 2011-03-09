@@ -22,14 +22,16 @@ h1. How does it work?
 BoxGrinder creates appliances (also called images) from simple plain text "Appliance Definition":/tutorials/appliance-definition files. There are only two simple steps to create an appliance:
 
 # *Create Appliance Definition File* - Check out our "appliance definition structure page":/tutorials/appliance-definition for detailed information about the file structure along with examples.
-<pre style="margin-top: 1em;"><code>name: f14-jeos
-summary: Just Enough Operating System based on Fedora 14
+<pre style="margin-top: 1em;"><code>name: jeos-postgresql
+summary: JEOS based on Fedora 14 with PostgreSQL server
 os:
   name: fedora
   version: 14
+packages:
+  - postgresql-server
 </code></pre>
 # *Run BoxGrinder* - BoxGrinder will download all the necessary artifacts, build the instance, convert it to the selected platform and upload it to the selected destination. *All in one process!*
-<pre style="margin-top: 1em;"><code>boxgrinder-build jeos.appl -p vmware -d local</code></pre>
+<pre style="margin-top: 1em;"><code>boxgrinder-build jeos-postgresql.appl -p vmware -d local</code></pre>
 
 That's all!
 
