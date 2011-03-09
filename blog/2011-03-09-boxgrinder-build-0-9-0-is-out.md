@@ -3,7 +3,7 @@ title: "BoxGrinder Build 0.9.0 is out!"
 author: 'Marek Goldmann'
 layout: blog
 version: 0.9.0
-timestamp: 2011-03-09t13:50:00.10+01:00
+timestamp: 2011-03-09t14:15:00.10+01:00
 tags: [ boxgrinder_build, fedora, release ]
 ---
 

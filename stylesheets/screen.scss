@@ -453,6 +453,10 @@ ul#menu >li> a:hover {
 
 /* TWITTER */
 
-.twtr-ft {
+.twtr-hd, .twtr-ft {
     display: none;
+}
+
+#latest-tweets > .twtr-widget .twtr-tweet-wrap {
+    padding: 0.5em 0;
 }
