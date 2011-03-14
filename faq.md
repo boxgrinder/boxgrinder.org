@@ -23,6 +23,14 @@ For Fedora/RHEL/CentOS use YUM:
 
     yum update rubygem-boxgrinder-*
 
+## How can I use BoxGrinder Build without changing the user to root?
+
+You can use [sudo](http://www.sudo.ws/sudo/sudo.man.html). To make it convenient you can grant your regular user access to execute BoxGrinder Build command without entering the password. To do this run `visudo` as root and add this line at the end:
+
+    username        ALL=NOPASSWD: /usr/bin/boxgrinder-build
+
+where `username` is your regular user username.
+
 # Amazon Web Services (EC2, S3...)
 
 ## Why can't I find my attached EBS volume?

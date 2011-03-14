@@ -39,38 +39,6 @@ title: Community
       [bgbuild_small]: /images/boxgrinder_logo_build_100px.gif "BoxGrinder Build"
       [bgrest_small]: /images/boxgrinder_logo_rest_100px.gif "BoxGrinder REST"
 #right-column
-  %h1 Latest tweets
-  :plain
-    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-    <script>
-    new TWTR.Widget({
-      version: 2,
-      type: 'profile',
-      rpp: 5,
-      interval: 6000,
-      width: 'auto',
-      height: 300,
-      theme: {
-        shell: {
-          background: '#dddddd',
-          color: '#880000'
-        },
-        tweets: {
-          background: '#eeeeee',
-          color: '#000000',
-          links: '#880000'
-        }
-      },
-      features: {
-        scrollbar: false,
-        loop: false,
-        live: false,
-        hashtags: true,
-        timestamp: true,
-        avatars: false,
-        behavior: 'all'
-      }
-    }).render().setUser('boxgrinder').start();
-    </script>
+  = partial( 'latest_tweets.html.haml' )
 
 
