@@ -99,6 +99,16 @@ Example hardware section:
         /home:
           size: 10
 
+To specify **filesystem type**, add a `type` subsection.
+
+> Default operating system filesystem type is used when no type is specified.
+
+    hardware:
+      partitions:
+        /:
+          size: 5
+          type: ext3 # currently supported: ext3 and ext4
+
 > Note: Not all environments (clouds) will respect the CPU/memory values; some environments will override it.
 
 > Note: Every partition specified in this section will be located on one disk.
