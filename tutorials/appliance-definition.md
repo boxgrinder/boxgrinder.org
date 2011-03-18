@@ -85,7 +85,7 @@ This section gives the ability to specify virtual hardware requirements.
 Members:
 
 * `cpus` - virtual CPU count, default: 1,
-* `memory` - memory quantity in MB, default: 64,
+* `memory` - memory quantity in MB, default: 256,
 * `partitions` - partitioning scheme with root mounts and size in GB.
 
 Example hardware section:
@@ -99,6 +99,31 @@ Example hardware section:
         /home:
           size: 10
 
+> Note: Not all platforms will respect the CPU/memory values; some environments will override it.
+
+### hardware / partitions
+
+In `partitions` subsection you define the partition scheme. Partition **sizes are specified in gigabytes** (GB).
+
+Example partition scheme:
+
+    hardware:
+      partitions:
+        /:
+          size: 5      # 5 GB
+        /home:
+          size: 0.5    # 0.5 GB
+
+> There must be only one root partition with '/' mount point.
+
+If there is no partition scheme specified, one root partition with size 1GB will be added, which is equivalent to this:
+
+    hardware:
+      partitions:
+        /:
+          size: 1      # 1 GB
+
+
 To specify **filesystem type**, add a `type` subsection.
 
 > Default operating system filesystem type is used when no type is specified.
@@ -107,9 +132,7 @@ To specify **filesystem type**, add a `type` subsection.
       partitions:
         /:
           size: 5
-          type: ext3 # currently supported: ext3 and ext4
-
-> Note: Not all environments (clouds) will respect the CPU/memory values; some environments will override it.
+          type: ext3   # currently supported: ext3 and ext4
 
 > Note: Every partition specified in this section will be located on one disk.
 
