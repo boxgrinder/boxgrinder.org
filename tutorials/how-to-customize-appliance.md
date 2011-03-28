@@ -60,7 +60,7 @@ Sample external repository:
     summary: One sentence description of your appliance
 
     repos:
-      - name: "external repo"
+      - name: external-repo
         baseurl: http://somehost/repo/
     packages:
       - httpd
@@ -74,5 +74,9 @@ Sample external repository:
 
 There are several parameters you can use in .appl files. Take a look at [appliance definition parameters][params].
 
-[appl]: /documentation/articles/appliance-definition-file
-[params]: /documentation/articles/appliance-definition-parameters
+# Need more detailed information?
+
+Please refer to [appliance defintion structure][appl] description.
+
+[appl]: /tutorials/appliance-definition
+[params]: /tutorials/appliance-definition-parameters

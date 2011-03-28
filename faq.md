@@ -31,6 +31,14 @@ You can use [sudo](http://www.sudo.ws/sudo/sudo.man.html). To make it convenient
 
 where `username` is your regular user username.
 
+## How can I prevent mounting partitions in my GNOME Desktop while building appliances?
+
+You need to disable Nautilius automounting feature using this command:
+
+    gconftool-2 --type bool --set /apps/nautilus/preferences/media_automount false
+
+Alternatively you can use [`gconf-editor`](http://en.wikipedia.org/wiki/Gconf-editor).
+
 # Amazon Web Services (EC2, S3...)
 
 ## Why can't I find my attached EBS volume?

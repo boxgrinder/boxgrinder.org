@@ -49,10 +49,11 @@ Example packages section:
       - httpd
       - mc
 
-
 ## repos
 
 In this section you can specify additional repositories in order to add packages to your appliance that are sourced from these repositories.
+
+> Note: Name of repository is required. This must be one word.
 
 There are two types of link:
 
