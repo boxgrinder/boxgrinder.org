@@ -10,6 +10,23 @@ title: Development
     :markdown
       The team is lead by Marek Goldmann and is supported by the other members of [ProjectOdd](http://projectodd.org/).
 
+      # Roadmap
+
+      Below you can find rough roadmap for our projects highlighting most important features we plan to integrate.
+
+      ## BoxGrinder Build
+
+      ### 0.10.0 (end of April 2011)
+      
+      * Eucalyptus support
+
+      ## BoxGrinder REST
+
+      ### 0.1.0 (end of April 2011)
+
+      * Initial release
+      * Exposed BoxGrinder Build features (without smart node management)
+
       # Source Code
       The code is developed as open-source, with a publicly-accessible [source-code repository on GitHub](https://github.com/boxgrinder).
 
@@ -36,13 +53,6 @@ title: Development
 
       * [GitHub page](http://github.com/boxgrinder/boxgrinder-build)
       * [Latest commits](http://github.com/boxgrinder/boxgrinder-build/commits/master)
-
-      ### BoxGrinder Build Plugins
-
-          git clone git://github.com/boxgrinder/boxgrinder-build-plugins.git
-
-      * [GitHub page](http://github.com/boxgrinder/boxgrinder-build-plugins)
-      * [Latest commits](http://github.com/boxgrinder/boxgrinder-build-plugins/commits/master)
 
       ## BoxGrinder REST
 
@@ -72,6 +82,8 @@ title: Development
       [bgrest_medium]: /images/boxgrinder_logo_rest_200px.gif "BoxGrinder REST"
 
 #right-column
+  %h1 Latest Commits
+  = rss_widget('commits', 'https://github.com/boxgrinder/boxgrinder-build/commits/master.atom', :limit => 5, :header => false, :content => false, :date => false)
   %h1 Latest JIRA Activity
   = rss_widget('jira', 'http://jira.jboss.org/plugins/servlet/streams?key=BGBUILD', :limit => 5, :header => false, :content => false, :date => false)
 
