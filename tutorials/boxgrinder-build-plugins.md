@@ -443,7 +443,6 @@ This plugin delivers appliance as EBS-based AMI to AWS.
         access_key: AWS_ACCESS_KEY                        # required
         secret_access_key: AWS_SECRET_ACCESS_KEY          # required
         account_number: AWS_ACCOUNT_NUMBER                # required
-        availability_zone: us-east-1b                     # default: current region
         delete_on_termination: false                      # default: true
 
 > Note: The delete_on_termination flag is used to specify if the root volume should be deleted after the instance is terminated.
