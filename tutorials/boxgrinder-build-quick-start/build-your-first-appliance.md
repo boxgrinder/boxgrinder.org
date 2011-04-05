@@ -43,7 +43,7 @@ Create a file `f14-basic.appl` with the following content and place it under the
 
 The last step is to run BoxGrinder Build.
 
-    boxgrinder-build appliances/build f14-basic.appl
+    boxgrinder-build f14-basic.appl
 
 You can check logs located in `log/` directory if something goes wrong.
 
