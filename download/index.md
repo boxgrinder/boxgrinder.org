@@ -15,7 +15,7 @@ You can [download the meta appliance][meta_download] to have a pre-configured Bo
 
 We have a Continuous Integration server where we build BoxGrinder gems (and RPMs!). You can grab latest artifacts from our [Continuous Integration][ci] site.
 
-<script type="text/javascript" src="http://ci.stormgrind.org/externalStatus.html?projectId=project2&js=1"> </script>
+<script type="text/javascript" src="http://ci.boxgrinder.org/externalStatus.html?projectId=project2&js=1"> </script>
 
 [meta_download]: /download/boxgrinder-build-meta-appliance
 [bgbuild_quick_start]: /tutorials/boxgrinder-build-quick-start
