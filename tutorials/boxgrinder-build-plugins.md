@@ -462,7 +462,7 @@ EBS-based AMI for `jeos.appl`:
 
 ***
 
-This plugin delivers appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using ElasticHosts API, like [SALI Cloud](http://www.skalicloud.com/).
+This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SALI Cloud](http://www.skalicloud.com/).
 
 > Note: Only base appliances (output of Operating System plugins) can be used by this plugin.
 
@@ -474,7 +474,7 @@ All operating systems are supported.
 
 * See above note.
 
-#### EBS Delivery Plugin Configuration
+#### ElasticHosts Delivery Plugin Configuration
 
     plugins:
       elastichosts:
@@ -488,23 +488,23 @@ All operating systems are supported.
         drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4
         drive_name: my-bg-drive
 
-Appliance is **uploaded in chunks**, by default we set chunk size to 64 MB, you are free to change this setting `chunk` property.
+The appliance is **uploaded in chunks**. By default we set the chunk size to 64 MB; you are free to change this setting `chunk` property.
 
-In case of troubles while uploading the image we retry the operation **three times** (set `retry` property to adjust, set 0 to disable) starting with the failed chunk. You can use `wait` property (in seconds) to adjust the time between retries (default: 5). If it still fails you can try to execute BoxGrinder Build command specifying the chunk to start with using `start_part` property (default: 0). See examples below.
+If the plugin encounters any errors while uploading the image it retries the operation up to **three times** (set the `retry` property to adjust, set 0 to disable) starting with the failed chunk. You can use the `wait` property (in seconds) to adjust the time between retries (default: 5). If it still fails you can try to execute the BoxGrinder Build command specifying the chunk to start with using the `start_part` property (default: 0). See examples below.
 
-By default a new remote drive will be created with the name of appliance as the default name. Name is adjustable with `drive_name` property. You may also use an existing drive to upload the appliance to. In this case specify the drive UUID as `drive_uuid`. Note that if you specify both `drive_uuid` and `drive_name` the last will be ignored.
+By default a new remote drive will be created with the name of appliance as the default name. The name is adjustable with `drive_name` property. You may also upload the appliance to an existing drive. In this case you specify the drive UUID as `drive_uuid`. Note that if you specify both `drive_uuid` and `drive_name` the latter will be ignored.
 
-#### EBS Delivery Plugin Examples
+#### ElasticHosts Delivery Plugin Examples
 
 Standard delivery for a sample JEOS appliance:
 
     boxgrinder build jeos.appl -d elastichosts
 
-Start delivery with 6th chunk:
+Start delivery with the 6th chunk:
 
     boxgrinder-build jeos.appl -d elastichosts --delivery-config start_part:6
 
-Use already existing disk:
+Use an already existing disk:
 
     boxgrinder-build jeos.appl -d elastichosts --delivery-config disk_uuid:b161fd8b-d56s-4eea-9055-669daaec8aa4
 
