@@ -457,6 +457,59 @@ EBS-based AMI for `jeos.appl`:
 
 
 
+
+### ElasticHosts Delivery Plugin
+
+***
+
+This plugin delivers appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using ElasticHosts API, like [SALI Cloud](http://www.skalicloud.com/).
+
+> Note: Only base appliances (output of Operating System plugins) can be used by this plugin.
+
+#### ElasticHosts Delivery Plugin supported operating systems
+
+All operating systems are supported.
+
+#### ElasticHosts Delivery Plugin Supported platforms
+
+* See above note.
+
+#### EBS Delivery Plugin Configuration
+
+    plugins:
+      elastichosts:
+        endpoint: api.lon-p.elastichosts.com              # required
+        user_uuid: your-user-id                           # required
+        secret_access_key: your-secret-access-key         # required
+        chunk: 128                                        # default: 64 (in MB)
+        start_part: 6                                     # default: 0
+        wait: 30                                          # default: 5 (in s)
+        retry: 2                                          # default: 3
+        drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4
+        drive_name: my-bg-drive
+
+Appliance is **uploaded in chunks**, by default we set chunk size to 64 MB, you are free to change this setting `chunk` property.
+
+In case of troubles while uploading the image we retry the operation **three times** (set `retry` property to adjust, set 0 to disable) starting with the failed chunk. You can use `wait` property (in seconds) to adjust the time between retries (default: 5). If it still fails you can try to execute BoxGrinder Build command specifying the chunk to start with using `start_part` property (default: 0). See examples below.
+
+By default a new remote drive will be created with the name of appliance as the default name. Name is adjustable with `drive_name` property. You may also use an existing drive to upload the appliance to. In this case specify the drive UUID as `drive_uuid`. Note that if you specify both `drive_uuid` and `drive_name` the last will be ignored.
+
+#### EBS Delivery Plugin Examples
+
+Standard delivery for a sample JEOS appliance:
+
+    boxgrinder build jeos.appl -d elastichosts
+
+Start delivery with 6th chunk:
+
+    boxgrinder-build jeos.appl -d elastichosts --delivery-config start_part:6
+
+Use already existing disk:
+
+    boxgrinder-build jeos.appl -d elastichosts --delivery-config disk_uuid:b161fd8b-d56s-4eea-9055-669daaec8aa4
+
+
+
 [fedora]: #Fedora_Operating_System_Plugin
 [centos]: #CentOS_Operating_System_Plugin
 [rhel]: #RHEL_Operating_System_Plugin
