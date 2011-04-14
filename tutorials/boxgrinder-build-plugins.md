@@ -464,7 +464,7 @@ Added in BoxGrinder **0.9.1**
 
 ***
 
-This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SCALI Cloud](http://www.skalicloud.com/), [Open Hosting](http://www.openhosting.com/), [Serverlove](http://www.serverlove.com/) and [CloudSigma](http://www.cloudsigma.com/).
+This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SKALI Cloud](http://www.skalicloud.com/), [Open Hosting](http://www.openhosting.com/), [Serverlove](http://www.serverlove.com/) and [CloudSigma](http://www.cloudsigma.com/).
 
 > Note: Only base appliances (output of Operating System plugins) can be used by this plugin.
 
