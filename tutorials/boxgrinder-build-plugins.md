@@ -485,6 +485,7 @@ All operating systems are supported.
         start_part: 6                                     # default: 0
         wait: 30                                          # default: 5 (in s)
         retry: 2                                          # default: 3
+        ssl: true                                         # default: false
         drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4
         drive_name: my-bg-drive
 
@@ -493,6 +494,8 @@ The appliance is **uploaded in chunks**. By default we set the chunk size to 64 
 If the plugin encounters any errors while uploading the image it retries the operation up to **three times** (set the `retry` property to adjust, set 0 to disable) starting with the failed chunk. You can use the `wait` property (in seconds) to adjust the time between retries (default: 5). If it still fails you can try to execute the BoxGrinder Build command specifying the chunk to start with using the `start_part` property (default: 0). See examples below.
 
 By default a new remote drive will be created with the name of appliance as the default name. The name is adjustable with `drive_name` property. You may also upload the appliance to an existing drive. In this case you specify the drive UUID as `drive_uuid`. Note that if you specify both `drive_uuid` and `drive_name` the latter will be ignored.
+
+Set `ssl` to true if you want establish a secure SSL connection to the server.
 
 #### ElasticHosts Delivery Plugin Examples
 
