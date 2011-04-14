@@ -37,4 +37,4 @@ Below you can find instruction on how to enable these repositories in YUM.
 
     curl http://boxgrinder.org/files/yum/boxgrinder-rhel-nightly.repo > /etc/yum.repos.d/boxgrinder-nightly.repo
 
-[ci]: http://ci.stormgrind.org/project.html?projectId=project2&tab=projectOverview&guest=1
+[ci]: http://ci.boxgrinder.org/project.html?projectId=project2&tab=projectOverview&guest=1

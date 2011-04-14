@@ -22,7 +22,7 @@ support for other platform in the near future.
 The plugin is not
 yet released, it'll be released along with BoxGrinder Build 0.6.0
 in the next weeks. If you want try it now – please
-[download nightly artifacts from our CI](http://ci.stormgrind.org/project.html?projectId=project2&tab=projectOverview&guest=1).
+[download nightly artifacts from our CI](http://ci.boxgrinder.org/project.html?projectId=project2&tab=projectOverview&guest=1).
 **Make sure you install also new version of boxgrinder-core and boxgrinder-build**
 (also from CI) because the EBS plugin forced to make some changes
 in the core. To do this please download all required gems, put them

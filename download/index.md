@@ -20,4 +20,4 @@ We have a Continuous Integration server where we build BoxGrinder gems (and RPMs
 [meta_download]: /download/boxgrinder-build-meta-appliance
 [bgbuild_quick_start]: /tutorials/boxgrinder-build-quick-start
 [bgbuild_meta_appliance]: /tutorials/boxgrinder-build-meta-appliance
-[ci]: http://ci.stormgrind.org/project.html?projectId=project2&tab=projectOverview&guest=1
+[ci]: http://ci.boxgrinder.org/project.html?projectId=project2&tab=projectOverview&guest=1
