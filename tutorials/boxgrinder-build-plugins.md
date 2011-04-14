@@ -460,6 +460,8 @@ EBS-based AMI for `jeos.appl`:
 
 ### ElasticHosts Delivery Plugin
 
+Added in BoxGrinder **0.9.1**
+
 ***
 
 This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SALI Cloud](http://www.skalicloud.com/).
