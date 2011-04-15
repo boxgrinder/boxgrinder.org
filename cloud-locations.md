@@ -7,6 +7,8 @@ title: Cloud locations
 
 # What do I see?
 
-This map presents locations of currently supported by [BoxGrinder](/) public Cloud providers. For usage instructions please refer to [plugins page](/tutorials/boxgrinder-build-plugins/).
+This map represents the locations of public Cloud providers that are currently supported by [BoxGrinder](/). For usage instructions, please refer to the [plugins page](/tutorials/boxgrinder-build-plugins/).
 
-Please bear in mind that BoxGrinder supports any private/hybrid Clouds that are using KVM/Xen or VMware under the hood.
+## What about private and hybrid Clouds?
+
+BoxGrinder supports any private/hybrid Clouds that are using KVM/Xen or VMware under the hood.
