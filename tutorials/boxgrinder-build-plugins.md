@@ -84,7 +84,7 @@ This plugin creates base disk image with Fedora operating system installed.
 
 #### Fedora Operating System Plugin Usage
 
-    boxgrinder build fedora-13.appl
+    boxgrinder-build fedora-13.appl
 
 
 
@@ -119,7 +119,7 @@ This plugin creates base disk image with CentOS operating system installed.
 
 #### CentOS Operating System Plugin Usage
 
-    boxgrinder build centos-5.appl
+    boxgrinder-build centos-5.appl
 
 
 
@@ -154,7 +154,7 @@ This plugin creates base disk image with RHEL operating system installed.
 
 #### RHEL Operating System Plugin Usage
 
-    boxgrinder build rhel-6.appl
+    boxgrinder-build rhel-6.appl
 
 
 
@@ -194,7 +194,7 @@ Personal is meant to use with VMware Fusion, Player, Workstation. Enterprise sho
 
 #### VMware Platform Plugin Examples
 
-    boxgrinder build jeos.appl -p vmware
+    boxgrinder-build jeos.appl -p vmware
 
 
 
@@ -225,7 +225,7 @@ This plugin creates disk image and descriptors consumable by VirtualBox virtuali
 
 #### VirtualBox Platform Plugin Examples
 
-    boxgrinder build jeos.appl -p virtualbox
+    boxgrinder-build jeos.appl -p virtualbox
 
 
 
@@ -256,7 +256,7 @@ This plugin creates a EC2 disk image.
 
 #### EC2 Platform Plugin Examples
 
-    boxgrinder build jeos.appl -p ec2
+    boxgrinder-build jeos.appl -p ec2
 
 
 
@@ -298,11 +298,11 @@ All platforms.
 
 VMware appliance delivered to local filesystem:
 
-    boxgrinder build jeos.appl -p vmware -d local
+    boxgrinder-build jeos.appl -p vmware -d local
 
 VirtualBox appliance delivered to local filesystem:
 
-    boxgrinder build jeos.appl -p virtualbox -d local
+    boxgrinder-build jeos.appl -p virtualbox -d local
 
 
 
@@ -343,11 +343,11 @@ All platforms.
 
 VMware appliance delivered to remote SFTP server:
 
-    boxgrinder build jeos.appl -p vmware -d sftp
+    boxgrinder-build jeos.appl -p vmware -d sftp
 
 VirtualBox appliance delivered to remote SFTP server:
 
-    boxgrinder build jeos.appl -p virtualbox -d sftp
+    boxgrinder-build jeos.appl -p virtualbox -d sftp
 
 
 
@@ -396,15 +396,15 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
 
 EC2 AMI for `jeos.appl`:
 
-    boxgrinder build jeos.appl -p ec2 -d ami
+    boxgrinder-build jeos.appl -p ec2 -d ami
 
 Packaged VirtualBox appliance delivered to CloudFront server:
 
-    boxgrinder build jeos.appl -p virtualbox -d cloudfront
+    boxgrinder-build jeos.appl -p virtualbox -d cloudfront
 
 Packaged VirtualBox appliance delivered to S3 bucket:
 
-    boxgrinder build jeos.appl -p virtualbox -d s3
+    boxgrinder-build jeos.appl -p virtualbox -d s3
 
 
 
@@ -451,7 +451,7 @@ This plugin delivers appliance as EBS-based AMI to AWS.
 
 EBS-based AMI for `jeos.appl`:
 
-    boxgrinder build jeos.appl -p ec2 -d ebs
+    boxgrinder-build jeos.appl -p ec2 -d ebs
 
 
 
@@ -503,7 +503,7 @@ Set `ssl` to true if you want establish a secure SSL connection to the server.
 
 Standard delivery for a sample JEOS appliance:
 
-    boxgrinder build jeos.appl -d elastichosts
+    boxgrinder-build jeos.appl -d elastichosts
 
 Start delivery with the 6th chunk:
 
