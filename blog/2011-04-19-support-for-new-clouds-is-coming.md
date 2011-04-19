@@ -2,7 +2,7 @@
 title: "Support for new Clouds is coming!"
 author: 'Marek Goldmann'
 layout: blog
-timestamp: 2011-04-19t9:30:00.10+01:00
+timestamp: 2011-04-19t09:40:00.10+01:00
 tags: [ boxgrinder_build, elastichosts, skalicloud, openhosting, serverlove ]
 ---
 
