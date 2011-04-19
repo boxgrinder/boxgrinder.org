@@ -13,6 +13,10 @@ title: FAQ
 
 See operating system plugins section on the [plugins page](/tutorials/boxgrinder-build-plugins). Bear in mind that building an appliance for a different operating system than you are currently running (eg. building Fedora on CentOS) is **not supported**.
 
+## What is the location of supported Clouds in the world?
+
+We have a [nice map](/cloud-locations/) to visualize it!
+
 ## How do I uninstall all of the BoxGrinder Build gems?
 
     gem list | cut -d" " -f1 | grep boxgrinder | xargs sudo gem uninstall -aIx

@@ -2,19 +2,18 @@
 title: "Support for new Clouds is coming!"
 author: 'Marek Goldmann'
 layout: blog
-timestamp: 2011-04-15t14:15:00.10+01:00
-tags: [ boxgrinder_build, elastichosts, skalicloud, openhosting, cloudsigma, serverlove ]
+timestamp: 2011-04-19t9:30:00.10+01:00
+tags: [ boxgrinder_build, elastichosts, skalicloud, openhosting, serverlove ]
 ---
 
 You know what's good? Support for a new Cloud. You know what's better? Support for many new Clouds!
 
-I'm excited to share with you that **with the upcoming 0.9.1  release BoxGrinder is going to support the following new Clouds**:
+I'm excited to share with you that **with the upcoming 0.9.1  release [BoxGrinder](/) is going to support the following new Clouds**:
 
 * [ElasticHosts](http://www.elastichosts.com/) - US, UK
 * [SKALI Cloud](http://www.skalicloud.com/) - Malaysia
 * [Open Hosting](http://www.openhosting.com/) - US
 * [Serverlove](http://www.serverlove.com/) - UK
-* [CloudSigma](http://www.cloudsigma.com/) - Switzerland
 
 It was possible because all the above listed Clouds **share the same API** for disk and server management, perfect! The
 [API](http://www.elastichosts.com/cloud-hosting/api) itself is really straightforward and makes the interaction with
@@ -47,3 +46,10 @@ This is immediately available from our [nightly repository](/tutorials/boxgrinde
 Please grab the updated packages, test it and [let us know](/community/) how it went!
 
 If you know any other Cloud that supports ElasticHosts API, please [let us know](/community/) too!
+
+# Which Cloud is the right one?
+
+BoxGrinder supports more and more Clouds. Some of them are closer to your location than others. To help you find the nearest
+Cloud to you see our [supported Clouds map](/cloud-locations/). Hope you like it!
+
+Enjoy!

@@ -464,9 +464,9 @@ Added in BoxGrinder **0.9.1**
 
 ***
 
-This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SKALI Cloud](http://www.skalicloud.com/), [Open Hosting](http://www.openhosting.com/), [Serverlove](http://www.serverlove.com/) and [CloudSigma](http://www.cloudsigma.com/).
+This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SKALI Cloud](http://www.skalicloud.com/), [Open Hosting](http://www.openhosting.com/) and [Serverlove](http://www.serverlove.com/).
 
-> Note: Only base appliances (output of Operating System plugins) can be used by this plugin.
+> Note: Only base appliances (output of [Operating System plugins][os_plugins]) can be used by this plugin.
 
 #### ElasticHosts Delivery Plugin supported operating systems
 
@@ -511,9 +511,10 @@ Start delivery with the 6th chunk:
 
 Use an already existing disk:
 
-    boxgrinder-build jeos.appl -d elastichosts --delivery-config disk_uuid:b161fd8b-d56s-4eea-9055-669daaec8aa4
+    boxgrinder-build jeos.appl -d elastichosts --delivery-config chunk:128,disk_uuid:b161fd8b-d56s-4eea-9055-669daaec8aa4
 
 
+[os_plugins]: #Operating_system_plugins
 
 [fedora]: #Fedora_Operating_System_Plugin
 [centos]: #CentOS_Operating_System_Plugin
