@@ -95,9 +95,9 @@ Example hardware section:
       cpus: 2
       memory: 256
       partitions:
-        /:
+        "/":
           size: 5
-        /home:
+        "/home":
           size: 10
 
 > Note: Not all platforms will respect the CPU/memory values; some environments will override it.
@@ -110,9 +110,9 @@ Example partition scheme:
 
     hardware:
       partitions:
-        /:
+        "/":
           size: 5      # 5 GB
-        /home:
+        "/home":
           size: 0.5    # 0.5 GB
 
 > There must be only one root partition with '/' mount point.
@@ -121,7 +121,7 @@ If there is no partition scheme specified, one root partition with size 1GB will
 
     hardware:
       partitions:
-        /:
+        "/":
           size: 1      # 1 GB
 
 
@@ -131,7 +131,7 @@ To specify **filesystem type**, add a `type` subsection.
 
     hardware:
       partitions:
-        /:
+        "/":
           size: 5
           type: ext3   # currently supported: ext3 and ext4
 
@@ -197,7 +197,7 @@ Example post section with one command executed for the base image and one comman
       cpus: 2
       memory: 512
       partitions:
-        /:
+        "/":
           size: 2
     packages:
       - httpd
