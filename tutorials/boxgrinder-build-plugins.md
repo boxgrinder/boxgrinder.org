@@ -481,8 +481,8 @@ All operating systems are supported.
     plugins:
       elastichosts:
         endpoint: api.lon-p.elastichosts.com              # required
-        user_uuid: your-user-id                           # required
-        secret_access_key: your-secret-access-key         # required
+        username: your-user-id                            # required
+        password: your-secret-access-key                  # required
         chunk: 128                                        # default: 64 (in MB)
         start_part: 6                                     # default: 0
         wait: 30                                          # default: 5 (in s)
@@ -490,6 +490,8 @@ All operating systems are supported.
         ssl: true                                         # default: false
         drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4
         drive_name: my-bg-drive
+
+> Note: `username` parameter is in most cases called *User UUID* wheras `password` is in most cases *Secret API Key*. For some clouds you are able to use your e-mail address and password instead of UUID/key combination.
 
 The appliance is **uploaded in chunks**. By default we set the chunk size to 64 MB; you are free to change this setting `chunk` property.
 
