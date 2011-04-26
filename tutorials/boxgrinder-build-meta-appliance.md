@@ -47,12 +47,12 @@ BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions
 
 1. Grab latest AMI number from [meta appliance][meta_appliance] page.
 2. Launch the AMI.
-3. Login via SSH using the keypair you specified when launching the appliance. The username is **ec2-user**.
+3. Login via SSH using the keypair you specified when launching the appliance. The username is **ec2-user**. It has full sudo access.
 
 # That's all
 
 See [quick start article][bgbuild_quick_start] if you want learn more on how to use BoxGrinder Build.
 
-[bgbuild_quick_start]: /documentation/articles/boxgrinder-build-quick-start
+[bgbuild_quick_start]: /tutorials/boxgrinder-build-quick-start/
 [bgbuild]: /build
-[meta_appliance]: /download/boxgrinder-build-meta-appliance
+[meta_appliance]: /download/boxgrinder-build-meta-appliance/
