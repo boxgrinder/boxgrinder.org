@@ -14,7 +14,7 @@ title: BoxGrinder Build Meta appliance download
 %h2 Amazon EC2 AMI's
 
 - latest_meta_appliance.amis.regions.each do |region, amis|
-  %h3 #{region} Region, #{latest_meta_appliance.amis.backend} based
+  %h3 #{region} region, #{latest_meta_appliance.amis.backend} based
   %ul
   - amis.each do |arch, ami|
     %li
@@ -33,11 +33,42 @@ title: BoxGrinder Build Meta appliance download
 
 %hr
 
+- unless latest_beta_meta_appliance.nil?
+  %h1 Beta of meta appliance, version #{latest_beta_meta_appliance.version}
+
+  :markdown
+
+    > Note: We do not support Beta meta appliances.
+
+    This is the latest **Beta** of meta appliance. It's based on **#{latest_beta_meta_appliance.os.name} #{latest_beta_meta_appliance.os.version}** operating system. Most probably you want to use latest stable meta appliance listed above.
+
+  %h2 Amazon EC2 AMI's
+
+  - latest_beta_meta_appliance.amis.regions.each do |region, amis|
+    %h3 #{region} region, #{latest_beta_meta_appliance.amis.backend} based
+    %ul
+    - amis.each do |arch, ami|
+      %li
+        %strong
+          #{arch}
+        #{ami}
+
+  %h2 Offline appliances
+  %ul
+  - latest_beta_meta_appliance.links.each_key do |platform|
+    - latest_beta_meta_appliance.links[platform].each_key do |arch|
+      %li
+        %a{:href => "#{latest_beta_meta_appliance.links[platform][arch][:url]}"}
+          #{platform} #{arch} appliance
+        [#{latest_beta_meta_appliance.links[platform][arch][:size]} MB]
+
+  %hr
+
 %h1 Meta appliance archive
 :markdown
   Below you can find archived meta appliances. We *strongly encourage you* to use latest, #{latest_meta_appliance.version} meta appliance.
 
-- site.meta_appliances.appliances[1..site.meta_appliances.appliances.size] .each do |appliance|
+- meta_appliances[1..meta_appliances.size] .each do |appliance|
   %h3 Meta appliance #{appliance.version}
   :markdown
     This meta appliance is based on **#{appliance.os.name} #{appliance.os.version}** operating system.
@@ -45,7 +76,7 @@ title: BoxGrinder Build Meta appliance download
   %h4 Amazon EC2 AMI's
 
   - appliance.amis.regions.each do |region, amis|
-    %h5 Amazon EC2 AMI's (#{region} Region, #{appliance.amis.backend} based)
+    %h5 #{region} region, #{appliance.amis.backend} based
     %ul
       - amis.each do |arch, ami|
         %li

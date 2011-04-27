@@ -23,6 +23,31 @@ BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions
 
 # Booting Locally
 
+## KVM
+
+1. [Download the RAW meta appliance][meta_appliance].
+2. Extract the downloaded file (`boxgrinder-meta-VERSION-fedora-VERSION-ARCH-raw.tgz`). This will create the directory `boxgrinder-meta-VERSION-fedora-VERSION-ARCH-raw`.
+3. Move/copy the extracted disk to `/var/lib/libvirt/images/`.
+4. Launch `virt-manager` and start new virtual machine wizard.
+5. Enter the name and select "Import existing disk option".
+
+    ![new_vm_1_screenshot][new_vm_1_screenshot]
+
+6. Select the previously copied disk. Select the operating system.
+
+    ![new_vm_2_screenshot][new_vm_2_screenshot]
+
+7. Select at least 1024 MB of RAM and CPU count.
+
+    ![new_vm_3_screenshot][new_vm_3_screenshot]
+
+8. Launch the VM using `virt-manager`.
+9. Login as root with password **boxgrinder**.
+
+[new_vm_1_screenshot]: /images/screenshots/new-vm-1.png  "New Virtual Machine Wizard Step 1"
+[new_vm_2_screenshot]: /images/screenshots/new-vm-2.png  "New Virtual Machine Wizard Step 2"
+[new_vm_3_screenshot]: /images/screenshots/new-vm-3.png  "New Virtual Machine Wizard Step 3"
+
 ## VMware Fusion on Mac
 
 1. Download the Fedora 13 32-bit meta appliance from the download page.
@@ -42,6 +67,7 @@ BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions
 7. Browse to the extracted `boxgrinder-meta-personal.vmdk` file and select it, closing the Virtual Media Manager
 8. Make sure `boxgrinder-meta-personal.vmdk` is displayed and click Continue on the Virtual Hard Disk screen
 9. Review your hardware choices and click Done
+10. Login as root with password **boxgrinder**.
 
 ## Booting on EC2
 

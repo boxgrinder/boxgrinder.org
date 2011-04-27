@@ -18,6 +18,8 @@ class ReleaseSizes
             release_path = "#{site.meta_appliances.path}/boxgrinder-meta-#{release.version}-#{release.os.name.downcase}-#{release.os.version}-#{arch}-#{platform.downcase}.tgz"
             release.links[platform.to_sym][arch.to_sym] = OpenCascade.new({:url => "http://#{site.meta_appliances.server}#{release_path}"})
 
+            puts "Getting size of #{site.meta_appliances.server}#{release_path}..."
+
             Net::HTTP.start(site.meta_appliances.server, 80) do |http|
               response = http.head(release_path)
               b = response['content-length'] || ''
@@ -26,8 +28,10 @@ class ReleaseSizes
                 kb = b / 1024
                 mb = kb / 1024
                 release.links[platform.to_sym][arch.to_sym][:size] = mb
+                puts "Size: #{mb} MB."
               else
                 release.links[platform.to_sym][arch.to_sym][:size] = 'unknown'
+                puts "Unknown size."
               end
             end
           end

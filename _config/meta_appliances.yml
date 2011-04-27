@@ -1,6 +1,41 @@
 server: "dist.stormfolio.boxgrinder.org"
 path: /meta
 appliances:
+  - version: 1.6
+    beta: true
+    date: 2011-04-27
+    os:
+      name: Fedora
+      version: 15
+    arches:
+      - 'i686'
+      - 'x86_64'
+    platforms:
+      - RAW
+      - VMware
+    amis:
+      backend: EBS
+      regions:
+        'us-east-1':
+          'i686': ami-06ae516f
+          'x86_64': ami-4eae5127
+  - version: 1.5
+    date: 2011-04-27
+    os:
+      name: Fedora
+      version: 14
+    arches:
+      - 'i686'
+      - 'x86_64'
+    platforms:
+      - RAW
+      - VMware
+    amis:
+      backend: EBS
+      regions:
+        'us-east-1':
+          'i686': ami-beaf50d7
+          'x86_64': ami-1aaf5073
   - version: 1.4
     os:
       name: Fedora
@@ -9,12 +44,12 @@ appliances:
       - RAW
       - VMware
     arches:
-      - i686
-      - x86_64
+      - 'i686'
+      - 'x86_64'
     amis:
       backend: EBS
       regions:
-        'US East':
+        'us-east-1':
           'i686': ami-888d7fe1
           'x86_64': ami-64f2000d
   - version: 1.3
@@ -25,12 +60,12 @@ appliances:
       - RAW
       - VMware
     arches:
-      - i686
-      - x86_64
+      - 'i686'
+      - 'x86_64'
     amis:
       backend: EBS
       regions:
-        'US East':
+        'us-east-1':
           'i686': ami-225aac4b
           'x86_64': ami-965dabff
   - version: 1.2
@@ -41,12 +76,12 @@ appliances:
       - RAW
       - VMware
     arches:
-      - i686
-      - x86_64
+      - 'i686'
+      - 'x86_64'
     amis:
       backend: EBS
       regions:
-        'US East':
+        'us-east-1':
           'i686': ami-faf70093
           'x86_64': ami-7ef60117
   - version: 1.1
@@ -57,8 +92,8 @@ appliances:
       - RAW
       - VMware
     arches:
-      - i686
-      - x86_64
+      - 'i686'
+      - 'x86_64'
     amis:
       backend: S3
       regions:
@@ -73,8 +108,8 @@ appliances:
       - RAW
       - VMware
     arches:
-      - i386
-      - x86_64
+      - 'i386'
+      - 'x86_64'
     amis:
       backend: S3
       regions:
