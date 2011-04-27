@@ -5,13 +5,11 @@ layout: one-column
 
 The easiest way to get starting building appliances is to use the [meta appliance][meta_appliance]. It provides a complete environment for [BoxGrinder Build][bgbuild] that you can run in your favorite virtual environment without affecting your workstation. The meta appliance is based on [Fedora](http://fedoraproject.org/).
 
-> Note: This document is a work-in-progress. You'll see text that needs clarification and expanding marked TODO: [like this].
-
 # Downloading
 
 The latest meta appliances for various virtual environments is available from the [meta appliance][meta_appliance] page. After downloading, follow the appropriate instructions below for booting your instance.
 
-> TODO: [When should I use 32-bit vs 64-bit images? What about RAW vs VMware? It would be nice to show which image work with which hypervisors.]
+<!-- TODO: [When should I use 32-bit vs 64-bit images? What about RAW vs VMware? It would be nice to show which image work with which hypervisors.] -->
 ## 32 vs 64 bit variants
 BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions provide the best performance and flexibility, and are recommended unless your hardware is unable to support [x86-64](http://en.wikipedia.org/wiki/X86-64). The 64 bit versions has several key advantages; 
 
@@ -29,7 +27,7 @@ BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions
 2. Extract the downloaded file (`boxgrinder-meta-VERSION-fedora-VERSION-ARCH-raw.tgz`). This will create the directory `boxgrinder-meta-VERSION-fedora-VERSION-ARCH-raw`.
 3. Move/copy the extracted disk to `/var/lib/libvirt/images/`.
 4. Launch `virt-manager` and start new virtual machine wizard.
-5. Enter the name and select "Import existing disk option".
+5. Enter the name and select "Import existing disk image" option.
 
     ![new_vm_1_screenshot][new_vm_1_screenshot]
 
