@@ -60,7 +60,9 @@ There are two types of link:
 * `mirrorlist`, and
 * `baseurl`.
 
-Notice that you can use #ARCH# tag to substitute architecture for the current building architecture, eg. if the appliance will be built on a 64 bit platform, x86_64 will be injected. In the other case i386 will be injected.
+Notice that you can use `#BASE_ARCH#` tag to substitute architecture for the current building architecture, eg. if the appliance will be built on a 64 bit platform, x86_64 will be injected. In the other case i386 will be injected.
+
+Read more about [available parameters here](/tutorials/appliance-definition-parameters/).
 
 ### Ephemeral repositories
 
@@ -75,9 +77,9 @@ Example repos section:
 
     repos:
       - name: "fedora-11"
-        baseurl: "http://ftp.man.poznan.pl/pub/linux/fedora/releases/11/Everything/#ARCH#/os/"
+        baseurl: "http://ftp.man.poznan.pl/pub/linux/fedora/releases/11/Everything/#BASE_ARCH#/os/"
       - name: "fedora-11-updates"
-        mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f11&arch=#ARCH#"
+        mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f11&arch=#BASE_ARCH#"
 
 ## hardware
 
@@ -204,5 +206,5 @@ Example post section with one command executed for the base image and one comman
       - mc
     repos:
       - name: "other-repo"
-        baseurl: "http://repo.yoursite.com/fedora/14/#ARCH#"
+        baseurl: "http://repo.yoursite.com/fedora/14/#BASE_ARCH#"
 
