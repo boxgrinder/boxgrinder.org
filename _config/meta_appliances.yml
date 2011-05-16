@@ -1,9 +1,8 @@
 server: "dist.stormfolio.boxgrinder.org"
 path: /meta
 appliances:
-  - version: 1.6
-    beta: true
-    date: 2011-04-27
+  - version: 1.5
+    date: 2011-05-17
     os:
       name: Fedora
       version: 15
@@ -17,25 +16,8 @@ appliances:
       backend: EBS
       regions:
         'us-east-1':
-          'i686': ami-06ae516f
-          'x86_64': ami-4eae5127
-  - version: 1.5
-    date: 2011-04-27
-    os:
-      name: Fedora
-      version: 14
-    arches:
-      - 'i686'
-      - 'x86_64'
-    platforms:
-      - RAW
-      - VMware
-    amis:
-      backend: EBS
-      regions:
-        'us-east-1':
-          'i686': ami-beaf50d7
-          'x86_64': ami-1aaf5073
+          'i686': ami-08e41a61
+          'x86_64': ami-4ae41a23
   - version: 1.4
     os:
       name: Fedora
