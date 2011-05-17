@@ -7,30 +7,30 @@ timestamp: 2011-05-17t07:35:00.10+02:00
 tags: [ boxgrinder_build, meta_appliance, fedora ]
 ---
 
-I'm very happy to announce new version of [BoxGrinder Build](/build/). This release contains many new features and enhancements.
+I'm very happy to announce a new version of [BoxGrinder Build](/build/). This release contains many new features and enhancements.
 
 # What's new?
 
 ## CloudSigma support
 
 In this version we added [CloudSigma](http://cloudsigma.com/) support. CloudSigma is a very popular IaaS Cloud provider in
-Europe, based in Switzerland. To create a server for CloudSgima use our ElasticHosts plugin. Read more on the [plugin page](/tutorials/boxgrinder-build-plugins/#ElasticHosts_Delivery_Plugin).
+Europe, based in Switzerland. To create a server for CloudSigma use our ElasticHosts plugin. Read more on the [plugin page](/tutorials/boxgrinder-build-plugins/#ElasticHosts_Delivery_Plugin).
 
-We will provide soon a tutorial on how to use CloudSigma with BoxGrinder together.
+We will soon provide a tutorial on how to use  BoxGrinder with CloudSigma.
 
 ## Better Fedora 15 support
 
-Previous version of BoxGrinder Build had Fedora 15 support, but we found a few issues (networing, `/etc/mtab`). This version addresses all of them - **now you can fully enjoy Fedora 15**.
+Previous versions of BoxGrinder Build had Fedora 15 support, but we found a few issues (networking, `/etc/mtab`). This version addresses all of them - **now you can fully enjoy Fedora 15**.
 
 ## New meta appliance
 
-We decided to switch to Fedora 15 as our base operating system for meta appliance. This means that **we have prepared for you new meta appliances**.
-go, and [download them](/download/boxgrinder-build-meta-appliance/) now.
+We decided to switch to Fedora 15 as our base operating system for the meta appliance. This means that **we have prepared new meta appliances for you**.
+Go and [download them](/download/boxgrinder-build-meta-appliance/) now.
 
 ## Cross-operating system builds working now! 
 
-Yes, this is true - we added support for cross-operating system builds. This means that **you can build for example RHEL 5 guest on Fedora 15 host**!
-Please make sure you run the build on a host with "newer" version of operating system compared to guest operating system version.
+Yes, it's true - we added support for cross-operating system builds.  For example, this means that **you can build a RHEL 5 guest on a Fedora 15 host**!
+Please make sure you run the build on a host with "newer" version of the operating system when compared to guest operating system version.
 
 # Need help?
 
