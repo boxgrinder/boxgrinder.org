@@ -3,7 +3,7 @@ title: "It's time for BoxGrinder Build 0.9.2"
 author: 'Marek Goldmann'
 layout: blog
 version: 0.9.2
-timestamp: 2011-05-17t07:35:00.10+02:00
+timestamp: 2011-05-17t17:30:00.10+02:00
 tags: [ boxgrinder_build, meta_appliance, fedora ]
 ---
 

@@ -464,7 +464,7 @@ Added in BoxGrinder **0.9.1**
 
 ***
 
-This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SKALI Cloud](http://www.skalicloud.com/), [Open Hosting](http://www.openhosting.com/) and [Serverlove](http://www.serverlove.com/).
+This plugin delivers an appliance to [ElasticHosts](http://www.elastichosts.com/) Cloud. It can be used for any Cloud using the ElasticHosts API, such as [SKALI Cloud](http://www.skalicloud.com/), [Open Hosting](http://www.openhosting.com/), [Serverlove](http://www.serverlove.com/) and [CloudSigma](http://www.cloudsigma.com/).
 
 > Note: Only base appliances (output of [Operating System plugins][os_plugins]) can be used by this plugin.
 
@@ -491,7 +491,7 @@ All operating systems are supported.
         drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4
         drive_name: my-bg-drive
 
-> Note: `username` parameter is in most cases called *User UUID* wheras `password` is in most cases *Secret API Key*. For some clouds you are able to use your e-mail address and password instead of UUID/key combination.
+> Note: `username` parameter is in most cases called *User UUID* wheras `password` is in most cases *Secret API Key*. For CloudSigma you need to specify your e-mail address and password instead of UUID/key combination.
 
 The appliance is **uploaded in chunks**. By default we set the chunk size to 64 MB; you are free to change this setting `chunk` property.
 
