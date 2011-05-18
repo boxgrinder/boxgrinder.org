@@ -22,7 +22,7 @@ The starting point of any appliance is an Appliance Definition File; an extremel
       version: 15
       password: boxgrinder-rules
     post:
-      elastichosts:
+      base:
         - /bin/echo "I am a CloudSigma appliance!" >> /what-am-i
 	
 Save the file as ___sigma-jeos.appl___.
