@@ -38,7 +38,7 @@ The CloudSigma plugin requires [specific configuration information](/tutorials/b
       elastichosts:
         endpoint: api.cloudsigma.com                      # required
         username: your@registered-email-address.com       # required
-	      password: whisper                                 # required
+	password: whisper                                 # required
         chunk: 128                                        # default: 64 (in MB)
         start_part: 0                                     # default: 0
         wait: 5                                           # default: 5 (in s)
