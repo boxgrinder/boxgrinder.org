@@ -1,19 +1,19 @@
 ---
-title: "Cloud Sigma delivery tutorial"
+title: "CloudSigma delivery tutorial"
 author: 'Marc Savy'
 layout: blog
-timestamp: 2011-05-19t16:00:00.10+01:00
+timestamp: 2011-05-19t20:15:00.10+01:00
 tags: [ boxgrinder_build, howto, cloudsigma, elastichosts ]
 ---
 
 BoxGrinder Build encapsulates powerful functionality, such as the ability to define, build and deliver an appliance, into a simple and concise pipeline. Ultimately, only a single command needs executing in order to build, convert and deliver a custom-defined appliance into your chosen environment.
 
-For some use-cases, appliances might only be run within internal or private infrastructure, hence BoxGrinder provides [local filesystem delivery and SFTP support](/tutorials/boxgrinder-build-plugins/).  However, BoxGrinder similarly succinct platform conversion and delivery methods exist for appliance delivery to public infrastructure providers, and as of release 0.9.2 support has been added for [CloudSigma](http://www.cloudsigma.com/), a provider of cloud services throughout Europe.
+For some use-cases, appliances might only be run within internal or private infrastructure, hence BoxGrinder provides [local file-system delivery and SFTP support](/tutorials/boxgrinder-build-plugins/).  However, BoxGrinder offers similarly succinct platform conversion and delivery methods exist for public infrastructure, and as of release 0.9.2 support has been added for [CloudSigma](http://www.cloudsigma.com/), a provider of cloud services throughout Europe.
 
 In this blog-post we demonstrate a basic, but complete, work-flow to specify, build and deliver an appliance to CloudSigma.
 
 ## Define your Appliance
-The starting point of any appliance is an Appliance Definition File; an extremely simple YAML text definition to describe the virtual machine you would like to produce.  There is support for a wide range of [features to customise](/tutorials/appliance-definition/) the image for your specific requirements, however for this post we will only produce a simple definition to illustrate the pertient functionality.
+The starting point of any appliance is an Appliance Definition File; an extremely simple YAML text definition to describe the virtual machine you would like to produce.  There is support for a wide range of [features to customise](/tutorials/appliance-definition/) the image for your specific requirements, however for this post we will only produce a simple definition to illustrate the pertinent functionality.
 
     name: sigma-jeos
     summary: Just enough Operating System
@@ -66,7 +66,7 @@ BoxGrinder will inform you of the __Server UUID__ and __Drive UUID__ for your ap
 ### Lift-Off  
 You can launch either via CloudSigma's API tools using the UUIDs, or the Web UI, where you should be able to see your newly uploaded appliance under __My Servers__ and __My Drives__.  After launching an instance, you can connect via SSH, with the __root__ user account and password set in the appliance definition; __boxgrinder-rocks__. 
 
-![image](/images/screenshots/boxgrinder-sigma-ui.png "CloudSigma UI")
+![image](/images/screenshots/boxgrinder-sigma-ui.png "CloudSigma Web UI")
 
 ## Effortless 
 With these simple steps, BoxGrinder Build has created a virtual appliance from scratch, and delivered it to the CloudSigma cloud.  It is easy to envisage how BoxGrinder Build can be harnessed to bake a range of compact, [specialised appliances](/tutorials/how-to-customize-appliance/) to fulfil the roles you require in your deployed applications.
