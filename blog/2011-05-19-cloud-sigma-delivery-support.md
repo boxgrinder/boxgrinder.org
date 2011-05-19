@@ -16,7 +16,7 @@ In this blog-post we demonstrate a basic, but complete, work-flow to specify, bu
 The starting point of any appliance is an Appliance Definition File; an extremely simple YAML text definition to describe the virtual machine you would like to produce.  There is support for a wide range of [features to customise](/tutorials/appliance-definition/) the image for your specific requirements, however for this post we will only produce a simple definition to illustrate the pertinent functionality.
 
     name: sigma-jeos
-    summary: Just enough Operating System
+    summary: Just Enough Operating System
     os:
       name: fedora
       version: 15
