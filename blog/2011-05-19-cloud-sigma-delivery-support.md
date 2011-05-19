@@ -8,7 +8,7 @@ tags: [ boxgrinder_build, howto, cloudsigma, elastichosts ]
 
 BoxGrinder Build encapsulates powerful functionality, such as the ability to define, build and deliver an appliance, into a simple and concise pipeline. Ultimately, only a single command needs executing in order to build, convert and deliver a custom-defined appliance into your chosen environment.
 
-For some use-cases, appliances might only be run within internal or private infrastructure, hence BoxGrinder provides [local file-system delivery and SFTP support](/tutorials/boxgrinder-build-plugins/).  However, BoxGrinder offers similarly succinct platform conversion and delivery methods exist for public infrastructure, and as of release 0.9.2 support has been added for [CloudSigma](http://www.cloudsigma.com/), a provider of cloud services throughout Europe.
+For some use-cases appliances might only be run within internal or private infrastructure, hence BoxGrinder provides [local file-system delivery and SFTP support](/tutorials/boxgrinder-build-plugins/).  However, BoxGrinder also offers similarly succinct platform conversion and delivery methods for public infrastructure, and as of release 0.9.2 support has been added for [CloudSigma](http://www.cloudsigma.com/), a provider of cloud services throughout Europe.
 
 In this blog-post we demonstrate a basic, but complete, work-flow to specify, build and deliver an appliance to CloudSigma.
 
@@ -50,7 +50,7 @@ The CloudSigma plugin requires [specific configuration information](/tutorials/b
 Only the __endpoint__, __username__, and __password__ are required attributes, BoxGrinder will either use a sensible default, or derive a value where appropriate.
 
 ## BoxGrinder Build, Make it So!
-There is now sufficient information available to build, convert and deliver an appliance to CloudSigma. We now simply need to execute BoxGrinder Build with the CloudSigma delivery flag on the command line as _root_, and the hard work will be performed for us.
+There is now sufficient information available to build, convert and deliver an appliance to CloudSigma. We now simply execute BoxGrinder Build with the CloudSigma delivery flag on the command line as _root_, and the hard work will be performed for us.
 
     boxgrinder-build sigma-jeos.appl -d elastichosts
 
