@@ -38,14 +38,14 @@ The CloudSigma plugin requires [specific configuration information](/tutorials/b
       elastichosts:
         endpoint: api.cloudsigma.com                      # required
         username: your@registered-email-address.com       # required
-	password: whisper                                 # required
+        password: whisper                                 # required
         chunk: 128                                        # default: 64 (in MB)
         start_part: 0                                     # default: 0
         wait: 5                                           # default: 5 (in s)
-        retry: 2                                          # default: 3
+        retry: 5                                          # default: 3
         ssl: true                                         # default: false
-        drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4  # optional
-        drive_name: f15-test-drive                        # optional
+        #drive_uuid:                                      # optional
+        #drive_name:                                      # optional
 	
 Only the __endpoint__, __username__, and __password__ are required attributes, BoxGrinder will either use a sensible default, or derive a value where appropriate.
 
@@ -65,6 +65,8 @@ BoxGrinder will inform you of the __Server UUID__ and __Drive UUID__ for your ap
 
 ### Lift-Off  
 You can launch either via CloudSigma's API tools using the UUIDs, or the Web UI, where you should be able to see your newly uploaded appliance under __My Servers__ and __My Drives__.  After launching an instance, you can connect via SSH, with the __root__ user account and password set in the appliance definition; __boxgrinder-rocks__. 
+
+![image](/images/screenshots/boxgrinder-sigma-ui.png "CloudSigma UI")
 
 ## Effortless 
 With these simple steps, BoxGrinder Build has created a virtual appliance from scratch, and delivered it to the CloudSigma cloud.  It is easy to envisage how BoxGrinder Build can be harnessed to bake a range of compact, [specialised appliances](/tutorials/how-to-customize-appliance/) to fulfil the roles you require in your deployed applications.
