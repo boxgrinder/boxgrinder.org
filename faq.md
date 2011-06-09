@@ -11,7 +11,7 @@ title: FAQ
 
 ## What operating systems are supported by BoxGrinder Build?
 
-See operating system plugins section on the [plugins page](/tutorials/boxgrinder-build-plugins). Bear in mind that building an appliance for a different operating system than you are currently running (eg. building Fedora on CentOS) is **not supported**.
+See operating system plugins section on the [plugins page](/tutorials/boxgrinder-build-plugins). As of release version 0.9.2 BoxGrinder Build supports cross operating system builds, allowing your host to produce an appliance based upon a different OS. For instance, it is possible to build a CentOS appliance using a Fedora host.
 
 ## What is the location of supported Clouds in the world?
 
