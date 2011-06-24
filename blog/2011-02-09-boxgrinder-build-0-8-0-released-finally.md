@@ -65,11 +65,11 @@ If you want register an AMI in us-east-1
 region (which is the default region for BG), please use command
 similar to this one:
 
-    boxgrinder build jeos.appl -p ec2 -d ami --delivery-config bucket:us-east-1    
+    boxgrinder build jeos.appl -p ec2 -d ami --delivery-config region:us-east-1    
 
 To deliver the same appliance to EU bucket:
 
-    boxgrinder build jeos.appl -p ec2 -d ami --delivery-config bucket:eu-west-1
+    boxgrinder build jeos.appl -p ec2 -d ami --delivery-config region:eu-west-1 
 
 ## Snapshot support for EC2 appliances
 
