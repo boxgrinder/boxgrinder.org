@@ -1,0 +1,16 @@
+---
+layout: default
+title: Chat
+---
+
+#left-column
+  - unless page.hide_title
+    %h1.pagetitle #{page.title}
+    :markdown
+      For your convenience we expose the freenode IRC webchat for you, so you can join our IRC channel any time you want without even having an IRC client installed on your system.
+
+      <iframe src="http://webchat.freenode.net?channels=boxgrinder" width="100%" height="500"></iframe>
+#right-column
+  = partial( 'latest_tweets.html.haml' )
+
+
