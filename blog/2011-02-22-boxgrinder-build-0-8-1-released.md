@@ -6,6 +6,8 @@ version: 0.8.1
 tags: [ boxgrinder_build ]
 ---
 
+> Update: With BoxGrinder 0.9.x the invocation has been changed, please refer to current [usage instructions](/tutorials/boxgrinder-build-usage-instructions/).
+
 I'm happy to announce **BoxGrinder Build 0.8.1**. This is a bugfix release. Please refer to the
 [Release Notes][release_notes] below for a full list of bugfixes.
 

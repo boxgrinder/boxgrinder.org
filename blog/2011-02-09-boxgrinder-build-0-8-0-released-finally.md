@@ -6,6 +6,8 @@ version: 0.8.0
 tags: [ boxgrinder_build, fedora ]
 ---
 
+> Update: With BoxGrinder 0.9.x the invocation has been changed, please refer to current [usage instructions](/tutorials/boxgrinder-build-usage-instructions/).
+
 I'm
 really happy to announce immediate availability of
 **BoxGrinder Build 0.8.0**! This is the next major release with
