@@ -6,7 +6,7 @@ timestamp: 2011-06-14t21:30:00.10+02:00
 tags: [ boxgrinder_build, future ]                                                                                                                                  
 ---
 
-We decided to create a mailing list for BoxGrinder development purposes. This will help us inform you about what we're currently working on, and what are our plans for the future. More importantly - this will be the place where **YOU can influence BoxGrinder development with new ideas or comments** regarding our current work.
+We decided to create a mailing list for BoxGrinder development purposes. This will help us inform you about what we're currently working on, and what our plans are for the future. More importantly - this will be the place where **YOU can influence BoxGrinder development with new ideas or comments** regarding our current work.
 
 # Join us!
 
