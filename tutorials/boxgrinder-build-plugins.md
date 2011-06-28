@@ -39,6 +39,7 @@ A delivery plugin moves the deliverables from a platfrorm or operating system pl
 * [SFTP plugin][sftp]
 * [S3 plugin][s3]
 * [EBS Plugin][ebs]
+* [ElasticHosts plugin][elastichosts]
 
 # Plugin configuration
 
@@ -391,6 +392,8 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
         cert_file: /home/a/cert-ABCD.pem                  # required only for ami type
         key_file: /home/a/pk-ABCD.pem                     # required only for ami type
         host: http://host:8773/services/Walrus            # default: http://s3.amazonaws.com; host used to upload AMI
+        snapshot: true                                    # default: false
+        overwrite: false                                  # default: false
 
 #### S3 Delivery Plugin Examples
 
@@ -405,10 +408,18 @@ Packaged VirtualBox appliance delivered to CloudFront server:
 Packaged VirtualBox appliance delivered to S3 bucket:
 
     boxgrinder-build jeos.appl -p virtualbox -d s3
+    
+Use overwrite to delete the existing resource with the same name.  This works with AMI, S3 and EBS.
 
+    boxgrinder-build jeos.appl -d ec2 --delivery-config overwrite:true
 
+You can use overwrite with snapshot, this will overwrite only the _last_ snapshot delivered
 
+    boxgrinder-build jeos.appl -p ec2 -d s3 --delivery-config snapshot:true,overwrite:true
 
+If you enable snapshotted delivery, each version delivered version will have an incremented snapshot number to guarantee naming uniqueness.
+
+    boxgrinder-build jeos.appl -p ec2 -d ami --delivery-config snapshot:true
 
 
 
@@ -444,8 +455,11 @@ This plugin delivers appliance as EBS-based AMI to AWS.
         secret_access_key: AWS_SECRET_ACCESS_KEY          # required
         account_number: AWS_ACCOUNT_NUMBER                # required
         delete_on_termination: false                      # default: true
-
-> Note: The delete_on_termination flag is used to specify if the root volume should be deleted after the instance is terminated.
+        snapshot: true                                    # default: false
+        overwrite: false                                  # default: false
+        preserve_snapshots: false                         # default: false
+	
+> Note: The delete\_on\_termination flag is used to specify if the root volume should be deleted after the instance is terminated.
 
 #### EBS Delivery Plugin Examples
 
@@ -453,8 +467,9 @@ EBS-based AMI for `jeos.appl`:
 
     boxgrinder-build jeos.appl -p ec2 -d ebs
 
+Overwrite any previous EBS backed AMI with the same name, version and release as specified in `jeos.appl`, but preserve any snapshot associated with the previous build.
 
-
+    boxgrinder-build jeos.appl -p ec2 -d ebs --delivery-config overwrite:true,preserve_snapshots:true
 
 
 
@@ -530,3 +545,4 @@ Use an already existing disk:
 [sftp]: #SFTP_Delivery_Plugin
 [s3]: #S3_Delivery_Plugin
 [ebs]: #EBS_Delivery_Plugin
+[elastichosts]: #ElasticHosts_Delivery_Plugin
