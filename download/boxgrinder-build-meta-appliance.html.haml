@@ -11,16 +11,18 @@ title: BoxGrinder Build Meta appliance download
 :markdown
   This is the latest and greatest meta appliance. It's based on **#{latest_meta_appliance.os.name} #{latest_meta_appliance.os.version}** operating system.
 
+  > If you find any issues with meta appliances - [let us know](/community)!
+
 %h2 Amazon EC2 AMI's
 
 - latest_meta_appliance.amis.regions.each do |region, amis|
   %h3 #{region} region, #{latest_meta_appliance.amis.backend} based
   %ul
-  - amis.each do |arch, ami|
-    %li
-      %strong
-        #{arch}
-      #{ami}
+    - amis.each do |arch, ami|
+      %li
+        %strong
+          #{arch}
+        #{ami}
 
 %h2 Offline appliances
 %ul
@@ -66,31 +68,41 @@ title: BoxGrinder Build Meta appliance download
 
 %h1 Meta appliance archive
 :markdown
-  Below you can find archived meta appliances. We *strongly encourage you* to use latest, #{latest_meta_appliance.version} meta appliance.
+  > We *strongly encourage you* to use latest, #{latest_meta_appliance.version} meta appliances. Use older appliances only in case of emergency :)
 
-- meta_appliances[1..meta_appliances.size] .each do |appliance|
-  %h3 Meta appliance #{appliance.version}
-  :markdown
-    This meta appliance is based on **#{appliance.os.name} #{appliance.os.version}** operating system.
+%p
+  %a{:id => 'archivetoggle', :href => '#'}
+    Show/hide archived meta appliances
 
-  %h4 Amazon EC2 AMI's
+%div{:id => 'archive', :style => 'display:none'}
+  - meta_appliances[1..meta_appliances.size] .each do |appliance|
+    %h3 Meta appliance #{appliance.version}
+    :markdown
+      This meta appliance is based on **#{appliance.os.name} #{appliance.os.version}** operating system.
 
-  - appliance.amis.regions.each do |region, amis|
-    %h5 #{region} region, #{appliance.amis.backend} based
+    %h4 Amazon EC2 AMI's
+
+    - appliance.amis.regions.each do |region, amis|
+      %h5 #{region} region, #{appliance.amis.backend} based
+      %ul
+        - amis.each do |arch, ami|
+          %li
+            %strong
+              #{arch}
+            #{ami}
+
+    %h4 Offline appliances
     %ul
-      - amis.each do |arch, ami|
-        %li
-          %strong
-            #{arch}
-          #{ami}
+      - appliance.links.each_key do |platform|
+        - appliance.links[platform].each_key do |arch|
+          %li
+            %a{:href => "#{appliance.links[platform][arch][:url]}"}
+              #{platform} #{arch} appliance
+            [#{appliance.links[platform][arch][:size]} MB]
 
-  %h4 Offline appliances
-  %ul
-    - appliance.links.each_key do |platform|
-      - appliance.links[platform].each_key do |arch|
-        %li
-          %a{:href => "#{appliance.links[platform][arch][:url]}"}
-            #{platform} #{arch} appliance
-          [#{appliance.links[platform][arch][:size]} MB]
+:javascript
 
-
+  $('#archivetoggle').click(function() {
+    $('#archive').slideToggle('slow');
+    return false;
+  });
