@@ -133,7 +133,7 @@ For example if you want to know what OS the appliance should have, use @applianc
 
 If your plugin needs some special configuration (for example login and passwords to some services) you can read them from plugin configuration. Every plugin can have a configuration in YAML format stored in BoxGrinder config file. The configuration will be accessible later via `@plugin_config` object.
 
-The configuration is stored by default in `#{ENV['HOME']}/.boxgrinder/config` file.
+The configuration is stored by default in `\#{ENV['HOME']}/.boxgrinder/config` file.
 
 For example, if you have a file in `~/.boxgrinder/config` with content like this:
 
