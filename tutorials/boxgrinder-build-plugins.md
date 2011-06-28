@@ -54,6 +54,12 @@ If a plugin configuration is needed, please place it it BoxGrinder configuration
       local:
         path: /mnt/builds
 
+Contrast this with the command-line version of the same configuration, noting that we must indicate which stage in the build pipeline our configuration options belong to:
+
+    boxgrinder-build jeos.appl -p vmware -d local --platform-config type:personal,thin_disk:true --delivery-config path:/mnt/builds
+    
+> Settings within the config file are merged with any arguments provided on the command-line.  Command-line arguments take precedence over conflicting conf file options.     
+
 # Plugins
 
 ## Operating system plugins
@@ -156,8 +162,6 @@ This plugin creates base disk image with RHEL operating system installed.
 #### RHEL Operating System Plugin Usage
 
     boxgrinder-build rhel-6.appl
-
-
 
 
 
