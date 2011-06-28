@@ -3,7 +3,7 @@ title: "BoxGrinder Build 0.9.3 released"
 author: 'Marc Savy'
 layout: blog
 version: 0.9.3
-timestamp: 2011-06-28t18:00:00.10+01:00
+timestamp: 2011-06-28t19:41:00.10+01:00
 tags: [ boxgrinder_build, meta_appliance ]
 ---
 
