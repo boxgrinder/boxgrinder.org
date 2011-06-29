@@ -13,17 +13,13 @@ layout: one-column
 
 ## Install BoxGrinder Build
 
-### Fedora 13+, RHEL/CentOS
+### Fedora 13+
 
 The easiest way to obtain BoxGrinder Build is to simply add BoxGrinder repo to your environment and use yum.
 
 > Note that admin rights might be required to run this command.
 
     yum install rubygem-boxgrinder-build
-
-### Other systems
-
-    gem install boxgrinder-build
 
 ## Finished!
 

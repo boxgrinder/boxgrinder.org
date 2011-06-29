@@ -17,24 +17,12 @@ These packages *may be not 100% stable*.
 
 Below you can find instruction on how to enable these repositories in YUM.
 
-### BoxGrinder Build stable repository
-
-#### Fedora
+### BoxGrinder Build Fedora stable repository
 
     curl http://boxgrinder.org/files/yum/boxgrinder-fedora.repo > /etc/yum.repos.d/boxgrinder.repo
 
-#### RHEL/CentOS
-
-    curl http://boxgrinder.org/files/yum/boxgrinder-rhel.repo > /etc/yum.repos.d/boxgrinder.repo
-
-### BoxGrinder Build nightly repository
-
-#### Fedora
+### BoxGrinder Build Fedora nightly repository
 
     curl http://boxgrinder.org/files/yum/boxgrinder-fedora-nightly.repo > /etc/yum.repos.d/boxgrinder-nightly.repo
-
-#### RHEL/CentOS
-
-    curl http://boxgrinder.org/files/yum/boxgrinder-rhel-nightly.repo > /etc/yum.repos.d/boxgrinder-nightly.repo
 
 [ci]: http://ci.boxgrinder.org/project.html?projectId=project2&tab=projectOverview&guest=1
