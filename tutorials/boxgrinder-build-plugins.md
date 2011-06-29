@@ -22,6 +22,7 @@ The goal of this kind of plugin is to create a base image for the selected opera
 * [Fedora plugin][fedora]
 * [CentOS plugin][centos]
 * [RHEL plugin][rhel]
+* [Scientific Linux plugin][sl]
 
 ## Platform plugins
 
@@ -162,6 +163,40 @@ This plugin creates base disk image with RHEL operating system installed.
 #### RHEL Operating System Plugin Usage
 
     boxgrinder-build rhel-6.appl
+
+
+
+
+
+### Scientific Linux Operating System Plugin
+
+***
+
+This plugin creates base disk image with Scientific Linux operating system installed.
+
+#### Scientific Linux Operating System Plugin Configuration
+
+    plugins:
+      sl:
+        format: qcow2      # Disk format to use. Default: raw.
+
+#### Scientific Linux Operating System Plugin Examples
+
+`sl-6.appl`:
+
+    name: sl-6
+    os:
+      name: sl
+      version: 6
+
+    [...]
+
+#### Scientific Linux Operating System Plugin Usage
+
+    boxgrinder-build rhel-6.appl
+
+
+
 
 
 
@@ -540,6 +575,7 @@ Use an already existing disk:
 [fedora]: #Fedora_Operating_System_Plugin
 [centos]: #CentOS_Operating_System_Plugin
 [rhel]: #RHEL_Operating_System_Plugin
+[sl]: #Scientific_Linux_Operating_System_Plugin
 
 [vmware]: #VMware_Platform_Plugin
 [virtualbox]: #VirtualBox_Platform_Plugin
