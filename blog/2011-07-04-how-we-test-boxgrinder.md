@@ -10,7 +10,7 @@ In this post I would like to highight our efforts to make BoxGrinder stable. It'
 
 # Unit tests
 
-Our first line of defense are unit tests. Because BoxGrinder is written in Ruby we use lovely [RSpec](http://rspec.info/) library to write our *[specs](https://github.com/boxgrinder/boxgrinder-build/tree/master/spec)*. RSpec provides a nice looking and flexible DSL for writing unit test.
+Our first line of defense are unit tests. Because BoxGrinder is written in Ruby we use the lovely [RSpec](http://rspec.info/) library to write our *[specs](https://github.com/boxgrinder/boxgrinder-build/tree/master/spec)*. RSpec provides a nice looking and flexible DSL for writing unit tests.
 
 Consider following code:
 
@@ -29,33 +29,33 @@ Currently we have over 270 tests (**[>83% C0 code coverage](http://ci.boxgrinder
 
 ![TeamCity](/images/screenshots/teamcity.png "TeamCity CI")
 
-As we have an [Continuous Integration](http://ci.boxgrinder.org/project.html?projectId=project2&tab=projectOverview&guest=1) server - we build our unit test for every commit and developers are automatically notified in case of failures. This triggers immediate developer response. Most of our failed unit tests are issues with forgetting something to commit or similar. So, not so bad.
+As we have a [Continuous Integration](http://ci.boxgrinder.org/project.html?projectId=project2&tab=projectOverview&guest=1) server - we build our unit tests for every commit and developers are automatically notified in case of failures, triggering an immediate developer response. Most of our failed unit tests are issues with forgetting to commit something, or similar. So, not too bad.
 
 # Integration tests
 
-This is pretty new for us. How to do integration testing for an appliance builder? Well, we **can build** appliances! But how to make them easy to write (and maintain)? This is another story. Thankfully BoxGrinder Build has one great feature - **you can use BoxGrinder as a library in your Ruby scripts**. You don't need to use command line to run the builds. We [described the feature in details earlier](/blog/2011/01/26/boxgrinder-build-0-8-0-features-using-boxgrinder-as-a-library/).
+This is pretty new for us. How to do integration testing for an appliance builder? Well, we **can build** appliances! But how do we make them easy to write (and maintain)? This is another story. Thankfully BoxGrinder Build has a great feature - **you can use BoxGrinder as a library in your Ruby scripts**. You don't need to use the command line to run the builds. We [described the feature in detail earlier](/blog/2011/01/26/boxgrinder-build-0-8-0-features-using-boxgrinder-as-a-library/).
 
 We prepared some [test appliance definitions](https://github.com/boxgrinder/boxgrinder-build/tree/master/integ/appliances).
 
-At this time we have JEOS appliances for Fedora 15 and CentOS 5. Additionaly we have a full modular appliance definitions where we have split the [appliance definition sections](/tutorials/appliance-definition/) into files and include them next. This gives us the chance to test all section plus inclusion and override functionality.
+At this time we have JEOS appliances for Fedora 15 and CentOS 5. Additionally we have a full modular appliance definitions where we have split the [appliance definition sections](/tutorials/appliance-definition/) into files and include them next. This gives us the chance to test all section plus inclusion and override functionality.
 
 ## Integration tests execution process
 
-We cannot just *execute* the tests. This a process. And yes - we use Cloud ([AWS](http://aws.amazon.com/) in our case). Let's take a look at all stages.
+We cannot just *execute* the tests. There a process. And yes - we use the Cloud ([AWS](http://aws.amazon.com/) in our case). Let's take a look at all stages.
 
-### 1. Build RPM's
+### 1. Build RPMs
 
-Each day we create RPM's for our gems - these are our nightly builds which are [accessible also using YUM](/tutorials/boxgrinder-rpm-repositories/). We will use them later.
+Each day we create RPM's for our gems - these are our nightly builds which are also [accessible using YUM](/tutorials/boxgrinder-rpm-repositories/). We will use them later.
 
 ### 2. Start new EC2 build instance
 
 After the RPMs are created we start a new instance on EC2. This is a feature of our continuous integration system - [TeamCity](http://www.jetbrains.com/teamcity/). If you haven't looked at TeamCity so far - I strongly recommend it. It is very powerful, looks great and it's free!
 
-But back to our instance. After the instance is launched - and agent installed on the instance connects to our CI server. Now we have an additional build machine in the Cloud we can use.
+But back to our instance. After the instance is launched, and the agent installed on the instance connects to our CI server, an additional build machine in the Cloud becomes available for use.
 
 ### 3. Prepare instance
 
-But before the build can be triggered we need to prepare the instance. We need to install BoxGrinder Build - we use of course nightly builds created for us just a few minutes ago. Additionally we create BoxGrinder configuration file with required data.
+Before the build can be triggered we need to prepare the instance. We need to install BoxGrinder Build using, of course, the nightly builds created for us just a few minutes ago. Additionally we create a BoxGrinder configuration file with the required data.
 
 Now we have launched and configured instance, let's start the tests!
 
@@ -67,7 +67,7 @@ This is the most important step - the agent installed on the instance pulls the 
       @appliance = Appliance.new("#{File.dirname(__FILE__)}/../appliances/jeos-fedora.appl", @config, :log => @log).create
     end
 
-Isn't neat? We have set also some callbacks to make sure the deliverables were created:
+Isn't it neat? We have also set some callbacks to make sure the deliverables were created:
 
     after(:each) do
       @appliance.plugin_chain.last[:plugin].deliverables.each_value do |file|
@@ -89,7 +89,7 @@ If you're not familiar with libguestfs - it's a tool for offline image launching
 
 It uses [qemu](http://qemu.org/) to start a custom, minimalistic OS (supermin appliance). This makes it very fast to boot, on my machine it's less than 5 seconds. You can mount disk images in various formats: vmdk, raw, qcow, even ISOs... Mounted disks are available to you - you can decide whether mount them in read-only fashion or make them fully writable.
 
-[Libguestfs exposes a lot of API calls](http://libguestfs.org/guestfs.3.html#api_calls) which make it possible to check or modify your appliance. In BoxGrinder we use only a fraction of them, but even this small set makes us happy libguestfs users!
+[Libguestfs exposes a lot of API calls](http://libguestfs.org/guestfs.3.html#api_calls) that make it possible to check or modify your appliance. In BoxGrinder we use only a fraction of them, but even this small set makes us happy libguestfs users!
 
 Libguestfs comes with a handy tool called guestfish which is a command line interface to libguestfs. This makes is super easy to debug your appliances and we use it a lot when developing BoxGrinder.
 
@@ -136,13 +136,13 @@ Libguestfs comes with a handy tool called guestfish which is a command line inte
     
     ><fs> 
 
-And, what is most important for us, **libguestfs is rock solid**. Go, try it - it's already in Fedora and RHEL!
+And, most importantantly for us, **libguestfs is rock solid**. Go, try it - it's already in Fedora and RHEL!
 
 ### Integration tests and libguestfs
 
-But how we can use libguestfs in our integrtaion tests? So far we only tested for deliverable existence what can only prove that something was created. But there are still some open questions. Is the artifact really readable? Does it contain data we wanted? **Here comes libguestfs to the rescue**.
+But how we can use libguestfs in our integration tests? So far we only tested for deliverable existence, which can only prove that something was created. But there are still some open questions. Is the artifact really readable? Does it contain data we wanted? **Here libguestfs comes to the rescue**.
 
-After build we launch libguestfs add the disk images and make sure everything is in place. Please take a look at this example test:
+After building we launch libguestfs, add the disk images and make sure everything is in place. Take a look at this example test:
 
     it "should build modular appliance based on Fedora and convert it to VirtualBox" do
       @config.merge!(:platform => :virtualbox)
@@ -156,13 +156,13 @@ After build we launch libguestfs add the disk images and make sure everything is
       end
     end
 
-Above code **is an real test**. It'll create the appliance, convert it to virtualbox format and then make sure that the files which should be created exists. Not bad for 10 lines of code, huh?
+The above code **is a real test**. It'll create the appliance, convert it to virtualbox format and then make sure that the files that should be created exist. Not bad for 10 lines of code, huh?
 
 ## Future directions
 
-Testing offline appliances makes a lot of sense - we make sure the image is valid. But does the upload process work as expected? Does the image boot correctly on the destination platform, especially on EC2? This is the next step we want to investigate.
+Testing offline appliances makes a lot of sense - we want to make sure the image is valid. But does the upload process work as expected? Does the image boot correctly on the destination platform, especially on EC2? This is the next step we want to investigate.
 
-To the 5 steps described above we'll add a new one - uploading, launching the appliance and testing on a real instance. This could look similar to this (not a working code):
+We'll introduce a new step in addition to the 5 described above: uploading, launching the appliance and testing on a real instance. It could look similar to this (not working code):
 
     it "should build Fedora JEOS" do
       @config.merge!(:platform => :ec2, :delivery => :ebs)
@@ -181,10 +181,10 @@ To the 5 steps described above we'll add a new one - uploading, launching the ap
       @ec2.terminate_instance(:instance_id => instance.instanceId)
     end
 
-This almost-working ruby code shows how easy we can extend our integration tests to run the tests on the right platform.
+This almost-working ruby code shows how easily we can extend our integration tests to run the tests on the right platform.
 
-Idea for above code is to create an appliance, convert it to EC2 format, upload to EC2 and launch. After the instance becomes available - we'll connect to it using SSH, check if the mysql daemon is really running. Instance is terminated afterwards.
+The idea of the above code is to create an appliance, convert it to EC2 format, upload to EC2 and launch. After the instance becomes available we'll connect to it using SSH, and check if the mysql daemon is really running. The instance is terminated afterwards.
 
-We'll work on making this as clean as possbile abstracting the interaction with EC2 even more.
+We'll work on making this as clean as possible, abstracting the interactions with EC2 even more.
 
 If you have any comments or ideas. Feel free to leave a note.
