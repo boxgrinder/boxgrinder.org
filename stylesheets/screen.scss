@@ -421,30 +421,30 @@ em {
     font-size: 0.9em;
 }
 
-ul#menu {
+ul#menu_ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-ul#menu>li {
+
+ul#menu_ul>li {
         float: left;
         padding-right: 10px;
-    };
+    }
 
-
-ul#menu >li> a {
+ul#menu_ul >li> a {
     text-decoration: none;
     color: #fff;
 }
 
-ul#menu >li> a:hover {
+ul#menu_ul >li> a:hover {
         text-decoration: underline;
-    }
+}
 
-        img#jbosscommunity-logo, img#projectodd-logo {
-          width: 150px;
-        }
+img#jbosscommunity-logo, img#projectodd-logo {
+  width: 150px;
+}
 
 
 
