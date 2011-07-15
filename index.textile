@@ -33,7 +33,8 @@ packages:
 # *Run BoxGrinder* - BoxGrinder will download all the necessary artifacts, build the instance, convert it to the selected platform and upload it to the selected destination. *All in one process!*
 <pre style="margin-top: 1em;"><code>boxgrinder-build jeos-postgresql.appl -p vmware -d local</code></pre>
 
-That's all!
+<p>That's all!</p>
+
 
 h1. Learn more
 
