@@ -28,6 +28,14 @@ This is a name for your appliance. It must be unique in all of your appliances.
 
 A small (one sentence or such) summary of the appliance; purpose, goals, etc.
 
+## version
+
+An integer representing the appliance version.
+
+## release
+
+An integer representing the appliance release.  Version and release are used when generating unique names for deliverables.
+
 ## appliances
 
 The appliances section is designed to reuse appliances in new definitions. For example, you can create a template for your appliances, and then create a new specialized definition with your appliance template as a dependency; it'll automatically be merged into one behind the scenes.
@@ -47,7 +55,7 @@ Example packages section:
 
     packages:
       - httpd
-      - mc
+      - mc      
 
 ## repos
 
@@ -63,6 +71,10 @@ There are two types of link:
 Notice that you can use `#BASE_ARCH#` tag to substitute architecture for the current building architecture, eg. if the appliance will be built on a 64 bit platform, x86_64 will be injected. In the other case i386 will be injected.
 
 Read more about [available parameters here](/tutorials/appliance-definition-parameters/).
+
+## default_repos
+
+A boolean to indicate whether the OSes default repositories should be loaded.  If you disable this, you must provide alternatives else it will be impossible to successfully complete a build.  This is useful for those that wish to use a local mirror rather than the remote defaults.
 
 ### Ephemeral repositories
 
@@ -204,6 +216,7 @@ Example post section with one command executed for the base image and one comman
     packages:
       - httpd
       - mc
+    default_repos: true # default is true
     repos:
       - name: "other-repo"
         baseurl: "http://repo.yoursite.com/fedora/14/#BASE_ARCH#"
