@@ -430,8 +430,8 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
         path: /images                                     # default: /
         cert_file: /home/a/cert-ABCD.pem                  # required only for ami type
         key_file: /home/a/pk-ABCD.pem                     # required only for ami type
-	region: us-east-1                                 # amazon region to upload and register amis in; default: us-east-1
-	snapshot: true                                    # default: false
+        region: us-east-1                                 # amazon region to upload and register amis in; default: us-east-1
+        snapshot: true                                    # default: false
         overwrite: false                                  # default: false
 
 #### S3 Delivery Plugin Examples
