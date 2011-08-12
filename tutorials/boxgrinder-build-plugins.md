@@ -430,8 +430,8 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
         path: /images                                     # default: /
         cert_file: /home/a/cert-ABCD.pem                  # required only for ami type
         key_file: /home/a/pk-ABCD.pem                     # required only for ami type
-        host: http://host:8773/services/Walrus            # default: http://s3.amazonaws.com; host used to upload AMI
-        snapshot: true                                    # default: false
+	region: us-east-1                                 # amazon region to upload and register amis in; default: us-east-1
+	snapshot: true                                    # default: false
         overwrite: false                                  # default: false
 
 #### S3 Delivery Plugin Examples
@@ -439,6 +439,10 @@ This plugin delivers artifacts to a S3 bucket. The plugin is able to deliver art
 EC2 AMI for `jeos.appl`:
 
     boxgrinder-build jeos.appl -p ec2 -d ami
+    
+EC2 AMI for `jeos.appl` in `ap-southeast-1` [region](http://aws.amazon.com/articles/3912)
+
+    boxgrinder-build jeos.appl -p ec2 -d ami --delivery-config region:ap-southeast-1    
 
 Packaged VirtualBox appliance delivered to CloudFront server:
 

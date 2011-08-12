@@ -15,7 +15,7 @@ layout: one-column
 
 # 3. Build your first appliance
 
-[This tutorial][build] walks you through BoxGrinder Build set up process and helps ypu build yur first appliance.
+[This tutorial][build] walks you through BoxGrinder Build set up process and helps you build your first appliance.
 
 [bgbuild]: /build
 
