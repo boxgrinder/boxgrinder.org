@@ -498,11 +498,31 @@ This plugin delivers appliance as EBS-based AMI to AWS.
         secret_access_key: AWS_SECRET_ACCESS_KEY          # required
         account_number: AWS_ACCOUNT_NUMBER                # required
         delete_on_termination: false                      # default: true
+        availability_zone:                                # default: current availability zone
         snapshot: true                                    # default: false
         overwrite: false                                  # default: false
+        terminate_instances: false                        # default: false 
         preserve_snapshots: false                         # default: false
 	
+	
 > Note: The delete\_on\_termination flag is used to specify if the root volume should be deleted after the instance is terminated.
+
+#### Region and Availability Zone
+The plugin will automatically detect which region you are in, you do not need to provide it manually.  In fact, is not technically possible to deliver an EBS AMI to any other region than that which it is being built in.
+
+You can, however, specify an [availability zone](http://aws.amazon.com/articles/3912) if you wish. 
+
+
+#### EBS overwrite behaviour
+
+1.  Live instances of the EBS AMI to be overwritten are discovered. By default, if any are returned, an error will be raised advising you to preserve any instance data then terminate the instances. You can set *terminate_instances: true* in your EBS config to instruct the EBS plug-in to terminate these instances on your behalf. Remember that terminating an instance will delete any attached EBS volumes. If you desire to preserve a particular EBS volume
+before overwriting, just detach it.
+
+2. The AMI is de-registered. This enables the name to be reused.
+
+3. The snapshot used to initialise all instances of the EBS AMI is located. By default this is then deleted, but you can set *preserve_snapshots: true* in your EBS config if you have some reason to retain it.
+
+At the end of this process the original EBS AMI should be gone - with some components still surviving for you to dissect depending on your config. A new version of EBS AMI with an identical name is then built and registered as usual. 
 
 #### EBS Delivery Plugin Examples
 
@@ -510,10 +530,17 @@ EBS-based AMI for `jeos.appl`:
 
     boxgrinder-build jeos.appl -p ec2 -d ebs
 
-Overwrite any previous EBS backed AMI with the same name, version and release as specified in `jeos.appl`, but preserve any snapshot associated with the previous build.
+This will destroy the existing `jeos.appl` EBS AMI of the same version and release. If *any instances are still running, the process will halt* before any destructive actions occur:
+
+    boxgrinder-build jeos.appl -p ec2 -d ebs --delivery-config overwrite:true
+
+This will destroy the existing `jeos.appl` EBS AMI of the same version and release, but *any running instances of my.appl will be terminated*:
+
+    boxgrinder-build my.appl -p ec2 -d ebs --delivery-config overwrite:true,destroy_instances:true
+
+Overwrite any previous EBS AMI of the same name, version and release as specified in `jeos.appl`, but *preserve any snapshot* associated with the previous build:
 
     boxgrinder-build jeos.appl -p ec2 -d ebs --delivery-config overwrite:true,preserve_snapshots:true
-
 
 
 ### ElasticHosts Delivery Plugin
