@@ -193,7 +193,7 @@ This plugin creates base disk image with Scientific Linux operating system insta
 
 #### Scientific Linux Operating System Plugin Usage
 
-    boxgrinder-build rhel-6.appl
+    boxgrinder-build sl-6.appl
 
 
 
@@ -210,10 +210,10 @@ This plugin creates base disk image with Scientific Linux operating system insta
 
 ***
 
-This plugin creates disk image and descriptors consumable by VMware virtualization software. There are two types of disk and virtual machine descriptors created:
+This plugin creates disk image and descriptors consumable by VMware virtualization software. There are two types of disk and virtual machine descriptors:
 
-1. personal,
-2. enterprise.
+1. personal
+2. enterprise
 
 Personal is meant to use with VMware Fusion, Player, Workstation. Enterprise should be used with VMware vSphere, ESX/i.
 
@@ -515,7 +515,7 @@ You can, however, specify an [availability zone](http://aws.amazon.com/articles/
 
 #### EBS overwrite behaviour
 
-1.  Live instances of the EBS AMI to be overwritten are discovered. By default, if any are returned, an error will be raised advising you to preserve any instance data then terminate the instances. You can set *terminate_instances: true* in your EBS config to instruct the EBS plug-in to terminate these instances on your behalf. Remember that terminating an instance will delete any attached EBS volumes. If you desire to preserve a particular EBS volume
+1.  Live instances of the EBS AMI to be overwritten are discovered. By default, if any are returned, an error will be raised advising you to preserve any instance data then terminate the instances. You can set *terminate_instances: true* in your EBS config to instruct the EBS plug-in to terminate these instances on your behalf. Remember that terminating an instance will delete any attached EBS volumes<sup>[1]</sup>. If you desire to preserve a particular EBS volume
 before overwriting, just detach it.
 
 2. The AMI is de-registered. This enables the name to be reused.
@@ -523,6 +523,8 @@ before overwriting, just detach it.
 3. The snapshot used to initialise all instances of the EBS AMI is located. By default this is then deleted, but you can set *preserve_snapshots: true* in your EBS config if you have some reason to retain it.
 
 At the end of this process the original EBS AMI should be gone - with some components still surviving for you to dissect depending on your config. A new version of EBS AMI with an identical name is then built and registered as usual. 
+
+[1] Unless you set _delete_on_termination:false_ for the appliance root, or any other EBS devices that you may have attached, in which case they will become orphaned. 
 
 #### EBS Delivery Plugin Examples
 
@@ -573,12 +575,12 @@ All operating systems are supported.
         wait: 30                                          # default: 5 (in s)
         retry: 2                                          # default: 3
         ssl: true                                         # default: false
-        drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4
-        drive_name: my-bg-drive
+        drive_uuid: b161fd8b-d56s-4eea-9055-669daaec8aa4  # optional
+        drive_name: my-bg-drive                           # optional
 
-> Note: `username` parameter is in most cases called *User UUID* wheras `password` is in most cases *Secret API Key*. For CloudSigma you need to specify your e-mail address and password instead of UUID/key combination.
+> Note: `username` parameter is often referred to as  *User UUID*, wheras `password` is usually *Secret API Key*. For CloudSigma specify your e-mail address and password instead of UUID/key combination.
 
-The appliance is **uploaded in chunks**. By default we set the chunk size to 64 MB; you are free to change this setting `chunk` property.
+The appliance is **uploaded in chunks**. By default we set the chunk size to 64 MB; you can change this setting with the `chunk` property.
 
 If the plugin encounters any errors while uploading the image it retries the operation up to **three times** (set the `retry` property to adjust, set 0 to disable) starting with the failed chunk. You can use the `wait` property (in seconds) to adjust the time between retries (default: 5). If it still fails you can try to execute the BoxGrinder Build command specifying the chunk to start with using the `start_part` property (default: 0). See examples below.
 
