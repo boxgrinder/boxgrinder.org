@@ -169,6 +169,29 @@ Example os section:
       version: rawhide
       password: fedorarulez
 
+## files
+
+Added in **0.9.6**
+
+This section allows to specify which local or remote files should be installed in appliance.
+
+Example:
+
+    files:
+      "/opt":
+        - "install.sh"
+        - "http://somehost.com/repos/a_file.zip"
+
+Files section is executed **before** post section. This allows you to execute some scripts copied to the appliance.
+
+You can specify both relative (to the application definition file) and absolute paths. **We strongly advise to use relative paths** which makes your appliance definition more portable. If you use absolute path - the whole path will be included in appliance. To make it more clear if you specify `files` section like this:
+
+    files:
+      "/opt":
+        - "/tmp/dir/file.txt"
+
+BoxGrinder will place `file.txt` in `/opt/tmp/dir/` directory located in the appliance. Keep that in mind.
+
 ## post
 
 In this section you can execute commands after the build is finished for the selected appliance format.

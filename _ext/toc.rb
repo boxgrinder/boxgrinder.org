@@ -11,7 +11,7 @@ class TOC
     site.pages.each do |page|
       toc = ""
 
-      if page.is_a?(Awestruct::MarukuFile)
+      if page.is_a?(Awestruct::MarkdownFile)
         toc = parse_markdown_headers(page.raw_page_content)
       elsif page.is_a?(Awestruct::TextileFile)
         toc = parse_textile_headers(page.raw_page_content)
