@@ -44,7 +44,7 @@ For more information about usage please refer to files section documentation.
 
 ## Swap support
 
-We haven't noticed earlier, but if you _really_ want to have swap space on your appliance - just specify another partition with **swap** as the mount point, like this:
+We hadn't noticed earlier, but if you _really_ want to have swap space on your appliance - just specify another partition with **swap** as the mount point, like this:
 
     hardware:
       partitions:
