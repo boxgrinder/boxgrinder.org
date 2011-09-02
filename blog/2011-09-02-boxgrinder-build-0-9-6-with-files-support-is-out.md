@@ -40,7 +40,7 @@ Now this is over! Let me introduce the files section:
 
 This way you have an easy and fast method of including your files into appliances. Feel free to test it and let us know how you like it!
 
-For more information about usage please refer to files section documentation.
+For more information about usage please refer to [files section documentation](/tutorials/appliance-definition/#files).
 
 ## Swap support
 
