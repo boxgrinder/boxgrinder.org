@@ -15,7 +15,7 @@ This release includes mostly bugfixes, but we also have a neat surprise for you,
 
 ## GRUB fixes
 
-We discovered some small issues which could prevent Xen/KVM/VMware appliances which used GRUB Legacy from running. Fixed!
+We discovered some small issues that could prevent Xen/KVM/VMware appliances which used GRUB Legacy from running. Fixed!
 
 ## File section support
 
