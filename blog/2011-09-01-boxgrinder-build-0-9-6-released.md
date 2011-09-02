@@ -9,22 +9,22 @@ tags: [ boxgrinder_build ]
 
 We continue our rapid development and release another minor update to BoxGrinder Build today: **0.9.6**.
 
-This release includes mostly bugfixes, but we have also a neat surprise for you, read on.
+This release includes mostly bugfixes, but we also have a neat surprise for you, read on.
 
 # What's new in 0.9.6?
 
 ## GRUB fixes
 
-We discovered some small issue which could prevent running Xen/KVM/VMware appliances which used GRUB Legacy. Fixed!
+We discovered some small issues which could prevent Xen/KVM/VMware appliances which used GRUB Legacy from running. Fixed!
 
 ## File section support
 
-Many of you requested some easy way of including selected files into appliance, for example scripts. Our answer so far was:
+Many of you requested an easy way of including selected files into appliance, for example scripts. Our answer thusfar was:
 
-1. Add your stuff to post section, or
+1. Add your stuff to the post section, or
 2. Create an RPM (which is fairly simple!) and add it to your packages list.
 
-Now this is over! Let me introduce files section:
+Now this is over! Let me introduce the files section:
 
     name: jeos-f16
     summary: fedora 16
@@ -38,13 +38,13 @@ Now this is over! Let me introduce files section:
       base:
         - "chmod +x /opt/install_script.sh && /opt/install_script.sh"
 
-This way you have an easy and fast way of including your files into appliance. Feel free to test it and let us know how you like it!
+This way you have an easy and fast method of including your files into appliances. Feel free to test it and let us know how you like it!
 
 For more information about usage please refer to files section documentation.
 
 ## Swap support
 
-We haven't noticed it earlier, but if you _really_ want to have swap space on your appliance - just specify another partition with **swap** mount point, like this:
+We haven't noticed earlier, but if you _really_ want to have swap space on your appliance - just specify another partition with **swap** as the mount point, like this:
 
     hardware:
       partitions:
@@ -53,7 +53,7 @@ We haven't noticed it earlier, but if you _really_ want to have swap space on yo
         "swap":
           size: 1
 
-That's all for now. You'll hear more from in the near future, stay tuned :)
+That's all for now. You'll hear more from us in the near future, stay tuned :)
 
 # Release Notes
 
