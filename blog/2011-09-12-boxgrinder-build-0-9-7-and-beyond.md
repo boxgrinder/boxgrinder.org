@@ -15,7 +15,7 @@ This small bugfix release fixes some issues regarding the [newly introduced file
 
 We also discovered a change in systemd in Fedora 16 which prevented from executing our `/etc/rc.local` file which lead to unusable AMIs on AWS. The new systemd doesn't have a symlink from `/etc/rc.d/rc.local` to `/etc/rc.local`. Even more - a new condition was added to check for the executability for this file that doesn't work when the file is a symlink. See [#737047](https://bugzilla.redhat.com/show_bug.cgi?id=737047) for more info.
 
-Due to a one character typo swap partitions didn't work for _some_ installations depending on Ruby and operating system combination. Pardon me.
+Due to a single character typo swap partitions didn't work for _some_ installations depending on Ruby and operating system combination. Pardon me.
 
 This release is immediately available in the updates-testing Fedora repository.
 
