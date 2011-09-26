@@ -21,7 +21,7 @@ To build appliances using BoxGrinder you need Fedora operating system.
 
 # Fedora 13+
 
-> Info: Fedora 13 and 14 doesn't require preparing anything before installing BoxGrinder - use BoxGrinder RPMs - this will pull all required packages.
+> Info: Fedora 13 and later doesn't require preparing anything before installing BoxGrinder - use BoxGrinder RPMs - this will pull all required packages.
 
 Finished!
 
