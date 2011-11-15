@@ -15,7 +15,7 @@ But hey, we found some time to release 0.9.8 :) Although we [planned to make 0.9
 
 As a side effect of fixing appliance-creator - I added the ability to create CentOS 6 appliances. You'll even be able to create CentOS 6 AMIs now! Go, try it and let us know how it went!
 
-## Using root privileges only when necessary
+## Preserving your environment, and limiting time as root
 
 There are some use cases where people get confused about BoxGrinder not using their own environment variables when executing BoxGrinder Build using `sudo`. Thanks to Marc this is now over, yay! Even more - we'll make sure that the created artifacts have the expected owner, and drop down from root user to standard user (where applicable) as soon as possible.  This change also ensures that the user's agents such as `ssh-agent` are available to BoxGrinder, for instance for the SSH plugin or the upcoming libVirt plugin will seamlessly use your `ssh-agent` when required. Small things, but makes life easier.
 
