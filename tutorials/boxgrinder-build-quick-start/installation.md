@@ -15,7 +15,7 @@ layout: one-column
 
 ### Fedora 13+
 
-The easiest way to obtain BoxGrinder Build is to simply add BoxGrinder repo to your environment and use yum.
+Just use `yum`!
 
 > Note that admin rights might be required to run this command.
 

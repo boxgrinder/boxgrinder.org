@@ -3,7 +3,7 @@ title: "BoxGrinder Build 0.9.7 and beyond"
 author: 'Marek Goldmann'
 layout: blog
 version: 0.9.7
-timestamp: 2011-09-12t11:35:00.10+02:00
+timestamp: 2011-09-12t12:30:00.10+02:00
 tags: [ boxgrinder_build ]
 ---
 
