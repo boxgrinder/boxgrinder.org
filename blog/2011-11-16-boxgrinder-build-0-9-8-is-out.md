@@ -3,7 +3,7 @@ title: "BoxGrinder Build 0.9.8 is out"
 author: 'Marek Goldmann'
 layout: blog
 version: 0.9.8
-timestamp: 2011-11-15t18:00:00.10+02:00
+timestamp: 2011-11-16t13:11:00.10+02:00
 tags: [ boxgrinder_build ]
 ---
 
@@ -21,21 +21,28 @@ There are some use cases where people get confused about BoxGrinder not using th
 
 To utilise it at its best, you can simply run `boxgrinder-build` **without** `sudo`. Although even under `sudo` and `su`, we now try to behave in a less surprising way.  
 
+The release is **immediately available** in Fedora 15/16 updates-testing repository.
+
 Full release notes you can find below. If you have any comments - [find us or our community](/community/).
 
 # Release Notes
 
 ## Bug
 
-* [BGBUILD-310] - BoxGrinder doesnt build appliances when Fedora 16 is the host
-* [BGBUILD-321] - For EBS AMIs use the filesystem type specified for root partition
+* [[BGBUILD-310]] - BoxGrinder doesnt build appliances when Fedora 16 is the host
+* [[BGBUILD-321]] - For EBS AMIs use the filesystem type specified for root partition
 
 ## Enhancement
 
-* [BGBUILD-312] - Only use root privileges when necessary
+* [[BGBUILD-312]] - Only use root privileges when necessary
 
 ## Feature Request
 
-* [BGBUILD-157] - Add Alignment options for virtual appliances
-* [BGBUILD-267] - Add CentOS 6 support
+* [[BGBUILD-157]] - Add Alignment options for virtual appliances
+* [[BGBUILD-267]] - Add CentOS 6 support
 
+[BGBUILD-310]: https://issues.jboss.org/browse/BGBUILD-310
+[BGBUILD-321]: https://issues.jboss.org/browse/BGBUILD-321
+[BGBUILD-312]: https://issues.jboss.org/browse/BGBUILD-312
+[BGBUILD-157]: https://issues.jboss.org/browse/BGBUILD-157
+[BGBUILD-267]: https://issues.jboss.org/browse/BGBUILD-267
