@@ -30,6 +30,7 @@ Platform plugins convert intermediary deliverables produced by the operating sys
 
 * [VMware plugin][vmware]
 * [VirtualBox Plugin][virtualbox]
+* [VirtualPC Plugin][virtualpc]
 * [EC2 plugin][ec2]
 
 ## Delivery plugins
@@ -243,6 +244,27 @@ Personal is meant to use with VMware Fusion, Player, Workstation. Enterprise sho
 
 
 
+### VirtualPC Platform Plugin
+
+***
+
+This plugin creates a VHD disk image that can be used by VirtualPC or Citrix XenServer.
+
+#### VirtualPC Platform Plugin Supported operating systems
+
+* All operating systems
+
+#### VrtualPC Platform Plugin Configuration
+
+> No configuration required
+
+#### VirtualPC Platform Plugin Examples
+
+    boxgrinder-build jeos.appl -p virtualpc
+
+
+
+
 
 
 
@@ -255,9 +277,7 @@ This plugin creates disk image and descriptors consumable by VirtualBox virtuali
 
 #### VirtualBox Platform Plugin Supported operating systems
 
-* Fedora - all versions
-* RHEL - all versions
-* CentOS - all versions
+* All operating systems
 
 #### VirtualBox Platform Plugin Configuration
 
@@ -612,6 +632,7 @@ Use an already existing disk:
 
 [vmware]: #VMware_Platform_Plugin
 [virtualbox]: #VirtualBox_Platform_Plugin
+[virtualpc]: #VirtualPC_Platform_Plugin
 [ec2]: #EC2_Platform_Plugin
 
 [local]: #Local_delivery_plugin
