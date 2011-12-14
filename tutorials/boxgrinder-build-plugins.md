@@ -42,6 +42,7 @@ A delivery plugin moves the deliverables from a platfrorm or operating system pl
 * [S3 plugin][s3]
 * [EBS Plugin][ebs]
 * [ElasticHosts plugin][elastichosts]
+* [OpenStack plugin][openstack]
 
 # Plugin configuration
 
@@ -245,6 +246,8 @@ Personal is meant to use with VMware Fusion, Player, Workstation. Enterprise sho
 
 
 ### VirtualPC Platform Plugin
+
+Added in BoxGrinder **0.10.0**
 
 ***
 
@@ -623,6 +626,66 @@ Use an already existing disk:
     boxgrinder-build jeos.appl -d elastichosts --delivery-config chunk:128,disk_uuid:b161fd8b-d56s-4eea-9055-669daaec8aa4
 
 
+
+
+
+
+
+
+
+
+
+### OpenStack Delivery Plugin
+
+Added in BoxGrinder **0.10.0 as a tech-preview**
+
+***
+
+This plugin delivers an appliance to [OpenStack](http://openstack.org/). This plugin will upload and register the appliance in specific format in [Glance](http://glance.openstack.org/) using the Glance REST API.
+
+#### OpenStack Delivery Plugin supported operating systems
+
+All operating systems are supported.
+
+#### OpenStack Delivery Plugin Supported platforms
+
+* EC2
+* VMware
+* VirtualBox
+
+#### OpenStack Delivery Plugin Configuration
+
+    plugins:
+      openstack:
+        host: 10.1.0.1          # default: localhost
+        port: 9292              # default: 9292
+        schema: http            # default: http
+        overwrite: true         # default: false
+        public: true            # default: false
+
+#### OpenStack Delivery Plugin Examples
+
+Standard delivery for a sample JEOS appliance:
+
+    boxgrinder-build jeos.appl -d openstack
+
+Delivery to a different host:
+
+    boxgrinder-build jeos.appl -d openstack --delivery-config host:nightmare
+
+Delivery of a VMware image:
+
+    boxgrinder-build jeos.appl -p vmware -d openstack
+
+Delivery of an EC2 image:
+
+    boxgrinder-build jeos.appl -p ec2 -d openstack
+
+
+
+
+
+
 [os_plugins]: #Operating_system_plugins
 
 [fedora]: #Fedora_Operating_System_Plugin
@@ -640,3 +703,4 @@ Use an already existing disk:
 [s3]: #S3_Delivery_Plugin
 [ebs]: #EBS_Delivery_Plugin
 [elastichosts]: #ElasticHosts_Delivery_Plugin
+[openstack]: #OpenStack_Delivery_Plugin
