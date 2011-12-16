@@ -1,6 +1,7 @@
 require 'release_helper'
 require 'meta_appliance_helper'
 require 'toc'
+require 'jira'
 
 require 'release_sizes'
 require 'rss_widget'
@@ -28,4 +29,5 @@ Awestruct::Extensions::Pipeline.new do
   helper ReleaseHelper
   helper MetaApplianceHelper
   helper RssWidget
+  extension Jira.new(:ids => ['BGBUILD'], :layout => 'blog', :since => Time.utc(2011, 12, 12))
 end
