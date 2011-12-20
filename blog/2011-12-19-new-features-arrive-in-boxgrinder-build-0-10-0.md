@@ -1,26 +1,40 @@
 ---
 title: "New features arriving in BoxGrinder Build 0.10.0"
-author: 'Marek Goldmann'
+author: 'BoxGrinder Team'
 layout: blog
 version: 0.10.0
 timestamp: 2011-12-19t13:11:00.10+02:00
 tags: [ boxgrinder_build, openstack, libvirt, virtualpc ]
 ---
 
-I'm really pleased to announce next major version of BoxGrinder Build. Version 0.10 includes many new exciting features.
+I'm really pleased to announce the next major version of BoxGrinder Build. Version 0.10 includes many exciting new features.
 
 ## New plugin: libvirt delivery plugin
 
-The most time consuming feature which was implemented by Marc is the [Libvirt](http://libvirt.org/) [delivery plugin](/tutorials/boxgrinder-build-plugins/#Libvirt_Delivery_Plugin). This plugin allows you to deliver the selected appliance to various platforms as libvirt supports many of them. Just to name few: KVM, Xen, VirtualBox.
+The most time-consuming feature was the [libvirt](http://libvirt.org/) [delivery plugin](/tutorials/boxgrinder-build-plugins/#Libvirt_Delivery_Plugin), enabling appliances to be delivered and registered on the range of platforms that [libvirt supports](http://libvirt.org/index.html).  These include KVM, Xen, VirtualBox and VMWare to name but a few, and whilst the current release of the plugin is a preview, we hope that your feedback will enable us to continue improving it, so please let us know your thoughts!
 
-// TODO
+There are a large number of [features and configurable options](/tutorials/boxgrinder-build-plugins/#Libvirt_Delivery_Plugin) available, so we shall limit ourselves to some simple examples. We encourage you to consult [the documentation](/tutorials/boxgrinder-build-plugins/#Libvirt_Delivery_Plugin) for detailed information.
 
+### Examples
+Deliver the appliance to a `qemu` hypervisor on the local machine, placing the appliance in the `/var/lib/libvirt/images` directory, and register the image:  
+
+    boxgrinder-build definition.appl -d libvirt --delivery-config connection_uri:qemu:///system,image_delivery_uri:/var/lib/libvirt/images  
+
+>The plugin will attempt to determine optimal settings by probing the libvirt daemon for its capabilities. If, for instance, the libvirtd residing at the `connection_uri` machine advertises that it supports `kvm`, this will be preferred over a slower `qemu` domain. You can, of course, override these settings manually.
+
+Connect via SSH to a remote `vbox` (VirtualBox) [hypervisor](http://libvirt.org/drvvbox.html). Deliver the appliance via SFTP to the remote machine and register:   
+
+    [...] -d libvirt --delivery-config connection_uri:vbox+ssh://root@example.org/session,image_delivery_uri:sftp://root@example.org/var/lib/libvirt/images
+    
+>In the above example, we assume that you have set up your [_ssh-agent_](http://mah.everybody.org/docs/ssh), thus enabling the plugin to seamlessly use key authentication for both libvirt and SFTP. Password authentication works too, but it requires you to enter a password each time the plugin needs to connect, which is rather inconvenient.  
+
+There are a plethora of further features to allow arbitrary modification of domain definitions. Futhermore, we hope to make the plugin more user-friendly for those who require complex configurations, and these are topics we shall blog on in the future. 
 
 ## New plugin: OpenStack delivery plugin
 
-It's a pleasure to submit to testing [OpenStack](http://openstack.org/) plugin. OpenStack plugin allows you to deliver your appliance (in different formats) to [Glance](http://glance.openstack.org/) server using its REST API.
+It's a pleasure to submit to testing our [OpenStack](http://openstack.org/) plugin. The OpenStack plugin allows you to deliver your appliance (in different formats) to a [Glance](http://glance.openstack.org/) server using its REST API.
 
-Usage of this plugin is very simple: if you want to submit a KVM image to OpenStack:
+Usage of this plugin is very simple. If you want to submit a KVM image to OpenStack:
 
     boxgrinder-build definition.appl -d openstack
 
@@ -28,9 +42,9 @@ Usage of this plugin is very simple: if you want to submit a KVM image to OpenSt
 
     boxgrinder-build definition.appl -p ec2 -d openstack
 
-Please refer to [plugin documentation](/tutorials/boxgrinder-build-plugins/#OpenStack_Delivery_Plugin). for detailed usage instructions.
+Please refer to [plugin documentation](/tutorials/boxgrinder-build-plugins/#OpenStack_Delivery_Plugin) for detailed usage instructions.
 
-This plugin is in a **tech-preview** state. This means that we haven't tested it very well, please help us with some testing. We really appreciate any comments and pull requests for this plugin.
+This plugin is in a **tech-preview** state. This means that we haven't tested it intensively, please help us with some testing. We really appreciate any comments and pull requests for this plugin.
 
 
 ## New plugin: VirtualPC platform plugin
@@ -43,19 +57,46 @@ This is an early stage of the plugin as we want to add more functionality in the
 
 ## Kickstart support removal
 
-As of now support for using [Kickstart files](http://fedoraproject.org/wiki/Anaconda/Kickstart) as input files for BoxGrinder Build is removed. Kickstart files support was the cause of confusion by many BoxGrinder users. They were expecting that the full plugin chain could be executed, but **this wasn't true since the beginning**. Only operating system plugin execution was tested, everything else was in the hand of gods.
+As of now support for using [Kickstart files](http://fedoraproject.org/wiki/Anaconda/Kickstart) as input files for BoxGrinder Build is removed. Kickstart files support was the cause of confusion by many BoxGrinder users. They were expecting that the full plugin chain could be executed, but **this wasn't ever true**. Only operating system plugin execution was tested, everything else was in the hand of gods.
 
 We're now clear about the support: there is no support for kickstart files.
 
 ## Virtual machines disk alingment
 
-This is not a direct feature of BoxGrinder but there was a fix commited to upstream appliance-tools which enables disk alingment by default. From now - all appliances made by BoxGrinder are aligned.
+This is not a direct feature of BoxGrinder, but there was a fix commited to the upstream appliance-tools which enables disk alignment by default. From now on, all appliances made by BoxGrinder are aligned.
 
 ## New supported EC2 regions: sa-east-1 and us-west-2
 
 You're now free to create your AMI's in new regions: sa-east-1 and us-west-2. More info about selecting the regions you can find in [S3 plugin documentation](/tutorials/boxgrinder-build-plugins/#S3_Delivery_Plugin).
 
-Full release notes you can find below. If you have any comments - [find us or our community](/community/).
+## Enhanced support for variables (parameters) in any string value field of an appliance definition
+
+As requested by the community, it is now possible to use [variables](http://boxgrinder.org/tutorials/appliance-definition-parameters/) in *any* value field of an appliance: 
+
+    name: boxgrinder-#OS_NAME#
+    os:
+      name: fedora
+      version: 16
+
+Furthermore, you may now **inject custom variables from your environment** into your appliances simply by defining them.
+
+    $ export MY_ENV="I-LOVE-BoxGrinder"
+    
+    [...]
+      base:
+        - "mkdir #MY_ENV#" # This becomes "mkdir I-LOVE-BoxGrinder"
+
+> There is a hierarchy in which a variable defined in the *variables* section of an appliance takes precedence over one defined in the environment. See our [mailing list post](http://markmail.org/message/we5abw2bwon36uva) for more detail.    
+
+As an added bonus it is now also possible to **define nested variables**.  BoxGrinder can now resolve the following variable *#A#* successfully as *BoxGrinder Rocks!*:
+
+    #A#: #B# #C#!
+    #B#: BoxGrinder
+    #C#: Rocks
+    
+> You could define these variables either in the *variables* section of your appliance, or in the environment. The variables section is better for portability, whereas the environment is useful for baking in one-shot customisations such as fixed MAC addresses. 
+
+Full release notes can be found below. If you have any comments - [find us or our community](/community/).
 
 # Release Notes
 
@@ -70,8 +111,7 @@ Full release notes you can find below. If you have any comments - [find us or ou
 * [BGBUILD-326] - BoxGrinder can fail when build run from / 
 
 ## Enhancement
-
-* [BGBUILD-244] - No way for user to specify that they want to install optional packages when using yum groups 
+ 
 * [BGBUILD-304] - Standarize plugin callbacks
 * [BGBUILD-312] - Only use root privileges when necessary
 * [BGBUILD-318] - Add support for us-west-2 region
@@ -80,7 +120,6 @@ Full release notes you can find below. If you have any comments - [find us or ou
 
 ## Feature Request
 
-* [BGBUILD-139] - Eucalyptus plugin
 * [BGBUILD-157] - Add Alignment options for virtual appliances
 * [BGBUILD-195] - Add support for OpenStack
 * [BGBUILD-211] - Support for registering appliances with libvirt (KVM/XEN)
@@ -97,13 +136,6 @@ Full release notes you can find below. If you have any comments - [find us or ou
 * [BGBUILD-328] - Document libvirt plugin usage
 * [BGBUILD-329] - Document openstack plugin usage
 * [BGBUILD-330] - Document virtualpc plugin usage
-
-
-
-
-
-
-
 
 
 
