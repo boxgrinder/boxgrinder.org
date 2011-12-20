@@ -683,7 +683,15 @@ Delivery of an EC2 image:
 
 
 
+
+
+
+
 ### libvirt Delivery Plugin
+
+Added in BoxGrinder **0.10.0 as a tech-preview**
+
+***
 
 This plugin delivers and registers appliances to a machine running [libvirt](http://wiki.libvirt.org/page/FAQ#What_is_libvirt.3F). Libvirt is a virtualisation API providing a hypervisor-agnostic remotevirtualisation management service; with support for a huge number of [hypervisors](http://libvirt.org/drivers.html), and a variety of secure [communication protocols](http://libvirt.org/remote.html).     
 #### libvirt supported operating systems
@@ -756,7 +764,6 @@ All operating systems are supported.
     # Default: default
     network: my_network
 
-***
 
 #### libvirt Example Configurations
 There are a large number of configuration options available, but usually only a couple are needed for most requirements.
@@ -775,7 +782,6 @@ There are a large number of configuration options available, but usually only a 
         overwrite: true                                                    # Undefine any existing domain and file of the same name 
 > BoxGrinder will use your *ssh-agent* to perform key authentication for libvirt and SFTP if available.
 
-***
 
 #### Running the libvirt plugin
 
