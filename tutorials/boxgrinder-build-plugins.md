@@ -683,8 +683,109 @@ Delivery of an EC2 image:
 
 
 
+### libvirt Delivery Plugin
 
+This plugin delivers and registers appliances to a machine running [libvirt](http://wiki.libvirt.org/page/FAQ#What_is_libvirt.3F). Libvirt is a virtualisation API providing a hypervisor-agnostic remotevirtualisation management service; with support for a huge number of [hypervisors](http://libvirt.org/drivers.html), and a variety of secure [communication protocols](http://libvirt.org/remote.html).     
+#### libvirt supported operating systems
 
+All operating systems are supported.
+
+#### libvirt Delivery Plugin Configuration
+
+***connection_uri (String)*** — Libvirt endpoint address. If you are using authenticated transport such as ssh you should register your keys with an ssh agent. See: [libvirt Connection URIs](http://libvirt.org/uri.html), and [libvirt Drivers](http://libvirt.org/drivers.html).
+    # Default: '' - Default empty string, libvirt decides which hypervisor to choose. 
+    connection_uri: qemu+ssh://user@example.com/system 
+    connection_uri: qemu:///system
+
+***image_delivery_uri (String)*** — Where to deliver the image to. This must be a local path or an SFTP address. The local ssh-agent is used for keys if available.
+    # Default: /var/lib/libvirt/images 
+    image_delivery_uri: sftp://user@example.com/some/path 
+    image_delivery_uri: sftp://user:pass@example.com/some/path # It is advisable to use keys with ssh-agent.
+
+***libvirt_image_uri (String)*** — Where the image will be on the Libvirt machine.
+    # Default: Path element of *image_delivery_uri*.
+    libvirt_image_uri: /some/other/place # For most leaving the default will be desired behaviour.
+
+***default_permissions (Int)*** — Permissions of delivered image.
+    # Default: 0770
+    default_permissions: 0755
+    default_permissions: 0775
+   
+***overwrite (Int)*** — Overwrite any identically named file at the delivery path. Also undefines any existing domain of the same name.
+    # Default: false
+    overwrite: true
+    
+***script (String)*** — Path to user provided script to modify XML before registration with Libvirt. Plugin passes the raw XML after flag --domain, and consumes stdout to use as revised XML document.
+    # Default: none
+    script: /some/script.sh 
+    script: /some/script.rb
+
+***remote_no_verify (Bool)*** — Disable certificate verification procedures.
+    # Default: true - This is what most people will want.
+    remote_no_verify: false
+
+***xml_only (Bool)*** — Do not connect to the Libvirt hypervisor, just assume sensible defaults where no user values are provided, and produce the XML domain.
+    # Default: false
+    xml_only: true
+    
+***appliance_name (String)*** — Name for the appliance to be registered as in Libvirt. At present the user can only specify literal strings.
+    # Default: name-version-release-os_name-os_version-arch-platform
+    appliance_name: boxgrinder-f16-rocks
+
+***domain_type (String)*** — Libvirt domain type. Default is a calculated value. Unless you are using xml_only the remote instance will be contacted and an attempt to determine the best value will be made. If xml_only is set then a safe pre-determined default is used. User-set values take precedence. See type: [Domain format](http://libvirt.org/formatdomain.html#elements).
+    # Default: calculated value, as described above
+    # Examples:
+    xml_only: kvm
+    xml_only: kvm
+    xml_only: qemu
+    
+***virt_type (String)*** — Libvirt virt type. Default is a calculated value. Where available paravirtual is preferred. See type: [BIOS bootloader](http://libvirt.org/formatdomain.html#elementsOSBIOS).
+    # Default: calculated value, as described above.  
+    # Examples:
+    virt_type: hvm
+    virt_type: xen
+    virt_type: linux
+
+***bus (String)*** — Disk bus. Default is a pre-determined value depending on the domain type. User-set values take precedence.
+    # Default: precalculated value, as described above.
+    # Examples:
+    virt_type: virtio
+    virt_type: ide
+
+***network (String)*** — Network name. If you require a more complex setup than a simple network name, then you should create and set a script.
+    # Default: default
+    network: my_network
+
+***
+
+#### libvirt Example Configurations
+There are a large number of configuration options available, but usually only a couple are needed for most requirements.
+
+    plugins:
+       libvirt:
+         libvirt_uri: qemu:///system                 # See http://libvirt.org/drivers.html
+         image_delivery_uri: /var/lib/libvirt/images # Where to deliver the appliance
+         overwrite: true                             # Undefine any existing domain and file of the same name 
+> There are *no* required parameters, but most users will want to set at least _libvirt_uri_. 
+    
+    plugins:
+      libvirt:
+        libvirt_uri: kvm+ssh://root@example.org/                           # Connect to KVM hypervisor over SSH
+        image_delivery_uri: sftp://root@example.org/var/lib/libvirt/images # Only SFTP is supported for remote delivery at present
+        overwrite: true                                                    # Undefine any existing domain and file of the same name 
+> BoxGrinder will use your *ssh-agent* to perform key authentication for libvirt and SFTP if available.
+
+***
+
+#### Running the libvirt plugin
+
+Deliver to local machine, register on VirtualBox hypervisor.
+
+    boxgrinder-build example.appl -d libvirt --delivery-config libvirt_uri:vbox:///session,image_delivery_uri:/my/libvirt/images/directory
+
+Deliver via SFTP to remote machine at `example.org`, registering on remote QEMU hypervisor tunnelled via SSH, overwrite any existing files/domains:
+
+    boxgrinder-build example.appl -d libvirt --delivery-config libvirt_uri:qemu+ssh://example.org/system,image_delivery_uri:sftp://example.org/var/lib/libvirt/images,overwrite:true
 
 [os_plugins]: #Operating_system_plugins
 
@@ -704,3 +805,4 @@ Delivery of an EC2 image:
 [ebs]: #EBS_Delivery_Plugin
 [elastichosts]: #ElasticHosts_Delivery_Plugin
 [openstack]: #OpenStack_Delivery_Plugin
+[libvirt]: #Libvirt_Delivery_Plugin
