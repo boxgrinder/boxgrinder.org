@@ -3,7 +3,7 @@ title: "New features arriving in BoxGrinder Build 0.10.0"
 author: 'BoxGrinder Team'
 layout: blog
 version: 0.10.0
-timestamp: 2011-12-20t14:00:00.10+02:00
+timestamp: 2011-12-20t14:20:00.10+02:00
 tags: [ boxgrinder_build, openstack, libvirt, virtualpc ]
 ---
 
