@@ -25,13 +25,13 @@ Go to the directory where you want build your appliance, and execute:
 
 The next step is to create an appliance definition. In this example we want create an appliance with basic packages. Below is a sample appliance definition file. Appliance definition file structure is explained here.
 
-Create a file `f14-basic.appl` with the following content and place it under the `appliances/` directory.
+Create a file `f15-basic.appl` with the following content and place it under the `appliances/` directory.
 
-    name: f14-basic
-    summary: Just Enough Operating System based on Fedora 14
+    name: f15-basic
+    summary: Just Enough Operating System based on Fedora 15
     os:
       name: fedora
-      version: 14
+      version: 15
     hardware:
       partitions:
         "/":
@@ -43,7 +43,7 @@ Create a file `f14-basic.appl` with the following content and place it under the
 
 The last step is to run BoxGrinder Build.
 
-    boxgrinder-build f14-basic.appl
+    boxgrinder-build f15-basic.appl
 
 You can check logs located in `log/` directory if something goes wrong.
 

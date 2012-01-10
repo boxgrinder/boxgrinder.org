@@ -51,7 +51,7 @@ BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions
 1. Download the Fedora 13 32-bit meta appliance from the download page.
 2. Extract the downloaded file (`boxgrinder-meta-VERSION-fedora-VERSION-i386-vmware.tgz`). This will create the directory `boxgrinder-meta-VERSION-fedora-VERSION-i386-vmware`.
 3. Using VMware Fusion, choose File / Open, browse to that folder and open the boxgrinder-meta image.
-4. Increase the default of 512 MB of RAM to 1024 MB (or more!) - appliances might build with less but it will take a drastically longer amount of time.
+4. Increase the default of 512 MB of RAM to 1024 MB (or more!) - appliances might build with less but it will take a drastically longer period of time.
 5. Login as root with password **boxgrinder**.
 
 ## VirtualBox
@@ -59,7 +59,7 @@ BoxGrinder Meta is available in both 32 and 64 bit variants. The 64 bit versions
 1. Make sure you've downloaded the **VMware tgz** bundle
 2. Extract the downloaded tgz file
 3. In VirtualBox, create a new Virtual Machine. Choose Linux as the Operating System and Fedora as the version.
-4. Increase the default of 512 MB of RAM to 1024 MB (or more!) - appliances might build with less but it will take a drastically longer amount of time.
+4. Increase the default of 512 MB of RAM to 1024 MB (or more!) - appliances might build with less but it will take a drastically longer period of time.
 5. Choose "Use existing hard disk" and click the browse folder icon to open the Virtual Media Manager
 6. Click the Add icon on the toolbar of the Virtual Media Manager
 7. Browse to the extracted `boxgrinder-meta-personal.vmdk` file and select it, closing the Virtual Media Manager

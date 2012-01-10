@@ -70,7 +70,7 @@ There are two types of link:
 
 Notice that you can use `#BASE_ARCH#` tag to substitute architecture for the current building architecture, eg. if the appliance will be built on a 64 bit platform, x86_64 will be injected. In the other case i386 will be injected.
 
-Read more about [available parameters here](/tutorials/appliance-definition-parameters/).
+Read more about [parameters here](/tutorials/appliance-definition-parameters/).
 
 ## default_repos
 
@@ -88,10 +88,10 @@ By default all repositories listed in an appliance definition file are installed
 Example repos section:
 
     repos:
-      - name: "fedora-11"
-        baseurl: "http://ftp.man.poznan.pl/pub/linux/fedora/releases/11/Everything/#BASE_ARCH#/os/"
-      - name: "fedora-11-updates"
-        mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f11&arch=#BASE_ARCH#"
+      - name: "fedora-15"
+        baseurl: "http://ftp.man.poznan.pl/pub/linux/fedora/releases/16/Everything/#BASE_ARCH#/os/"
+      - name: "fedora-16-updates"
+        mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f16&arch=#BASE_ARCH#"
 
 ## hardware
 
@@ -99,8 +99,8 @@ This section gives the ability to specify virtual hardware requirements.
 
 Members:
 
-* `cpus` - virtual CPU count, default: 1,
-* `memory` - memory quantity in MB, default: 256,
+* `cpus` - virtual CPU count, default: 1.
+* `memory` - memory quantity in MB, default: 256.
 * `partitions` - partitioning scheme with root mounts and size in GB.
 
 Example hardware section:
@@ -157,8 +157,8 @@ This section specifies operating system information for the appliance.
 
 Members:
 
-* `name` - OS name, default: fedora,
-* `version` - OS version; this could be a number or string: 1, rawhide, default: 12.
+* `name` - OS name
+* `version` - OS version; this could be a number or string: 1, rawhide.
 * `password` - this is the root password, default: boxgrinder.
 
 
@@ -184,13 +184,15 @@ Example:
 
 Files section is executed **before** post section. This allows you to execute some scripts copied to the appliance.
 
-You can specify both relative (to the application definition file) and absolute paths. **We strongly advise to use relative paths** which makes your appliance definition more portable. If you use absolute path - the whole path will be included in appliance. To make it more clear if you specify `files` section like this:
+You can specify both relative (to the application definition file) and absolute paths. **We strongly advise you to use relative paths** which makes your appliance definition more portable. If you use absolute path - the whole path will be included in appliance. 
+
+For instance, if you specified a `files` section as follows:
 
     files:
       "/opt":
         - "/tmp/dir/file.txt"
 
-BoxGrinder will place `file.txt` in `/opt/tmp/dir/` directory located in the appliance. Keep that in mind.
+BoxGrinder will place `file.txt` in the `/opt/tmp/dir/` directory located in the appliance. Keep that in mind.
 
 ## post
 
@@ -228,7 +230,7 @@ Example post section with one command executed for the base image and one comman
     release: 0
     os:
       name: fedora
-      version: 14
+      version: 15
       password: weakpassword
     hardware:
       cpus: 2
@@ -242,5 +244,5 @@ Example post section with one command executed for the base image and one comman
     default_repos: true # default is true
     repos:
       - name: "other-repo"
-        baseurl: "http://repo.yoursite.com/fedora/14/#BASE_ARCH#"
+        baseurl: "http://repo.yoursite.com/fedora/15/#BASE_ARCH#"
 

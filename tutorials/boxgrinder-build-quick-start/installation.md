@@ -9,11 +9,11 @@ layout: one-column
 
 ***
 
-> Note: Before you install BoxGrinder make sure you have [prepared your environment][prepare] or use [meta appliance][meta].
+> Note: Before you install BoxGrinder make sure you have [prepared your environment][prepare] or use the [meta appliance][meta].
 
 ## Install BoxGrinder Build
 
-### Fedora 13+
+### Fedora 15+
 
 Just use `yum`!
 

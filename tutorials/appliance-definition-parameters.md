@@ -48,5 +48,5 @@ Possible values:
 
 ## #OS_VERSION# ##
 
-Release version or name, eg. 14 (fedora), 5 (RHEL),  rawhide (for Fedora developement).
+Release version or name, eg. 15 (fedora), 5 (RHEL), rawhide (for Fedora developement).
 

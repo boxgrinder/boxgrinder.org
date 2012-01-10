@@ -83,18 +83,18 @@ This plugin creates base disk image with Fedora operating system installed.
 
 #### Fedora Operating System Plugin Examples
 
-`fedora-13.appl`:
+`fedora-15.appl`:
 
-    name: fedora-13
+    name: fedora-15
     os:
       name: fedora
-      version: 13
+      version: 15
 
     [...]
 
 #### Fedora Operating System Plugin Usage
 
-    boxgrinder-build fedora-13.appl
+    boxgrinder-build fedora-15.appl
 
 
 

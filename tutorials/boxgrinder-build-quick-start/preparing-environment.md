@@ -17,11 +17,11 @@ See the [meta appliance][meta] page for details on getting it up and running.
 
 # Preparing own build environment
 
-To build appliances using BoxGrinder you need Fedora operating system.
+To build appliances using BoxGrinder you need to use Fedora; but don't worry, the *appliances* you create can have any OS that BoxGrinder supports. 
 
-# Fedora 13+
+# Fedora 15+
 
-> Info: Fedora 13 and later doesn't require preparing anything before installing BoxGrinder - use BoxGrinder RPMs - this will pull all required packages.
+> Info: Fedora 15 and later don't require any preparation before installing BoxGrinder - simply install the BoxGrinder RPMs, this will pull all required packages.
 
 Finished!
 

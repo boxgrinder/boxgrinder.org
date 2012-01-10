@@ -202,7 +202,7 @@ The plugin method will register your plugin in BoxGrinder with provided informat
     </tr>
     <tr>
         <td>:versions</td>
-        <td>Required only for operating system plugins. This is a array with supported operating system versions, eg. [ '12', '13', 'rawhide' ]</td>
+        <td>Required only for operating system plugins. This is a array with supported operating system versions, eg. [ '15', '16', 'rawhide' ]</td>
         <td>yes (for OS plugins)</td>
     </tr>
     <tr>
