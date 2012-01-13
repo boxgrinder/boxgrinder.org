@@ -9,15 +9,19 @@ title: FAQ
 
 # General
 
-## What operating systems are supported by BoxGrinder Build?
+## Which operating systems are supported by BoxGrinder Build?
 
-See operating system plugins section on the [plugins page](/tutorials/boxgrinder-build-plugins). As of release version 0.9.2 BoxGrinder Build supports cross operating system builds, allowing your host to produce an appliance based upon a different OS. For instance, it is possible to build a CentOS appliance using a Fedora host.
+The [operating system section](http://boxgrinder.org/tutorials/boxgrinder-build-plugins/#Operating_system_plugins) of the plugins page provides the most contemporary information on which OSes BoxGrinder supports. Since verion 0.9.2 BoxGrinder Build has supported cross operating system builds, allowing your host to produce an appliance based upon a *different OS*. For instance, it is possible to *build a CentOS appliance using a Fedora host*.
 
-## On what operating systems can I run BoxGrinder Build?
+> In fact, the recommended approach is to use Fedora 15 or 16 to build your appliances, which themselves may have *any* supported OS.
 
-Currently we **support Fedora operating system only**. You need to have Fedora 13+ to build appliances with BoxGrinder Build. We strongly encourange you to use latest available Fedora release.
+## On which operating systems can I run BoxGrinder Build?
 
-Please consult also [above question](#What_operating_systems_are_supported_by_BoxGrinder_Build).
+Currently we **only support Fedora for building**. You need to have Fedora 15+ to build appliances with the latest BoxGrinder Build. We strongly encourange you to use latest available Fedora release.
+
+> Note that you can still build appliances of any supported OS. For instance using Fedora 15 you can build a RHEL, CentOS or SL appliance using Fedora 15!  
+
+Refer to the [above question](#What_operating_systems_are_supported_by_BoxGrinder_Build) for OSes that BoxGrinder can build into *appliances*.
 
 ## What is the location of supported Clouds in the world?
 
@@ -25,25 +29,33 @@ We have a [nice map](/cloud-locations/) to visualize it!
 
 ## How do I uninstall all of the BoxGrinder Build gems?
 
-    gem list | cut -d" " -f1 | grep boxgrinder | xargs sudo gem uninstall -aIx
+The easiest way to remove BoxGrinder is to simply use your package manager, for instance:
+    
+    yum remove -y rubygem-boxgrinder-build rubygem-boxgrinder-core
 
-## How do I update all of the BoxGrinder Build plugins to latest versions?
+## How do I update BoxGrinder Build to the latest version?
 
 For Fedora/RHEL/CentOS use YUM:
 
-    yum update rubygem-boxgrinder-*
+    yum update 'rubygem-boxgrinder-*'
 
 ## How can I use BoxGrinder Build without changing the user to root?
 
-You can use [sudo](http://www.sudo.ws/sudo/sudo.man.html). To make it convenient you can grant your regular user access to execute BoxGrinder Build command without entering the password. To do this run `visudo` as root and add this line at the end:
+You can use [sudo](http://www.sudo.ws/sudo/sudo.man.html), or can you run `boxgrinder-build` as a **normal non-root user**, and BoxGrinder will re-launch itself as *root*, whilst preserving your environment. When *root* is no longer required, BoxGrinder will **switch back to your local user**. All files produced will be **owned by your local user**, and plugins will be able to access your **user's agents and environment** such as `ssh-agent` and `ssh-askpass`.
 
+Simply **ensure the user can run sudo**: 
+
+    some-usr$ boxgrinder-build my.appl
+    
+For convenience you can grant your regular user access to execute BoxGrinder Build command without entering the password. To do this run `visudo` as *root* and add this line:
+    
     username        ALL=NOPASSWD: /usr/bin/boxgrinder-build
 
-where `username` is your regular user username.
+where *username* is your usual username.
 
-## How can I prevent mounting partitions in my GNOME Desktop while building appliances?
+## How can I prevent GNOME Desktop mounting appliance partitions during builds?
 
-You need to disable Nautilius automounting feature using this command:
+You can disable Nautilius automounting using this command:
 
     gconftool-2 --type bool --set /apps/nautilus/preferences/media_automount false
 
@@ -53,15 +65,17 @@ Alternatively you can use [`gconf-editor`](http://en.wikipedia.org/wiki/Gconf-ed
 
 ## Why can't I find my attached EBS volume?
 
-If you use **Fedora 13+ or RHEL/CentOS 6+** AMIs built with BoxGrinder you need to search for `/dev/xvdX` instead of `/dev/sdX`. This is because we use a pv-grub AKI. Example: if you mount an EBS volume on `/dev/sdf`, look for it under `/dev/xvdf`.
+If you use **Fedora 15+ or RHEL/CentOS 6+** AMIs built with BoxGrinder you need to search for `/dev/xvdX` instead of `/dev/sdX`. This is because we use a pv-grub AKI. 
 
-## Why do I get 'Permission denied (publickey,gssapi-keyex,gssapi-with-mic)' when I try to log in to meta appliance instance?
+For example: if you mount an EBS volume on `/dev/sdf`, look for it under `/dev/xvdf`.
 
-You see it because the meta appliance installs the latest stable BoxGrinder Build release on boot, which prevents sshd from starting (and therefore prevents logins) until the install finishes. This can take several minutes depending on the selected instance size.
+## Why do I get 'Permission denied (publickey,gssapi-keyex,gssapi-with-mic)' when I try to log into a meta appliance instance?
+
+You see this because the meta appliance installs the latest stable BoxGrinder Build release on boot, which prevents sshd from starting (and therefore prevents logins) until the update finishes. This can take several minutes depending upon the selected instance size.
 
 ## Why can't I log into my AMI as root via SSH?
 
-AMIs should be accessed over SSH using `ec2-user`, rather than `root`.  The `ec2-user` account has full `sudo` access, without password.
+AMIs should be accessed over SSH using `ec2-user` rather than `root`.  The `ec2-user` account has full `sudo` access without requiring a password (*NOPASSWD*).
 
 ## Why does BoxGrinder Build not function properly on some Xen-based RHEL/CentOS 5 hosts like AWS AMIs?
 
