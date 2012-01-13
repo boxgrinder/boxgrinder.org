@@ -11,7 +11,7 @@ We are really pleased to announce the next major version of BoxGrinder Build. Ve
 
 ## New plugin: libvirt delivery plugin
 
-The most time-consuming feature was the [libvirt](http://libvirt.org/) [delivery plugin](/tutorials/boxgrinder-build-plugins/#Libvirt_Delivery_Plugin), enabling appliances to be delivered and registered on the range of platforms that [libvirt supports](http://libvirt.org/index.html).  These include KVM, Xen, VirtualBox and VMWare to name but a few, and whilst the current release of the plugin is a preview, we hope that your feedback will enable us to continue improving it, so please let us know your thoughts!
+The most time-consuming feature was the [libvirt](http://libvirt.org/) [delivery plugin](/tutorials/boxgrinder-build-plugins/#libvirt_Delivery_Plugin), enabling appliances to be delivered and registered on the range of platforms that [libvirt supports](http://libvirt.org/index.html).  These include KVM, Xen, VirtualBox and VMWare to name but a few, and whilst the current release of the plugin is a preview, we hope that your feedback will enable us to continue improving it, so please let us know your thoughts!
 
 There are a large number of [features and configurable options](/tutorials/boxgrinder-build-plugins/#Libvirt_Delivery_Plugin) available, so we shall limit ourselves to some simple examples. We encourage you to consult [the documentation](/tutorials/boxgrinder-build-plugins/#libvirt_Delivery_Plugin) for detailed information.
 

@@ -743,9 +743,9 @@ All operating systems are supported.
 ***domain_type (String)*** — Libvirt domain type. Default is a calculated value. Unless you are using xml_only the remote instance will be contacted and an attempt to determine the best value will be made. If xml_only is set then a safe pre-determined default is used. User-set values take precedence. See type: [Domain format](http://libvirt.org/formatdomain.html#elements).
     # Default: calculated value, as described above
     # Examples:
-    xml_only: kvm
-    xml_only: kvm
-    xml_only: qemu
+    domain_type: kvm
+    domain_type: qemu
+    domain_type: vbox
     
 ***virt_type (String)*** — Libvirt virt type. Default is a calculated value. Where available paravirtual is preferred. See type: [BIOS bootloader](http://libvirt.org/formatdomain.html#elementsOSBIOS).
     # Default: calculated value, as described above.  
