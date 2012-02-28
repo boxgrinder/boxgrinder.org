@@ -7,6 +7,22 @@
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/screen.css', :media=>'screen, projection' }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/print.css', :media=>'print' }
     %script{ :type=>'text/javascript', :src=>'/javascripts/jquery-1.6.1.min.js' }
+    <!-- Syntax highlighting -->
+    %script{ :type=>'text/javascript', :src=>'/javascripts/shCore.js' }
+    %script{ :type=>'text/javascript', :src=>'/javascripts/shAutoloader.js' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/shCore.css' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/shThemeBoxGrinder.css' }
+    :javascript 
+      $(document).ready(function() { 
+        SyntaxHighlighter.autoloader(
+          'ruby rb rails best_language /javascripts/shBrushRuby.js',
+          'diff git                    /javascripts/shBrushDiff.js'
+        );
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['tab-size'] = 2;
+        SyntaxHighlighter.all();
+      })
+
     /[if lt IE 8]
       %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/ie.css', :media=>'screen, projection' }
     %link{ :rel=>'alternate',  :type=>'application/atom+xml', :href=>'/blog.atom' }

@@ -2,6 +2,7 @@ require 'release_helper'
 require 'meta_appliance_helper'
 require 'toc'
 require 'jira'
+require 'gsub'
 
 require 'release_sizes'
 require 'rss_widget'
@@ -24,6 +25,10 @@ Awestruct::Extensions::Pipeline.new do
                                                 '/blog/tags/index.html',
                                                 :layout=>'one-column')
 
+  transformer Awestruct::Extensions::Gsub.new(
+    %r(<!--\s*lang:\s*(\S*?)\s*-->\s*<pre><code>(.*?)</code></pre>),
+    '<pre class="brush: \1">\2</pre>')
+ 
   helper Awestruct::Extensions::GoogleAnalytics
   helper Awestruct::Extensions::Partial
   helper ReleaseHelper
