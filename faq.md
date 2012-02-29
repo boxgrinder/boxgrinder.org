@@ -11,17 +11,15 @@ title: FAQ
 
 ## Which operating systems are supported by BoxGrinder Build?
 
-The [operating system section](http://boxgrinder.org/tutorials/boxgrinder-build-plugins/#Operating_system_plugins) of the plugins page provides the most contemporary information on which OSes BoxGrinder supports. Since verion 0.9.2 BoxGrinder Build has supported cross operating system builds, allowing your host to produce an appliance based upon a *different OS*. For instance, it is possible to *build a CentOS appliance using a Fedora host*.
+See the [operating system plugins section][] on the plugins page. As of version 0.9.2 BoxGrinder Build **supports cross operating system builds**, allowing your host to produce an appliance based upon a different OS. For instance, it is possible to build a CentOS, RHEL or SL appliance using a *Fedora* host.
 
-> In fact, the recommended approach is to use Fedora 15 or 16 to build your appliances, which themselves may have *any* supported OS.
+> The supported approach is to use Fedora 15 or 16 to build your appliances, on which you may **build any supported OS**.
 
-## On which operating systems can I run BoxGrinder Build?
+## Which operating systems can I run BoxGrinder Build on?
 
-Currently we **only support Fedora for building**. You need to have Fedora 15+ to build appliances with the latest BoxGrinder Build. We strongly encourange you to use latest available Fedora release.
+Currently we only support Fedora for *building* appliances, but your appliance can have [any supported OS][]. You need to have Fedora 15+ to build appliances with the latest BoxGrinder Build. We strongly encourange you to use latest available Fedora release.
 
-> Note that you can still build appliances of any supported OS. For instance using Fedora 15 you can build a RHEL, CentOS or SL appliance using Fedora 15!  
-
-Refer to the [above question](#What_operating_systems_are_supported_by_BoxGrinder_Build) for OSes that BoxGrinder can build into *appliances*.
+> You can build appliances of **any supported OS** using BoxGrinder on Fedora.
 
 ## What is the location of supported Clouds in the world?
 
@@ -41,9 +39,11 @@ For Fedora/RHEL/CentOS use YUM:
 
 ## How can I use BoxGrinder Build without changing the user to root?
 
-You can use [sudo](http://www.sudo.ws/sudo/sudo.man.html), or can you run `boxgrinder-build` as a **normal non-root user**, and BoxGrinder will re-launch itself as *root*, whilst preserving your environment. When *root* is no longer required, BoxGrinder will **switch back to your local user**. All files produced will be **owned by your local user**, and plugins will be able to access your **user's agents and environment** such as `ssh-agent` and `ssh-askpass`.
+You can run `boxgrinder-build` as a normal non-root user, and BoxGrinder will **preserve your local environment**. Alternatively, you can run using plain [sudo][root], which has some caveats.
 
-Simply **ensure the user can run sudo**: 
+When BoxGrinder is run a non-root user, any files produced will be owned by your local user, and plugins will be able to access your user's agents and environment such as `ssh-agent` and `ssh-askpass`.
+
+Simply ensure the user can run sudo, and execute: 
 
     some-usr$ boxgrinder-build my.appl
     
@@ -82,3 +82,7 @@ AMIs should be accessed over SSH using `ec2-user` rather than `root`.  The `ec2-
 At present, [a bug in libguestfs](https://bugzilla.redhat.com/show_bug.cgi?id=539746#c9) results in only non-Xen kernels being looked for in /boot. You can work around this by installing a non-Xen kernel onto the AMI:
 
     yum install kernel
+
+[operating system plugins section]: http://boxgrinder.org/tutorials/boxgrinder-build-plugins/#Operating_system_plugins
+[any supported OS]: #Which_operating_systems_are_supported_by_BoxGrinder_Build
+[root]: http://linux.die.net/man/8/sudo
