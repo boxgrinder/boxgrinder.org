@@ -740,7 +740,7 @@ All operating systems are supported.
     # Default: name-version-release-os_name-os_version-arch-platform
     appliance_name: boxgrinder-f16-rocks
 
-***domain_type (String)*** — Libvirt domain type. Default is a calculated value. Unless you are using xml_only the remote instance will be contacted and an attempt to determine the best value will be made. If xml_only is set then a safe pre-determined default is used. User-set values take precedence. See type: [Domain format](http://libvirt.org/formatdomain.html#elements).
+***domain_type (String)*** — Libvirt domain type. Default is a calculated value. Unless you are using xml_only the remote instance will be contacted and an attempt to determine the best value will be made. If xml_only is set then a safe pre-determined default is used. User-set values take precedence. Owing to limitations in the library being used to discover hypervisor characteristics, in some cases KVM-capable CPUs may not be detected as such, with the result that the slower QEMU driver will be used. In this situation, users can override the auto-detected value and set it to KVM as shown in the example below. See type: [Domain format](http://libvirt.org/formatdomain.html#elements).
     # Default: calculated value, as described above
     # Examples:
     domain_type: kvm
