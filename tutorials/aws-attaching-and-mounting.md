@@ -59,6 +59,7 @@ You can also use cloud-init to define a custom fstab layout, including settings 
 > With a bit more effort you can get cloud-init running on [RHEL and forks like CentOS/SL](http://www.nimbusproject.org/doc/cloudinitd/1.0/install.html). There are various unofficial sources of cloud-init RPMs for EL that can be [found online](http://pbrady.fedorapeople.org/cloud-init-el6/).
 
 [examples]: http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/files/head:/doc/examples/
+[cloud-init]: https://help.ubuntu.com/community/CloudInit
 
 ### Custom fstab
 

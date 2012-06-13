@@ -1,1 +1,6 @@
 ErrorDocument 404 /404.html
+Options +FollowSymLinks
+Options +Indexes
+RewriteEngine On
+RewriteBase /
+RewriteRule ^permalink/ephemeral(.*)$ tutorials/aws-attaching-and-mounting$1 [R=301,L]
