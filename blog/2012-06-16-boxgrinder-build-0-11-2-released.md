@@ -3,7 +3,7 @@ title: "BoxGrinder 0.10.2 Released"
 author: 'Marc Savy'
 layout: blog
 version: 0.10.2
-timestamp: 2012-06-13t18:00:00.10+01:00
+timestamp: 2012-06-16t18:00:00.10+01:00
 tags: [ boxgrinder_build ]
 ---
 
